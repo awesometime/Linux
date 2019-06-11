@@ -1,0 +1,932 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="1.驱动程序的基本函数.files/filelist.xml">
+<title>驱动程序的基本函数</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>CLJ</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>CLJ</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>2</o:TotalTime>
+  <o:Created>2007-08-27T04:13:00Z</o:Created>
+  <o:LastSaved>2007-08-27T04:13:00Z</o:LastSaved>
+  <o:Pages>2</o:Pages>
+  <o:Words>333</o:Words>
+  <o:Characters>1902</o:Characters>
+  <o:Lines>15</o:Lines>
+  <o:Paragraphs>4</o:Paragraphs>
+  <o:CharactersWithSpaces>2231</o:CharactersWithSpaces>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:PunctuationKerning/>
+  <w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	mso-font-kerning:5.0pt;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:15.6pt;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:2014989077;
+	mso-list-type:simple;
+	mso-list-template-ids:1592046340;}
+@list l0:level1
+	{mso-level-tab-stop:13.2pt;
+	mso-level-number-position:left;
+	margin-left:13.2pt;
+	text-indent:-13.2pt;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+</head>
+
+<body lang=ZH-CN style='tab-interval:21.0pt;text-justify-trim:punctuation'>
+
+<div class=Section1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal style='margin-left:13.2pt;text-indent:-13.2pt;mso-list:l0 level1 lfo1;
+tab-stops:list 13.2pt'><![if !supportLists]><span lang=EN-US style='mso-fareast-font-family:
+"Times New Roman"'><span style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>驱动程序的基本函数</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0cm 5.4pt 0cm 5.4pt;mso-border-insideh:.5pt solid windowtext;
+ mso-border-insidev:.5pt solid windowtext'>
+ <tr>
+  <td width=53 valign=top style='width:31.65pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>类别</span></p>
+  </td>
+  <td width=184 valign=top style='width:110.25pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>函数名</span></p>
+  </td>
+  <td width=114 valign=top style='width:68.25pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>功能</span></p>
+  </td>
+  <td width=158 valign=top style='width:94.5pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>函数形成</span></p>
+  </td>
+  <td width=210 valign=top style='width:126.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>参数</span></p>
+  </td>
+  <td width=463 valign=top style='width:277.95pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>描述</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=53 rowspan=2 valign=top style='width:31.65pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>驱动程序入口和出口点</span></p>
+  </td>
+  <td width=184 valign=top style='width:110.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>module_init</span></p>
+  </td>
+  <td width=114 valign=top style='width:68.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>驱动程序初始化入口点</span></p>
+  </td>
+  <td width=158 valign=top style='width:94.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>module_init ( x)</span></p>
+  </td>
+  <td width=210 valign=top style='width:126.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>x</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为启动时或插入模块时要运行的函数</span></p>
+  </td>
+  <td width=463 valign=top style='width:277.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>如果在启动时就确认把这个驱动程序</span> <span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>插入内核或以静态形成链接，则</span><span lang=EN-US>module_init </span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>将其初始化例程加入到</span><span lang=EN-US>&quot;__initcall.int&quot;</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>代码段，否则将用</span><span lang=EN-US>init_module</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>封装其初始化例程，以便该驱动程序作为模块来使用。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=184 valign=top style='width:110.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>module_exit</span></p>
+  </td>
+  <td width=114 valign=top style='width:68.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>驱动程序退出出口点</span></p>
+  </td>
+  <td width=158 valign=top style='width:94.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>module_exit ( x)</span></p>
+  </td>
+  <td width=210 valign=top style='width:126.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>x</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为驱动程序被卸载时要运行的函数</span></p>
+  </td>
+  <td width=463 valign=top style='width:277.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>当驱动程序是一个模块，用</span><span lang=EN-US>rmmod</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>卸载一个模块时</span><span lang=EN-US>module_exit</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>（）将用</span><span lang=EN-US>cleanup_module</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>（）封装</span><span lang=EN-US>clean-up</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>代码。如果驱动程序是静态地<span class=GramE>链接进内核</span>，则</span><span
+  lang=EN-US>module_exit</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>（）函数不起任何作用。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=53 rowspan=12 style='width:31.65pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>原子和指针操作</span></p>
+  </td>
+  <td width=184 valign=top style='width:110.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>atomic_read</span></p>
+  </td>
+  <td width=114 valign=top style='width:68.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>读取原子变量</span></p>
+  </td>
+  <td width=158 valign=top style='width:94.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>atomic_read ( v)</span></p>
+  </td>
+  <td width=210 valign=top style='width:126.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>v</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为指向</span><span
+  lang=EN-US>atomic_t</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>类型的指针</span></p>
+  </td>
+  <td width=463 valign=top style='width:277.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>原子地读取</span><span lang=EN-US>v</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>的值。注意要保证</span><span lang=EN-US>atomic</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>的有用范围只有</span><span lang=EN-US>24</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>位。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=184 valign=top style='width:110.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>atomic_set</span></p>
+  </td>
+  <td width=114 valign=top style='width:68.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>设置原子变量</span></p>
+  </td>
+  <td width=158 valign=top style='width:94.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>atomic_set ( v, i)</span></p>
+  </td>
+  <td width=210 valign=top style='width:126.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>v</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为指向</span><span
+  lang=EN-US>atomic_t</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>类型的指针，</span><span
+  lang=EN-US>i</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>为<span class=GramE>待设置</span>的值</span></p>
+  </td>
+  <td width=463 valign=top style='width:277.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>原子地把</span><span lang=EN-US>v</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>的值设置为</span><span lang=EN-US>i</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>。注意要保证</span><span lang=EN-US>atomic</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>的有用范围只有</span><span lang=EN-US>24</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>位。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=184 valign=top style='width:110.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>atomic_add</span></p>
+  </td>
+  <td width=114 valign=top style='width:68.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>把整数增加到原子变量</span></p>
+  </td>
+  <td width=158 valign=top style='width:94.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>void atomic_add (int i, atomic_t * v)</span></p>
+  </td>
+  <td width=210 valign=top style='width:126.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>i</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为要增加的值，</span><span
+  lang=EN-US>v</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>为指向</span><span lang=EN-US>atomic_t</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>类型的指针。</span></p>
+  </td>
+  <td width=463 valign=top style='width:277.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>原子地把</span><span lang=EN-US>i </span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>增加到</span><span lang=EN-US>v</span><span style='font-family:
+  宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>。注意要保证</span><span
+  lang=EN-US>atomic</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>的有用范围只有</span><span
+  lang=EN-US>24</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>位。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=184 valign=top style='width:110.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>atomic_sub</span></p>
+  </td>
+  <td width=114 valign=top style='width:68.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>减原子变量的值</span></p>
+  </td>
+  <td width=158 valign=top style='width:94.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>void atomic_sub (int i, atomic_t * v)</span></p>
+  </td>
+  <td width=210 valign=top style='width:126.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>i</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为要减取的值，</span><span
+  lang=EN-US>v</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>为指向</span><span lang=EN-US>atomic_t</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>类型的指针。</span></p>
+  </td>
+  <td width=463 valign=top style='width:277.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>原子地从</span><span lang=EN-US>v</span><span
+  class=GramE><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>减取</span></span><span lang=EN-US>i</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>。注意要保证</span><span lang=EN-US>atomic</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>的有用范围只有</span><span lang=EN-US>24</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>位。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=184 valign=top style='width:110.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>atomic_sub_and_test</span></p>
+  </td>
+  <td width=114 valign=top style='width:68.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>从变量中减去值，并测试结果</span></p>
+  </td>
+  <td width=158 valign=top style='width:94.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>int atomic_sub_and_test (int i, atomic_t
+  * v)</span></p>
+  </td>
+  <td width=210 valign=top style='width:126.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>i</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为要减取的值，</span><span
+  lang=EN-US>v</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>为指向</span><span lang=EN-US>atomic_t</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>类型的指针。</span></p>
+  </td>
+  <td width=463 valign=top style='width:277.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>原子地从</span><span lang=EN-US>v</span><span
+  class=GramE><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>减取</span></span><span lang=EN-US>i</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>的值，如果结果为</span><span lang=EN-US>0</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>，则返回真，其他所有情况都返回假。注意要保证</span><span lang=EN-US>atomic</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>的有用范围只有</span><span lang=EN-US>24</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>位。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=184 valign=top style='width:110.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>atomic_inc</span></p>
+  </td>
+  <td width=114 valign=top style='width:68.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>增加原子变量的值</span></p>
+  </td>
+  <td width=158 valign=top style='width:94.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>void atomic_inc (atomic_t * v)</span></p>
+  </td>
+  <td width=210 valign=top style='width:126.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>v</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为指向</span><span
+  lang=EN-US>atomic_t</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>类型的指针。</span></p>
+  </td>
+  <td width=463 valign=top style='width:277.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>原子地从</span><span lang=EN-US>v</span><span
+  class=GramE><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>减取</span></span><span lang=EN-US>1</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>。注意要保证</span><span lang=EN-US>atomic</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>的有用范围只有</span><span lang=EN-US>24</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>位。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=184 valign=top style='width:110.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>atomic_dec</span></p>
+  </td>
+  <td width=114 valign=top style='width:68.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span class=GramE><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>减取原子</span></span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>变量的值</span></p>
+  </td>
+  <td width=158 valign=top style='width:94.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>void atomic_dec (atomic_t * v)</span></p>
+  </td>
+  <td width=210 valign=top style='width:126.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>v</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为指向</span><span
+  lang=EN-US>atomic_t</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>类型的指针。</span></p>
+  </td>
+  <td width=463 valign=top style='width:277.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>原子地给</span><span lang=EN-US>v</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>增加</span><span lang=EN-US>1</span><span style='font-family:
+  宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>。注意要保证</span><span
+  lang=EN-US>atomic</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>的有用范围只有</span><span
+  lang=EN-US>24</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>位。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=184 valign=top style='width:110.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>atomic_dec_and_test</span></p>
+  </td>
+  <td width=114 valign=top style='width:68.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>减少和测试</span></p>
+  </td>
+  <td width=158 valign=top style='width:94.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>int atomic_dec_and_test (atomic_t * v)</span></p>
+  </td>
+  <td width=210 valign=top style='width:126.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;</span>v</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为指向</span><span
+  lang=EN-US>atomic_t</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>类型的指针。</span></p>
+  </td>
+  <td width=463 valign=top style='width:277.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>原子地给</span><span lang=EN-US>v</span><span
+  class=GramE><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>减取</span></span><span lang=EN-US>1</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>，如果结果为</span><span lang=EN-US>0</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>，则返回真，其他所有情况都返回假。注意要保证</span><span lang=EN-US>atomic</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>的有用范围只有</span><span lang=EN-US>24</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>位。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=184 valign=top style='width:110.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>atomic_inc_and_test</span></p>
+  </td>
+  <td width=114 valign=top style='width:68.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>增加和测试</span></p>
+  </td>
+  <td width=158 valign=top style='width:94.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>int atomic_ inc _and_test (atomic_t * v)</span></p>
+  </td>
+  <td width=210 valign=top style='width:126.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;</span>v</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为指向</span><span
+  lang=EN-US>atomic_t</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>类型的指针。</span></p>
+  </td>
+  <td width=463 valign=top style='width:277.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>原子地给</span><span lang=EN-US>v</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>增加</span><span lang=EN-US>1</span><span style='font-family:
+  宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>，如果结果为</span><span
+  lang=EN-US>0</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>，则返回真，其他所有情况都返回假。注意要保证</span><span
+  lang=EN-US>atomic</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>的有用范围只有</span><span
+  lang=EN-US>24</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>位。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=184 valign=top style='width:110.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>atomic_add_negative</span></p>
+  </td>
+  <td width=114 valign=top style='width:68.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>如果结果为负数，增加并测试</span></p>
+  </td>
+  <td width=158 valign=top style='width:94.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>int atomic_add_negative (int i, atomic_t
+  * v)</span></p>
+  </td>
+  <td width=210 valign=top style='width:126.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>i</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为要减取的值，</span><span
+  lang=EN-US>v</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>为指向</span><span lang=EN-US>atomic_t</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>类型的指针。</span></p>
+  </td>
+  <td width=463 valign=top style='width:277.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>原子地给</span><span lang=EN-US>v</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>增加</span><span lang=EN-US>i</span><span style='font-family:
+  宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>，如果结果为负数，则返回真，如果结果大于等于</span><span
+  lang=EN-US>0</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>，则返回假。注意要保证</span><span lang=EN-US>atomic</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>的有用范围只有</span><span lang=EN-US>24</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>位。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=184 valign=top style='width:110.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>et_unaligned</span></p>
+  </td>
+  <td width=114 valign=top style='width:68.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>从非对齐位置<span class=GramE>获取值</span></span></p>
+  </td>
+  <td width=158 valign=top style='width:94.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>get_unaligned ( ptr)</span></p>
+  </td>
+  <td width=210 valign=top style='width:126.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>ptr</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>指向获取的值</span></p>
+  <p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=463 valign=top style='width:277.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>这个宏应该用来访问大于单个字节的值，该值所处的位置不在按字节对齐的位置，例如从非</span><span
+  lang=EN-US>u16</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>对齐的位置检索一个</span><span lang=EN-US>u16</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>的值。注意，在某些体系结构中，非对齐访问要化费较高的代价。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=184 valign=top style='width:110.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>put_unaligned</span></p>
+  </td>
+  <td width=114 valign=top style='width:68.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span class=GramE><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>把值放在</span></span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>一个非对齐位置</span></p>
+  </td>
+  <td width=158 valign=top style='width:94.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>put_unaligned ( val, ptr)</span></p>
+  </td>
+  <td width=210 valign=top style='width:126.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>val</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为要放置的值，</span><span
+  lang=EN-US>ptr</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>指向要放置的位置</span></p>
+  <p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=463 valign=top style='width:277.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>这个宏用来把大于单个字节的值放置在不按字节对齐的位置，例如把一个</span><span
+  lang=EN-US>u16</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>值写到一个非</span><span lang=EN-US>u16</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>对齐的位置。注意事项同上。</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-lastrow:yes;page-break-inside:avoid'>
+  <td width=53 valign=top style='width:31.65pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>延时、调度及定时器例程</span></p>
+  </td>
+  <td width=184 valign=top style='width:110.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>schedule_timeout</span></p>
+  </td>
+  <td width=114 valign=top style='width:68.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>睡眠到定时时间到</span></p>
+  </td>
+  <td width=158 valign=top style='width:94.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>signed long schedule_timeout (signed long
+  timeout)</span></p>
+  </td>
+  <td width=210 valign=top style='width:126.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>timeout</span><span style='font-family:
+  宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为以</span><span
+  lang=EN-US>jiffies</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>为单位的到期时间</span></p>
+  </td>
+  <td width=463 valign=top style='width:277.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>使当前进程睡眠，直到所设定的时间到期。如果当前进程的状态没有进行专门的设置，则睡眠时间一到该例程就立即返回。如果当前进程的状态设置为：</span></p>
+  <p class=MsoNormal><span lang=EN-US style='font-family:Wingdings;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;
+  mso-symbol-font-family:Wingdings'><span style='mso-char-type:symbol;
+  mso-symbol-font-family:Wingdings'>&#129;</span></span><span lang=EN-US>
+  TASK_UNINTERRUPTIBLE</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>：则睡眠到期该例程返回</span><span
+  lang=EN-US>0</span></p>
+  <p class=MsoNormal><span lang=EN-US style='font-family:Wingdings;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;
+  mso-symbol-font-family:Wingdings'><span style='mso-char-type:symbol;
+  mso-symbol-font-family:Wingdings'>&#130;</span></span><span lang=EN-US>
+  TASK_INTERRUPTIBLE</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>：如果当前进程接收到一个信号，则该例程就返回，返回值取决于剩余到期时间。</span></p>
+  <p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;
+  </span></span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>当该例程返回时，要确保当前进程处于</span><span
+  lang=EN-US>TASK_RUNNING</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>状态。</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,374 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="6.6.3.files/filelist.xml">
+<title>交换空间的数据结构</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="chsdate" downloadurl=""/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>CLJ</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>CLJ</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:Created>2007-08-15T08:15:00Z</o:Created>
+  <o:LastSaved>2007-08-15T08:15:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>219</o:Words>
+  <o:Characters>1250</o:Characters>
+  <o:Lines>10</o:Lines>
+  <o:Paragraphs>2</o:Paragraphs>
+  <o:CharactersWithSpaces>1467</o:CharactersWithSpaces>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:PunctuationKerning/>
+  <w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	mso-font-kerning:1.0pt;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:15.6pt;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+</head>
+
+<body lang=ZH-CN style='tab-interval:21.0pt;text-justify-trim:punctuation'>
+
+<div class=Section1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal align=left style='text-align:left;mso-outline-level:1;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><st1:chsdate
+Year="1899" Month="12" Day="30" IsLunarDate="False" IsROCDate="False" w:st="on"><b
+ style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-family:宋体;
+ mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>6.6.3</span></b></st1:chsdate><b
+style='mso-bidi-font-weight:normal'><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>交换空间的数据结构<span lang=EN-US><o:p></o:p></span></span></b></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>Linux</span><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>支持多个交换文件或设备，它们将被<span
+lang=EN-US>swapon </span>和<span lang=EN-US> swapoff </span>系统调用来打开或关闭。每个交换文件或设备都可用<span
+lang=EN-US>swap_info_struct </span>结构来描述：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp;</span><span
+class=GramE>struct</span> swap_info_struct {<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>unsigned</span> int flags;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>kdev_t swap_device;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>spinlock_t sdev_lock;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>struct</span> dentry * swap_file;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>struct</span> vfsmount *swap_vfsmnt;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>unsigned</span> short * swap_map;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>unsigned</span> int lowest_bit;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>unsigned</span> int highest_bit;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>unsigned</span> int cluster_next;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>unsigned</span> int cluster_nr;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>int</span> prio;<span style='mso-spacerun:yes'>&nbsp;
+</span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>/*
+swap priority */<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>int</span> pages;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>unsigned</span> long max;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> next;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>/* next entry on swap list */<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>};<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span class=GramE><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>extern</span></span><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'> int nr_swap_pages;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp;</span>flags</span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>域<span lang=EN-US>(SWP_USED </span>或<span lang=EN-US>SWP_WRITEOK)</span>用作控制访问交换文件。当<span
+lang=EN-US>swapoff</span>被调用（为了取消一个文件）时，<span lang=EN-US>SWP_WRITEOK</span>置成<span
+lang=EN-US> off</span>，使在文件中无法分配空间。如果<span lang=EN-US>swapon</span>加入一个新的交换文件时，<span
+lang=EN-US>SWP_USED </span>被置位。这里还有一静态变量<span lang=EN-US>(nr_swapfiles)</span>来记录当前活动的交换文件数。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>域<span
+lang=EN-US>lowest_bit </span>，<span lang=EN-US>highest_bit</span>表明在交换文件中空闲范围的边界，这是为了快速寻址。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>当用户程序<span
+lang=EN-US>mkswap</span>初始化交换文件或设备时，在文件的第一个页插槽的前<span lang=EN-US>10</span>个字节，有一个包含有位图的标志，在位图里初始化为<span
+lang=EN-US>0</span>，代表坏的页插槽，<span lang=EN-US>1</span>代表相关页插槽是空闲的。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>当用户程序调用<span
+lang=EN-US>swapon()</span>时，有一页被分配给<span lang=EN-US>swap_map</span>。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>swap_map</span><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>为在交换文件中每一个页插槽保留了一个字节，<span
+lang=EN-US>0</span>代表可用页插槽，<span lang=EN-US>128</span>代表<span class=GramE>不</span>可用页插槽。它被用于记下交换文件中每一页插槽上的<span
+lang=EN-US>swap</span>请求。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>内存中的一页被换出时，调用<span
+lang=EN-US>get_swap_page</span>（）会得到一个一个记录换出位置的索引，然后在页表项中回填（<span lang=EN-US>1--31</span>位）此索引。这是为了在发生在缺页异常时进行处理（<span
+lang=EN-US>do_no_page)</span>。索引的高<span lang=EN-US>7</span>位给定交换文件，后<span
+lang=EN-US>24</span>位给定设备中的页插槽号。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>另外函数<span
+lang=EN-US>swap_duplicate()</span>被<span lang=EN-US>copy_page_tables()</span>调用来实现子进程在<span
+lang=EN-US>fork()</span>时继承被换出的页面，这里要增加域<span lang=EN-US>swap_map</span>中此页面的<span
+lang=EN-US>count</span>值，任何进程<span class=GramE>访问此</span>页面时，会换入它的独立的拷贝。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>swap_free()</span><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>减少域<span lang=EN-US>swap_map</span>中的<span
+lang=EN-US>count</span>值，如果<span lang=EN-US>count</span>减到<span lang=EN-US>0</span>时，则这页面又可再次分配（<span
+lang=EN-US>get_swap_page)</span>，在把一个换出页面调入<span lang=EN-US>(swap_in)</span>内存时或放弃一个页面时（<span
+lang=EN-US>free_one_table) </span>调用<span lang=EN-US>swap_free()</span>。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>相关函数在文件<span
+lang=EN-US>filemap.c</span>中<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

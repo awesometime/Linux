@@ -1,0 +1,752 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="6.7.2.files/filelist.xml">
+<link rel=Edit-Time-Data href="6.7.2.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>缓冲区高速缓存</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="chsdate" downloadurl=""/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>CLJ</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>ls</o:LastAuthor>
+  <o:Revision>3</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:Created>2007-08-15T08:18:00Z</o:Created>
+  <o:LastSaved>2009-05-05T06:00:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>551</o:Words>
+  <o:Characters>3143</o:Characters>
+  <o:Lines>26</o:Lines>
+  <o:Paragraphs>7</o:Paragraphs>
+  <o:CharactersWithSpaces>3687</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:PunctuationKerning/>
+  <w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	mso-font-kerning:1.0pt;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:15.6pt;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="3074"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=ZH-CN style='tab-interval:21.0pt;text-justify-trim:punctuation'>
+
+<div class=Section1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none;vertical-align:middle'><st1:chsdate Year="1899"
+Month="12" Day="30" IsLunarDate="False" IsROCDate="False" w:st="on"><b
+ style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-family:宋体;
+ mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>6.7.2</span></b></st1:chsdate><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'> </span></b><b
+style='mso-bidi-font-weight:normal'><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>缓冲区高速缓存<span lang=EN-US><o:p></o:p></span></span></b></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>Linux </span><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>采用了缓冲区高速缓存机制，而不同于其他操作系统的“写透”方式，也就是说，当你把一个数据写入文件时，内核将把数据写入内存缓冲区，而不是直接写入磁盘。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>在这里要用到一个数据结构<span lang=EN-US> <span class=SpellE>buffer_head</span>
+</span>它是用来描述缓冲区的数据结构，缓冲区的大小一般要比页面尺寸小，所以一页面中可以包含数个缓冲区，同一页面中的缓冲区用链表连接。回忆页面结构<span
+lang=EN-US>page</span>，其中有一个域<span class=SpellE><span lang=EN-US>buffer_head</span></span><span
+lang=EN-US> buffer</span>就是用来指向缓冲区的，这个结构的详细内容请参见虚拟文件系统。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>由于使用了缓冲技术，因此有可能出现这种情况：写磁盘的命令已经返回，但实际的写入磁盘的操作还未执行。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>基于上述原因，应当使用正常的关机命令关机，而不应直接关掉计算机的电源。用户也可以使用<span
+lang=EN-US> sync </span>命令刷新缓冲区高速缓存，从而把缓冲区中的数据强制写到磁盘中。在<span lang=EN-US> Linux </span>系统中，除了传统的<span
+lang=EN-US> update </span>守护进程之外，还有一个额外的守护进程<span lang=EN-US> <span
+class=SpellE>dbflush</span></span>，这一进程可频繁运行不完整的<span lang=EN-US> sync </span>从而可避免有时由于<span
+lang=EN-US> sync </span>命令的超负荷磁盘操作而造成的磁盘冻结，一般的情况下，它们在系统引导时自动执行，且每隔<span
+lang=EN-US>30</span>秒执行一次任务。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>sync</span><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>命令使用基本的系统调用<span
+lang=EN-US>sync()</span>来实现。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+class=SpellE><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>dbflush</span></span><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'> </span><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>在<span lang=EN-US> Linux </span>系统中由<span
+lang=EN-US> update </span>启动。如果由于某种原因该进程僵死了，则内核会发送警告信息，这时需要手工启动该进程（<span
+lang=EN-US>/<span class=SpellE>sbin</span>/update</span>）。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none;vertical-align:middle'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>1. </span><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>页面缓存的详细描述。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>经内存映射的文件每次只读取一页面内容，读取后的页面保存在页面缓存中，利用页面缓存，可提高文件的访问速度。如图<span
+lang=EN-US>6.19</span>所示，页面缓存由<span lang=EN-US> <span class=SpellE>page_hash_table</span>
+</span>组成，它是一个<span class=SpellE><span lang=EN-US>mem_map_t</span></span><span
+lang=EN-US>(</span>即<span class=SpellE><span lang=EN-US>struct</span></span><span
+lang=EN-US> page </span>数据结构<span lang=EN-US>)</span>的指针向量。页面缓存的结构是<span
+lang=EN-US> Linux </span>内核中典型的哈希表结构。众所周知，对计算机内存的线性数组的访问是最快速的访问方法，因为线性数组中的每一个元素的位置都可以利用索引值直接计算得到，而这种计算是简单的线性计算。但是，如果要处理大量数据，有时由于受到存储空间的限制，采用线性结构是不切合实际的。但如果采用链表等非线性结构，则元素的检索性能又会大打折扣。哈希表则是一种折衷的方法，它综合了线性结构和非线性结构的优点，可以在大量数据中进行快速的查找。哈希表的结构有多种，在<span
+lang=EN-US> Linux </span>内核中，常见的哈希结构和图<span lang=EN-US>6.19 </span>的结构类似。要在这种哈希表中访问某个数据，首先要利用哈希函数以目标元素的某个特征值作为函数自变量生成哈希值作为索引，然后利用该索引访问哈希表的线性指针向量。哈希线性表中的指针代表一个链表，该链表所包含的所有节点均具有相同的哈希值，在该链表中查找可访问到指定的数据。哈希函数的选择非常重要，不恰当的哈希函数可能导致大量数据映射到同一哈希值，这种情况下，元素的查找将相当耗时。但是，如果选择恰当的哈希函数，则可以在性能和空间上得到均衡效果。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>在<span lang=EN-US> Linux </span>页面缓存中，访问<span lang=EN-US>
+<span class=SpellE>page_hash_table</span> </span>的索引由文件的<span lang=EN-US> VFS</span>（虚拟文件系统）索引节点<span
+lang=EN-US> <span class=SpellE>inode</span> </span>和内存页面在文件中的偏移量生成。有关<span
+lang=EN-US> VFS </span>索引节点的内容将虚拟文件中讲到，在这里，应知道每个文件的<span lang=EN-US> VFS </span>索引节点<span
+lang=EN-US> <span class=SpellE>inode</span> </span>是唯一的。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:372.75pt;
+ height:168pt'>
+ <v:imagedata src="6.7.2.files/image001.gif" o:title="619"/>
+</v:shape><![endif]--><![if !vml]><img width=497 height=224
+src="6.7.2.files/image001.gif" v:shapes="_x0000_i1025"><![endif]><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>图<span lang=EN-US>6.19 Linux </span>页面缓存示意图<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>当系统要从内存映射文件中读取某一未加锁的页面时，就首先要用到函数：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+class=SpellE><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>find_page</span></span><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'> (<span class=SpellE>struct</span> <span class=SpellE>inode</span>
+* <span class=SpellE>inode</span>, unsigned long offset)</span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>它完成如下工作：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>首先是在“页面缓存”中查找，如果发现该页面保存在缓存中，则可以免除实际的文件读取，而只需从页面缓存中读取，这时，指向<span
+lang=EN-US> <span class=SpellE>mm_map_t</span> </span>数据结构的指针被返回到页面故障的处理代码；部分代码如下：<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+class=GramE><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>for</span></span><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'> (page = <span class=SpellE>page_hash</span>(<span
+class=SpellE>inode</span>, offset); page ; page = page-&gt;<span class=SpellE>next_hash</span>)
+<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>/*</span><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>函数<span
+class=SpellE><span lang=EN-US>page_hash</span></span><span lang=EN-US>()</span>是从哈希表中找页面<span
+lang=EN-US>*/<o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>{<span class=GramE>if</span> (page-&gt;<span
+class=SpellE>inode</span> != <span class=SpellE>inode</span>)<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>continue</span>;<span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+class=GramE><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>if</span></span><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'> (page-&gt;offset != offset)<span style='mso-tab-count:
+2'>&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><span style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+class=GramE>continue</span>;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><span style='mso-tab-count:1'>&nbsp;&nbsp; </span>/*
+</span><span style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>找到了特定页面<span lang=EN-US> */<span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><span style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+class=SpellE>atomic_<span class=GramE>inc</span></span><span class=GramE>(</span>&amp;page-&gt;count);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><span style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+class=SpellE>set_bit</span>(<span class=SpellE>PG_referenced</span>,
+&amp;page-&gt;flags);/*</span><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>设访问位<span lang=EN-US>*/<span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><span style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+class=GramE>break</span>;<span style='mso-tab-count:1'>&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><span style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+class=GramE>return</span> page;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>}<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>如果该页面不在缓存中，则必须从实际的文件系统映象中读取页面，这时<span lang=EN-US>Linux </span>内核首先分配物理页面然后从磁盘读取页面内容。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>如果可能，<span lang=EN-US>Linux </span>还会预先读取文件中下一页面内容到页面缓存中，而不等页面错误发生才去“请页面”，这样做是为了提高装入代码的速度。<span
+lang=EN-US>(</span>有关代码在<span class=SpellE><span lang=EN-US>filemap.c</span></span>中，如<span
+class=SpellE><span lang=EN-US>generic_file_readahead</span></span>（）等函数），这样，如果进程要连续访问页面，则下一页面的内容不必再次从文件中读取了，而只需从页面缓存中读取。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>随着映象的读取和执行，页面缓存中的内容可能会增多，这时，<span lang=EN-US>Linux </span>可移走不再需要的页面。当系统中可用的物理内存量变小时，<span
+lang=EN-US>Linux </span>也会通过缩小页面缓存的大小而释放更多的物理内存页面。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none;vertical-align:middle'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>2. </span><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>有关页面缓存的函数：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>先看把读入的页面如何存于缓存，这要用到函数<span class=SpellE><span lang=EN-US>add_to_page_cache</span></span><span
+lang=EN-US>()</span>，它完成把指定的“文件页面”记入页面缓存中。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+class=GramE><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>static</span></span><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'> inline void <span class=SpellE>add_to_page_cache</span>(<span
+class=SpellE>struct</span> page * page,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><span style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+class=SpellE><span class=GramE>struct</span></span> <span class=SpellE>inode</span>
+* <span class=SpellE>inode</span>, unsigned long offset)<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>{<span style='mso-tab-count:1'>&nbsp; </span>/*</span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>设置有关页面域，引用数，页面使用方式，页面在文件中的偏移<span lang=EN-US> */<o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>page</span>-&gt;count++;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><span style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+class=GramE>page</span>-&gt;flags &amp;= ~((1 &lt;&lt; <span class=SpellE>PG_uptodate</span>)
+| (1 &lt;&lt; <span class=SpellE>PG_error</span>));<span style='mso-tab-count:
+1'> </span><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span class=GramE>page</span>-&gt;offset
+= offset;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span class=SpellE>add_page_to_inode_queue</span>(<span
+class=SpellE>inode</span>, page);/* </span><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>把页面加入<span
+class=SpellE><span lang=EN-US>inode</span></span>节点队列<span lang=EN-US>*/<span
+style='mso-tab-count:1'> </span><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span class=SpellE>add_page_to_hash_queue</span>(<span
+class=SpellE>inode</span>, page);/* </span><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>把页面加入哈唏表<span
+class=SpellE><span lang=EN-US>page_hash_table</span></span><span lang=EN-US>[]*/}<o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>注：<span class=SpellE><span lang=EN-US>inode</span></span>的部分请看虚拟文件章节。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>哈唏表<span class=SpellE><span lang=EN-US>page_hash_table</span></span><span
+lang=EN-US>[]</span>的定义：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+class=GramE><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>extern</span></span><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'> <span class=SpellE>struct</span> page * <span
+class=SpellE>page_hash_table</span>[PAGE_HASH_SIZE];<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>下面是有关对哈唏表操作的部分代码：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+class=GramE><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>static</span></span><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'> inline void <span class=SpellE>add_page_to_inode_queue</span>(<span
+class=SpellE>struct</span> <span class=SpellE>inode</span> * <span
+class=SpellE>inode</span>, <span class=SpellE>struct</span> page * page)<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>{<span style='mso-tab-count:1'>&nbsp; </span><span
+class=SpellE>struct</span> page **p = &amp;<span class=SpellE>inode</span>-&gt;<span
+class=SpellE>i_pages</span>;/*</span><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>指向物理页面<span lang=EN-US>*/<o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><span style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+class=SpellE>inode</span>-&gt;<span class=SpellE>i_nrpages</span>++;/*</span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>节点中调入内存的页面数目增<span lang=EN-US>1*/<o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><span style='mso-tab-count:1'>&nbsp;&nbsp; </span>page-&gt;<span
+class=SpellE>inode</span> = <span class=SpellE>inode</span>; /*</span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>指向该页面来自的文件节点结构，相互连成链<span lang=EN-US>*/<o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span class=GramE>page</span>-&gt;<span
+class=SpellE>prev</span> = NULL;<span style='mso-tab-count:1'> </span><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+class=GramE><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>if</span></span><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'> ((page-&gt;next = *p) != NULL)<span style='mso-tab-count:
+1'> </span><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+class=GramE><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>page</span></span><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>-&gt;next-&gt;<span class=SpellE>prev</span> = page;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><span style='mso-tab-count:1'>&nbsp;&nbsp; </span>*p
+= page<span class=GramE>;<span style='mso-spacerun:yes'>&nbsp; </span>}</span><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>把页面加入哈唏表：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+class=GramE><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>static</span></span><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'> inline void <span class=SpellE>add_page_to_hash_queue</span>(<span
+class=SpellE>struct</span> <span class=SpellE>inode</span> * <span
+class=SpellE>inode</span>, <span class=SpellE>struct</span> page * page)<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>{<span style='mso-tab-count:1'>&nbsp; </span><span
+class=SpellE><span class=GramE>struct</span></span> page **p = &amp;<span
+class=SpellE>page_hash</span>(<span class=SpellE>inode,page</span>-&gt;offset);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><span style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+class=SpellE>page_cache_size</span>++;/*</span><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>哈希表中记录的页面数目加<span
+lang=EN-US>1*/<o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><span style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+class=SpellE>set_bit</span>(<span class=SpellE>PG_referenced</span>,
+&amp;page-&gt;flags);/*</span><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>设置访问位<span lang=EN-US>*/<o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>page-&gt;age = PAGE_AGE_VALUE;/*</span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>设缓存中的页面‘年龄’为定值，为淘汰做准<span lang=EN-US><span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>备<span lang=EN-US>*/<o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><span style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+class=GramE>page</span>-&gt;<span class=SpellE>prev_hash</span> = NULL;<span
+style='mso-tab-count:1'> </span><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span class=GramE>if</span>
+((page-&gt;<span class=SpellE>next_hash</span> = *p) != NULL)<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><span style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+class=GramE>page</span>-&gt;<span class=SpellE>next_hash</span>-&gt;<span
+class=SpellE>prev_hash</span> = page;<span style='mso-tab-count:1'>&nbsp; </span>*p
+= page;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>}<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>有关页面的刷新函数：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+class=SpellE><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>remove_page_from_hash_queue</span></span><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>(page);<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>/*</span><span style='font-family:
+宋体;mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>从哈希表中去掉页面<span
+lang=EN-US>*/<span style='mso-tab-count:1'> </span><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+class=SpellE><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>remove_page_from_inode_queue</span></span><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>(page);<span style='mso-spacerun:yes'>&nbsp;
+</span>/*</span><span style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>从<span class=SpellE><span lang=EN-US>inode</span></span>节点中去掉页面<span
+lang=EN-US>*/<o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

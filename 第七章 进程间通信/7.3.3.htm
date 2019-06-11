@@ -1,0 +1,752 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="7.3.3.files/filelist.xml">
+<link rel=Edit-Time-Data href="7.3.3.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>共享内存</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="chsdate" downloadurl=""/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>CLJ</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>CLJ</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>3</o:TotalTime>
+  <o:Created>2007-08-15T08:46:00Z</o:Created>
+  <o:LastSaved>2007-08-15T08:46:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>414</o:Words>
+  <o:Characters>2362</o:Characters>
+  <o:Lines>19</o:Lines>
+  <o:Paragraphs>5</o:Paragraphs>
+  <o:CharactersWithSpaces>2771</o:CharactersWithSpaces>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:PunctuationKerning/>
+  <w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	mso-font-kerning:1.0pt;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:521.65pt 26.0cm;
+	margin:63.8pt 48.2pt 50.75pt 48.2pt;
+	mso-header-margin:46.8pt;
+	mso-footer-margin:49.6pt;
+	mso-header:url("7.3.3.files/header.htm") h1;
+	mso-footer:url("7.3.3.files/header.htm") f1;
+	mso-paper-source:0;
+	layout-grid:15.6pt 0pt;
+	mso-layout-grid-char-alt:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=ZH-CN style='tab-interval:21.0pt;text-justify-trim:punctuation'>
+
+<div class=Section1 style='layout-grid:15.6pt 0pt;mso-layout-grid-char-alt:
+0'>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><st1:chsdate Year="1899"
+Month="12" Day="30" IsLunarDate="False" IsROCDate="False" w:st="on"><b
+ style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-family:宋体;
+ mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>7.3.3</span></b></st1:chsdate><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'> </span></b><b
+style='mso-bidi-font-weight:normal'><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>共享内存<span lang=EN-US><o:p></o:p></span></span></b></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>共享内存可以被描述成内存一个区域<span
+lang=EN-US>(</span>段<span lang=EN-US>)</span>的映射，这个区域可以被更多的进程所共享。这是<span
+lang=EN-US>IPC</span>机制中最快的一种形式，因为它不需要中间环节，而是把信息直接从一个内存段映射到调用进程的地址空间。 一个<span
+class=GramE>段可以</span>直接由一个进程创建，随后，可以有任意多的进程对其读和写。但是，一旦内存被共享之后，对共享内存的访问同步需要由其他<span
+lang=EN-US> IPC </span>机制，例如信号量来实现。<span class=GramE>象</span>所有的<span
+lang=EN-US>System V IPC </span>对象一样，<span lang=EN-US>Linux </span>对共享内存的存取是通过对访问键和访问权限的检查来控制的。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>1. </span></b><b style='mso-bidi-font-weight:
+normal'><span style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>数据结构<span lang=EN-US><o:p></o:p></span></span></b></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>与消息队列和信号量集合类似，内核为每一个共享内存段<span
+lang=EN-US>(</span>存在于它的地址空间<span lang=EN-US>)</span>维护着一个特殊的数据结构<span
+lang=EN-US>shmid_ds</span>，这个结构在<span lang=EN-US>include/linux/shm.h</span>中定义如下：<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp;&nbsp; </span>/* </span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>在系统中 每一个共享内存段都有一个<span lang=EN-US>shmid_ds</span>数据结构<span
+lang=EN-US>. */<o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp;&nbsp; </span><span
+class=GramE>struct</span> shmid_ds {<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>struct
+ipc_perm shm_perm;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/* </span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>操作权限<span lang=EN-US> */<o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>int<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>shm_segsz;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>/* </span><span style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>段的大小<span lang=EN-US>(</span>以字节为单位<span
+lang=EN-US>) */<o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>time_t<span style='mso-spacerun:yes'>&nbsp; </span>shm_atime;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>/* </span><span style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>最后一个进程附加到该段的时间<span lang=EN-US> */<o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>time_t<span style='mso-spacerun:yes'>&nbsp; </span>shm_dtime;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>/* </span><span style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>最后一个进程离开该段的时间<span lang=EN-US> */<o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>time_t<span style='mso-spacerun:yes'>&nbsp; </span>shm_ctime;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>/* </span><span style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>最后一次修改这个结构的时间<span lang=EN-US> */<o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>unsigned
+short<span style='mso-spacerun:yes'>&nbsp; </span>shm_cpid;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/*</span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>创建该段进程的<span lang=EN-US> pid */<o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>unsigned
+short<span style='mso-spacerun:yes'>&nbsp; </span>shm_lpid;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/* </span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>在该段上操作的最后一个进程的<span lang=EN-US>pid */<o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;</span>short<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>shm_nattch;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>/*</span><span style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>当前附加到该段的进程的个数<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span>*/<o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>/* </span><span style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>下面是私有的<span lang=EN-US> */<o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>unsigned
+short<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span>shm_npages;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>/*</span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>段的大小<span lang=EN-US>(</span>以页为单位<span lang=EN-US>) */<o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>unsigned
+long<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span>*shm_pages;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/* </span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>指向<span lang=EN-US>frames -&gt; SHMMAX</span>的指针数组<span
+lang=EN-US> */ <o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>struct vm_area_struct *attaches; /* </span><span style='font-family:
+宋体;mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>对共享段的描述<span
+lang=EN-US> */<o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>};<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>我们用图<span
+lang=EN-US> 7</span>－<span lang=EN-US>4 </span>来表示共享内存的数据结构<span lang=EN-US>shmid_ds</span>与其它相关数据结构的关系。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='text-indent:24.0pt;mso-layout-grid-align:none;
+text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:36.0pt;mso-layout-grid-align:
+none;text-autospace:none'><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1026" type="#_x0000_t75" style='position:absolute;
+ left:0;text-align:left;margin-left:127.5pt;margin-top:9.8pt;width:386.45pt;
+ height:221.4pt;z-index:1'>
+ <v:imagedata src="7.3.3.files/image001.png" o:title="图7"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'>
+
+<table cellpadding=0 cellspacing=0 align=left>
+ <tr>
+  <td width=170 height=13></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td><img width=515 height=295 src="7.3.3.files/image002.gif" v:shapes="_x0000_s1026"></td>
+ </tr>
+</table>
+
+</span><![endif]><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:36.0pt;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:36.0pt;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:36.0pt;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:36.0pt;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:36.0pt;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:36.0pt;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:36.0pt;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:36.0pt;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:36.0pt;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:36.0pt;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:36.0pt;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:36.0pt;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:36.0pt;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:36.0pt;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:36.0pt;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:36.0pt;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<br style='mso-ignore:vglayout' clear=ALL>
+
+<p class=MsoNormal style='margin-left:90.2pt;mso-para-margin-left:8.59gd;
+text-indent:124.95pt;mso-char-indent-count:11.9;mso-layout-grid-align:none;
+text-autospace:none'><span style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>图<span lang=EN-US>7</span>－<span lang=EN-US>4
+</span>共享内存的数据结构<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>2. </span></b><b style='mso-bidi-font-weight:
+normal'><span style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>共享内存的处理过程<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></b><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>某个进程第一次访问共享虚拟内存时将产生缺页异常。这时，<span
+lang=EN-US>Linux </span>找出描述该内存的<span lang=EN-US> vm_area_struct </span>结构，该结构中包含用来处理这种共享虚拟内存段的处理函数地址。共享内存缺页异常处理代码对<span
+lang=EN-US>shmid_ds </span>的页表项表进行搜索，以便查看是否存在该共享虚拟内存的页表项。如果没有，系统将分配一个<span
+class=GramE>物理页并建立</span>页表项，该页表项加入<span lang=EN-US> shmid_ds </span>结构的同时也添加<span
+class=GramE>到进程</span>的页表中。这就意味着当下一个进程试图访问这页内存时出现缺页异常，共享内存的缺页异常处理代码则把新创建的<span
+class=GramE>物理页给这个</span>进程。因此说，第一个进程对共享内存的存取引起创建新的物理页面，而其它进程对共享内存的存取引起把那个页加添加到它们的地址空间。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>当某个进程不再共享其虚拟内存时，利用系统调用将共享段从自己的虚拟地址区域中移去，并更新进程页表。当最后一个进程释放了共享段之后，系统将释放给共享段所分配的物理页。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>当共享的虚拟内存没有被锁定到物理内存时，共享内存也可能会被交换到交换区中。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>3. </span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>系统调用：<span class=GramE><span lang=EN-US>shmget()</span></span><span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp; </span></span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>原型：<span class=GramE><span lang=EN-US>int</span></span><span
+lang=EN-US> shmget ( key_t key, int size, int shmflg );<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp; </span></span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>返回：成功，则返回共享内存段的识别号<span lang=EN-US>, </span>失败返回<span
+lang=EN-US>-1<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>shmget()</span><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>系统调用类似于信号量和消息队列的系统调用，在此不进一步赘述。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>4. </span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>系统调用：<span class=GramE><span lang=EN-US>shmat()</span></span><span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>原型：<span lang=EN-US> <span class=GramE>int</span> shmat (
+int shmid, char *shmaddr, int shmflg);<o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>返回：成功，则返回附加<span class=GramE>到进程</span>的那个段的地址，失败返回<span
+lang=EN-US>-1</span>。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>其中<span
+lang=EN-US>shmid</span>是由<span lang=EN-US>shmget()</span>调用返回的共享内存段识别号，<span
+lang=EN-US>shmaddr</span>是你希望共享段附加的地址，<span lang=EN-US>shmflag</span>允许你规定希望所附加的段为只读<span
+lang=EN-US>(</span>利用<span lang=EN-US>SHM_RDONLY)</span>以代替读写。通常，并不需要规定你自己的<span
+lang=EN-US>shmaddr</span>，可以用传递<span class=GramE>参数值零使得</span>系统为你取得一个地址。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>这个调用可能是最简单的，下面看一个例子，把一个有效的识别号传递给一个段，然后返回这个段被附加到内存的内存地址。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span class=GramE><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>char</span></span><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'> *attach_segment( int shmid )<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>{<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>return(</span>shmat(shmid, 0, 0));<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>}<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>一旦一个<span
+class=GramE>段适当</span>地被附加，并且一个进程有指向那个段起始地址的一个指针，那么，对那个段的读写就变得相当容易。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>5. </span><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>系统调用：<span lang=EN-US> <span
+class=GramE>shmctl()</span><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp; </span></span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>原型：<span lang=EN-US> <span class=GramE>int</span> shmctl
+( int shmqid, int cmd, struct shmid_ds *buf );<o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp; </span></span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>返回：成功为<span lang=EN-US> 0 </span>，<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span>失败 为<span lang=EN-US>-1<o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>这个特殊的调用和<span
+lang=EN-US>semctl()</span>调用几乎相同，因此，这里不进行详细的讨论。有效命令的值是：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>IPC_STAT </span><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>：检索一个共享段的<span lang=EN-US>shmid_ds</span>结构，把它存到<span
+lang=EN-US>buf</span>参数的地址中。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>IPC_SET </span><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>：对一个共享段来说，从<span
+lang=EN-US>buf </span>参数中取值设置<span lang=EN-US>shmid_ds</span>结构的<span
+lang=EN-US>ipc_perm</span>域的值。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>IPC_RMID </span><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>：把一个段标记为删除<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp;</span><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp;</span>IPC_RMID </span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>命令实际上不从内核删除一个段，而是仅仅把这个段标记为删除，实际的删除发生在最后一个进程离开这个共享段时。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>当一个进程不再需要共享内存段时，它将调用<span
+lang=EN-US>shmdt()</span>系统调用取消这个段，但是，这并不是从内核真正地删除这个段，而是把相关<span lang=EN-US>shmid_ds</span>结构的<span
+lang=EN-US> shm_nattch</span><span class=GramE>域的值减</span><span lang=EN-US>1</span>，当这个值为<span
+lang=EN-US>0</span>时，内核才从物理上删除这个共享段。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

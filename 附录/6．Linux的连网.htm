@@ -1,0 +1,1835 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="6．Linux的连网.files/filelist.xml">
+<title>Linux的连网</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>CLJ</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>CLJ</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>1</o:TotalTime>
+  <o:Created>2007-08-27T04:26:00Z</o:Created>
+  <o:LastSaved>2007-08-27T04:26:00Z</o:LastSaved>
+  <o:Pages>4</o:Pages>
+  <o:Words>927</o:Words>
+  <o:Characters>5288</o:Characters>
+  <o:Lines>44</o:Lines>
+  <o:Paragraphs>12</o:Paragraphs>
+  <o:CharactersWithSpaces>6203</o:CharactersWithSpaces>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:PunctuationKerning/>
+  <w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;
+	mso-font-alt:"Courier New";
+	mso-font-charset:0;
+	mso-generic-font-family:modern;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:TimesNewRomanPSMT;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-alt:"Times New Roman";
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:auto;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Courier-Oblique;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-alt:Arial;
+	mso-font-charset:0;
+	mso-generic-font-family:modern;
+	mso-font-format:other;
+	mso-font-pitch:auto;
+	mso-font-signature:3 0 0 0 1 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	mso-font-kerning:5.0pt;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:15.6pt;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+</head>
+
+<body lang=ZH-CN style='tab-interval:21.0pt;text-justify-trim:punctuation'>
+
+<div class=Section1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal><span lang=EN-US>6</span><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>．</span><span
+lang=EN-US>Linux</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>的连网</span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0cm 5.4pt 0cm 5.4pt;mso-border-insideh:.5pt solid windowtext;
+ mso-border-insidev:.5pt solid windowtext'>
+ <tr style='page-break-inside:avoid'>
+  <td width=53 rowspan=39 style='width:31.65pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>套接字缓冲区函数</span></p>
+  </td>
+  <td width=166 valign=top style='width:99.75pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>函数名</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>功能</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>函数形成</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>参数</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>描述</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb_queue_empty</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>检查队列是否为空</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>int skb_queue_empty (struct sk_buff_head
+  * list)</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>list</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为队列头</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>如果队列为空返回真，否则<span class=GramE>返回假</span></span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb_get</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>引用缓冲区</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>struct sk_buff * skb_get (struct sk_buff
+  * skb)</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为要引用的缓冲区</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>对套接字缓冲区再引用一次，返回指向缓冲区的指针</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>kfree_skb</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>释放一个</span><span lang=EN-US>sk_buff</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>void kfree_skb (struct sk_buff * skb)</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>sk</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为要释放的缓冲区</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>删除对一个缓冲区的引用，如果其引用计数变为</span><span
+  lang=EN-US>0</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>，则释放它</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb_cloned</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>缓冲区是否是克隆的</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>int skb_cloned (struct sk_buff * skb)</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为要检查的缓冲区</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>如果以</span><span lang=EN-US>skb_clone</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>标志来产生缓冲区，并且是缓冲区多个共享拷贝中的一个，则返回真。克隆的缓冲区具有共享数据，因此在正常情况下不必对其进行写。</span></p>
+  <p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb_shared</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>缓冲区是否是共享的</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>int skb_shared (struct sk_buff * skb)</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为要检查的缓冲区</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>如果有多于一个的人引用这个缓冲区就返回真。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb_share_check</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>检查缓冲区是否共享的，如果是就克隆它</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>struct sk_buff * skb_share_check (struct
+  sk_buff * skb, int pri)</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为要检查的缓冲区，</span><span
+  lang=EN-US>pri</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>为内存分配的优先级</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>如果缓冲区是共享的，就克隆这个缓冲区，并把原来缓冲区的引用计数减</span><span
+  lang=EN-US>1</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>，返回新克隆的缓冲区。如果不是共享的，则返回原来的缓冲区。当从中断状态或全局锁调用该函数时，</span><span
+  lang=EN-US>pri</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>必须是</span><span lang=EN-US>GFP_ATOMIC</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>。</span></p>
+  <p class=MsoNormal><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;</span></span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>内存分配失败则返回</span><span
+  lang=EN-US>NULL</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb_unshare</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>产生一个共享缓冲区的拷贝</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>struct sk_buff * skb_unshare (struct
+  sk_buff * skb, int pri);</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为要检查的缓冲区，</span><span
+  lang=EN-US>pri</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>为内存分配的优先级</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>如果套接字缓冲区是克隆的，那么这个函数就创建一个新的数据拷贝，并把原来缓冲区的引用计数减</span><span
+  lang=EN-US>1</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>，返回引用计数为</span><span lang=EN-US>1</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>的新拷贝。如果不是克隆的，就返回原缓冲区。当从中断状态或全局锁调用该函数时，</span><span
+  lang=EN-US>pri</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>必须是</span><span lang=EN-US>GFP_ATOMIC</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>。</span></p>
+  <p class=MsoNormal><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;</span></span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>内存分配失败则返回</span><span
+  lang=EN-US>NULL</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb_queue_len</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>获得队列的长度</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>__u32 skb_queue_len (struct sk_buff_head
+  * list_)</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>list_</span><span style='font-family:
+  宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为测量的链表</span></p>
+  <p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>返回</span><span lang=EN-US>&amp;sk_buff
+  </span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>队列的指针。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>__skb_queue_head</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>在链表首部对一个缓冲区排队</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>void __skb_queue_head (struct
+  sk_buff_head * list, struct sk_buff * newsk)</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>list</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为要使用的链表，</span></p>
+  <p class=MsoNormal><span lang=EN-US>newsk</span><span style='font-family:
+  宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为要排队的缓冲区。</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>在链表首部对一个缓冲区进行排队。这个函数没有锁，因此在调用它之前必须持有必要的锁。一个缓冲区不能同时放在两个链表中。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb_queue_head</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>在链表首部对一个缓冲区排队</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>void skb_queue_head (struct sk_buff_head
+  * list, struct sk_buff * newsk)</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>list</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为要使用的链表，</span></p>
+  <p class=MsoNormal><span lang=EN-US>newsk</span><span style='font-family:
+  宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为要排队的缓冲区。</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>在链表首部对一个缓冲区进行排队。这个函持有锁，因此可以安全地使用。一个缓冲区不能同时放在两个链表中。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>__skb_queue_tail</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>在链表尾部对一个缓冲区排队</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>void __skb_queue_tail (struct
+  sk_buff_head * list, struct sk_buff * newsk)</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>list</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为要使用的链表，</span></p>
+  <p class=MsoNormal><span lang=EN-US>newsk</span><span style='font-family:
+  宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为要排队的缓冲区。</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>在链表尾部对一个缓冲区进行排队。这个函数没有锁，因此在调用它之前必须持有必要的锁。一个缓冲区不能同时放在两个链表中。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb_queue_tail</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>在链表尾部对一个缓冲区排队</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>void skb_queue_tail (struct sk_buff_head
+  * list, struct sk_buff * newsk)</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>list</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为要使用的链表，</span></p>
+  <p class=MsoNormal><span lang=EN-US>newsk</span><span style='font-family:
+  宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为要排队的缓冲区。</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>在链表尾部对一个缓冲区进行排队。这个函持有锁，因此可以安全地使用。一个缓冲区不能同时放在两个链表中。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>__skb_dequeue</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>从队列的首部删除一个缓冲区</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>struct sk_buff * __skb_dequeue (struct
+  sk_buff_head * list)</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>list</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为要操作的队列</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>删除链表首部。这个函数<span class=GramE>不</span>持有任何锁，因此使用时应当持有适当的锁。<span
+  class=GramE>如果队链表</span>为空则返回</span><span lang=EN-US>NULL</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>，成功则返回首部元素。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb_dequeue</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>从队列的首部删除一个缓冲区</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>struct sk_buff * skb_dequeue (struct
+  sk_buff_head * list)</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>list</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为要操作的队列</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>删除链表首部，这个函数持有锁，因此可以安全地使用。<span
+  class=GramE>如果队链表</span>为空则返回</span><span lang=EN-US>NULL</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>，成功则返回首部元素。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb_insert</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>插入一个缓冲区</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>void skb_insert (struct sk_buff * old,
+  struct sk_buff * newsk)</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>old</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为插入之前的缓冲区，</span><span
+  lang=EN-US>newsk</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>为要插入的缓冲区</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>把一个数据包放在链表中给定的包之前。该函数持有链表锁，并且是原子操作。一个缓冲区不能同时放在两个链表中。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb_append</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>追加一个缓冲区</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>void skb_append (struct sk_buff * old, struct
+  sk_buff * newsk)</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>old</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为插入之前的缓冲区，</span><span
+  lang=EN-US>newsk</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>为要插入的缓冲区</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>把一个数据包放在链表中给定的包之前。该函数持有链表锁，并且是原子操作。一个缓冲区不能同时放在两个链表中。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb_unlink</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>从链表删除一个缓冲区</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  lang=EN-US>void <b style='mso-bidi-font-weight:normal'>skb_unlink </b>(struct
+  sk_buff * <i style='mso-bidi-font-style:normal'>sk</i>b);</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><i style='mso-bidi-font-style:normal'><span lang=EN-US>Sk</span></i><span
+  lang=EN-US>b</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>为要删除的缓冲区</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>把一个数据包放在链表中给定的包之前。该函数持有链表锁，并且是原子操作。</span></p>
+  <p class=MsoNormal><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;</span></span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>_skb_dequeue_tail</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>从队尾删除</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  lang=EN-US>struct sk_buff * <b style='mso-bidi-font-weight:normal'>__skb_dequeue_tail
+  </b>(struct sk_buff_head * <i style='mso-bidi-font-style:normal'>lis</i>t)</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>List</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为要操作的链表</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>从链表尾部删除。这个函数<span class=GramE>不</span>持有任何锁，因此必须持以合适的锁来使用。如果链表为空，则返回</span><span
+  lang=EN-US style='font-family:TimesNewRomanPSMT'>NULL</span><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>，成功则返首部元素。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb_dequeue_tail</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>从队头删除</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  lang=EN-US>struct sk_buff * <b style='mso-bidi-font-weight:normal'>skb_dequeue_tail
+  </b>(struct sk_buff_head * <i style='mso-bidi-font-style:normal'>lis</i>t)</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>List</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为要操作的链表</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>删除链表尾部，这个函数持有锁，因此可以安全地使用。<span
+  class=GramE>如果队链表</span>为空则返回</span><span lang=EN-US>NULL</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>，成功则返回首部元素。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb_put</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>把数据加到缓冲区</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>unsigned char * <b style='mso-bidi-font-weight:
+  normal'>skb_put </b>(struct sk_buff * <i style='mso-bidi-font-style:normal'>sk</i>b,
+  unsigned int <i style='mso-bidi-font-style:normal'>le</i>n)</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:Courier-Oblique'>skb</span><span
+  style='font-family:宋体;mso-ascii-font-family:Courier-Oblique;mso-hansi-font-family:
+  Courier-Oblique'>为要使用的缓冲区，</span><span lang=EN-US style='font-family:Courier-Oblique'>len</span><span
+  style='font-family:宋体;mso-ascii-font-family:Courier-Oblique;mso-hansi-font-family:
+  Courier-Oblique'>为要增加的数据长度</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>这个函数扩充缓冲区所使用的数据区。如果扩充后超过缓冲区总长度，内核会产生警告。函数返回的指针指向所扩充数据的第一个字节。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb_push</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>把数据加到缓冲区的开始</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  lang=EN-US>unsigned char * <b style='mso-bidi-font-weight:normal'>skb_push </b>(struct
+  sk_buff * <i style='mso-bidi-font-style:normal'>sk</i>b, unsigned int <i
+  style='mso-bidi-font-style:normal'>le</i>n);</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:Courier-Oblique'>skb</span><span
+  style='font-family:宋体;mso-ascii-font-family:Courier-Oblique;mso-hansi-font-family:
+  Courier-Oblique'>为要使用的缓冲区，</span><span lang=EN-US style='font-family:Courier-Oblique'>len</span><span
+  style='font-family:宋体;mso-ascii-font-family:Courier-Oblique;mso-hansi-font-family:
+  Courier-Oblique'>为要增加的数据长度</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;
+  mso-hansi-font-family:TimesNewRomanPSMT'>这个函数扩充在缓冲区的开始处缓冲区所使用的数据区。如果扩充后超过缓冲区首部空间的总长度，内核会产生警告。函数返回的指针指向所扩充数据的第一个字节。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb_pull</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>从缓冲区的开始删除数据</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>unsigned char * <b style='mso-bidi-font-weight:
+  normal'>skb_pull </b>(struct sk_buff * <i style='mso-bidi-font-style:normal'>sk</i>b,
+  unsigned int <i style='mso-bidi-font-style:normal'>le</i>n)</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:Courier-Oblique'>skb</span><span
+  style='font-family:宋体;mso-ascii-font-family:Courier-Oblique;mso-hansi-font-family:
+  Courier-Oblique'>为要使用的缓冲区，</span><span lang=EN-US style='font-family:Courier-Oblique'>len</span><span
+  style='font-family:宋体;mso-ascii-font-family:Courier-Oblique;mso-hansi-font-family:
+  Courier-Oblique'>为要删除的数据长度</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>这个函数从链表开始处删除数据，把腾出的内存归还给首部空间。把指向下一个缓冲区的指针返回。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb_headroom</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>缓冲区首部空闲空间的字节数</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  lang=EN-US>int <b style='mso-bidi-font-weight:normal'>skb_headroom </b>(const
+  struct sk_buff * <i style='mso-bidi-font-style:normal'>sk</i>b)</span></p>
+  <p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:Courier-Oblique'>skb</span><span
+  style='font-family:宋体;mso-ascii-font-family:Courier-Oblique;mso-hansi-font-family:
+  Courier-Oblique'>为要检查的缓冲区</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>返回</span><span lang=EN-US style='font-family:TimesNewRomanPSMT'>&amp;sk_buff</span><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>首部空闲空间的字节数</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb_tailroom</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>缓冲区尾部的空闲字节数</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  lang=EN-US>int <b style='mso-bidi-font-weight:normal'>skb_tailroom </b>(const
+  struct sk_buff * <i style='mso-bidi-font-style:normal'>sk</i>b)</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:Courier-Oblique'>skb</span><span
+  style='font-family:宋体;mso-ascii-font-family:Courier-Oblique;mso-hansi-font-family:
+  Courier-Oblique'>为要检查的缓冲区</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>返回</span><span lang=EN-US style='font-family:TimesNewRomanPSMT'>&amp;sk_buff</span><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>尾部空闲空间的字节数</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb_reserve</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>调整头部的空间</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  lang=EN-US>void <b style='mso-bidi-font-weight:normal'>skb_reserve </b>(struct
+  sk_buff * <i style='mso-bidi-font-style:normal'>sk</i>b, unsigned int <i
+  style='mso-bidi-font-style:normal'>le</i>n)</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:Courier-Oblique'>skb</span><span
+  style='font-family:宋体;mso-ascii-font-family:Courier-Oblique;mso-hansi-font-family:
+  Courier-Oblique'>为要改变的缓冲区，</span><span lang=EN-US style='font-family:Courier-Oblique'>len</span><span
+  style='font-family:宋体;mso-ascii-font-family:Courier-Oblique;mso-hansi-font-family:
+  Courier-Oblique'>为要删除的字节数</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>通过减少尾部空间，增加一个空</span><span lang=EN-US style='font-family:
+  TimesNewRomanPSMT'>&amp;sk_buff</span><span style='font-family:宋体;mso-ascii-font-family:
+  TimesNewRomanPSMT;mso-hansi-font-family:TimesNewRomanPSMT'>的首部空间。这仅仅适用于空缓冲区。</span><span
+  lang=EN-US style='font-family:TimesNewRomanPSMT'><o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  lang=EN-US><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb_trim</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>从缓冲区删除尾部</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  lang=EN-US>void <b style='mso-bidi-font-weight:normal'>skb_trim </b>(struct
+  sk_buff * <i style='mso-bidi-font-style:normal'>sk</i>b, unsigned int <i
+  style='mso-bidi-font-style:normal'>le</i>n);</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:Courier-Oblique'>skb</span><span
+  style='font-family:宋体;mso-ascii-font-family:Courier-Oblique;mso-hansi-font-family:
+  Courier-Oblique'>为要改变的缓冲区，</span><span lang=EN-US style='font-family:Courier-Oblique'>len</span><span
+  style='font-family:宋体;mso-ascii-font-family:Courier-Oblique;mso-hansi-font-family:
+  Courier-Oblique'>为新的长度</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>通过从尾部删除数据，剪切缓冲区的长度。如果缓冲区已经处于指定的长度，则不用改变。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb_orphan</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>使一个缓冲区成为孤儿</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  lang=EN-US>void <b style='mso-bidi-font-weight:normal'>skb_orphan </b>(struct
+  sk_buff * <i style='mso-bidi-font-style:normal'>sk</i>b);</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:Courier-Oblique'>skb</span><span
+  style='font-family:宋体;mso-ascii-font-family:Courier-Oblique;mso-hansi-font-family:
+  Courier-Oblique'>是要成为孤儿的缓冲区</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>如果一个缓冲区当前有一个拥有者，我们就调用拥有者<span class=GramE>的析构函数</span>，使</span><span
+  lang=EN-US style='font-family:TimesNewRomanPSMT'>skb</span><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>没有拥有者。该缓冲区继续存在，但以前的拥有者不再对其“负责”。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb_queue_purge</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>使一个链表空</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  lang=EN-US>void <b style='mso-bidi-font-weight:normal'>skb_queue_purge </b>(struct
+  sk_buff_head * <i style='mso-bidi-font-style:normal'>lis</i>t)</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+  "Times New Roman"'>list</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>为要腾空的链表</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>删除在</span><span lang=EN-US style='font-family:TimesNewRomanPSMT'>&amp;sk_buff</span><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>链表上的所有缓冲区。这个函数持有链表锁，并且是原子的。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>__skb_queue_purge</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>使一个链表空</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  lang=EN-US>void <b style='mso-bidi-font-weight:normal'>__skb_queue_purge </b>(struct
+  sk_buff_head * <i style='mso-bidi-font-style:normal'>lis</i>t);</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+  "Times New Roman"'>list</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>为要腾空的链表</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;
+  mso-hansi-font-family:TimesNewRomanPSMT'>删除在</span><span lang=EN-US
+  style='font-family:TimesNewRomanPSMT'>&amp;sk_buff</span><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>链表上的所有缓冲区。这个函数<span class=GramE>不</span>持有链表锁，调用者必须持有相关的锁来使用它。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>dev_alloc_skb</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>为发送分配一个</span><span lang=EN-US>skbuff</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  lang=EN-US>struct sk_buff * <b style='mso-bidi-font-weight:normal'>dev_alloc_skb
+  </b>(unsigned int <i style='mso-bidi-font-style:normal'>lengt</i>h)</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+  "Times New Roman"'>Length</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>为要分配的长度</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>分配一个新的</span><span lang=EN-US style='font-family:TimesNewRomanPSMT'>&amp;sk_buff</span><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>，并赋予它一个引用计数。这个缓冲区有未确定的头空间。用户应该分配自己需要的头空间。</span><span
+  lang=EN-US style='font-family:TimesNewRomanPSMT'><o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  lang=EN-US style='font-family:TimesNewRomanPSMT'><span
+  style='mso-spacerun:yes'>&nbsp; </span></span><span style='font-family:宋体;
+  mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:TimesNewRomanPSMT'>如果没有空闲内存，则返回</span><span
+  lang=EN-US style='font-family:TimesNewRomanPSMT'>NULL</span><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>。尽管这个函数是分配内存，但也可以从中断来调用。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb_cow</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>当需要时拷贝</span><span lang=EN-US>skb</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>的首部</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>struct sk_buff * <b style='mso-bidi-font-weight:
+  normal'>skb_cow </b>(struct sk_buff * <i style='mso-bidi-font-style:normal'>sk</i>b,
+  unsigned int <i style='mso-bidi-font-style:normal'>headroo</i>m)</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:Courier-Oblique'>Skb</span><span
+  style='font-family:宋体;mso-ascii-font-family:Courier-Oblique;mso-hansi-font-family:
+  Courier-Oblique'>为要拷贝的缓冲区，</span><span lang=EN-US style='font-family:Courier-Oblique'>headroom</span><span
+  style='font-family:宋体;mso-ascii-font-family:Courier-Oblique;mso-hansi-font-family:
+  Courier-Oblique'>为需要的<span class=GramE>头空间</span></span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>如果传递过来的缓冲区缺乏足够的<span class=GramE>头空间</span>或是克隆的，则该缓冲区被拷贝，并且附加的<span
+  class=GramE>头空间</span>变为可用。如果没有空闲的内存，则返回空。如果缓冲区拷贝成功，则返回新的缓冲区，否则返回已存在的缓冲区。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb_over_panic</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>私有函数</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>void <b style='mso-bidi-font-weight:normal'>skb_over_panic
+  </b>(struct sk_buff * <i style='mso-bidi-font-style:normal'>sk</i>b, int <i
+  style='mso-bidi-font-style:normal'>s</i>z, void * <i style='mso-bidi-font-style:
+  normal'>her</i>e)</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为缓冲区，</span><span
+  lang=EN-US>sz</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>为大小，</span><span lang=EN-US>here</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>为地址。</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>用户不可调用。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb_under_panic</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>私有函数</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  lang=EN-US>void <b style='mso-bidi-font-weight:normal'>skb_under_panic </b>(struct
+  sk_buff * <i style='mso-bidi-font-style:normal'>sk</i>b, int <i
+  style='mso-bidi-font-style:normal'>s</i>z, void * <i style='mso-bidi-font-style:
+  normal'>her</i>e)</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为缓冲区，</span><span
+  lang=EN-US>sz</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>为大小，</span><span lang=EN-US>here</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>为地址。</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>用户不可调用。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>alloc_skb</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>分配一个网络缓冲区</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  lang=EN-US>struct sk_buff * <b style='mso-bidi-font-weight:normal'>alloc_skb </b>(unsigned
+  int <i style='mso-bidi-font-style:normal'>siz</i>e, int <i style='mso-bidi-font-style:
+  normal'>gfp_mas</i>k)</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>size</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为要分配的大小，</span><span
+  lang=EN-US>gfp_mask</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>为分配掩码</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>分配一个新的</span><span lang=EN-US style='font-family:TimesNewRomanPSMT'>&amp;sk_buff</span><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>。返回的缓冲区没有</span><span lang=EN-US style='font-family:TimesNewRomanPSMT'>size</span><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>大小的<span class=GramE>头空间</span>和<span class=GramE>尾空间</span>。新缓冲区的引用计数为</span><span
+  lang=EN-US style='font-family:TimesNewRomanPSMT'>1</span><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>。返回值为一缓冲区，如果失败则返回空。从中断分配缓冲区，掩码只能使用</span><span lang=EN-US
+  style='font-family:TimesNewRomanPSMT'>GFP_ATOMIC</span><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>的</span><span lang=EN-US style='font-family:Courier-Oblique'>gfp_mask</span><span
+  style='font-family:宋体;mso-ascii-font-family:Courier-Oblique;mso-hansi-font-family:
+  Courier-Oblique'>。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>__kfree_skb</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>私有函数</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  lang=EN-US>void <b style='mso-bidi-font-weight:normal'>__kfree_skb </b>(struct
+  sk_buff * <i style='mso-bidi-font-style:normal'>sk</i>b)</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb</span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为缓冲区</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>释放一个</span><span lang=EN-US style='font-family:TimesNewRomanPSMT'>sk_buff</span><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>。释放与该缓冲区相关的所有事情，清除状态。这是一个内部使用的函数，用户应当调用</span><span
+  lang=EN-US style='font-family:TimesNewRomanPSMT'>kfree_skb</span><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb_clone</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>复制一个</span><span lang=EN-US>sk_buff</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>struct sk_buff * <b style='mso-bidi-font-weight:
+  normal'>skb_clone </b>(struct sk_buff * <i style='mso-bidi-font-style:normal'>sk</i>b,
+  int <i style='mso-bidi-font-style:normal'>gfp_mas</i>k)</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:Courier-Oblique'>skb</span><span
+  style='font-family:宋体;mso-ascii-font-family:Courier-Oblique;mso-hansi-font-family:
+  Courier-Oblique'>为要克隆的缓冲区，</span><span lang=EN-US style='font-family:Courier-Oblique'>gfp_mask</span><span
+  style='font-family:宋体;mso-ascii-font-family:Courier-Oblique;mso-hansi-font-family:
+  Courier-Oblique'>为分配掩码。</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>复制一个</span><span lang=EN-US style='font-family:TimesNewRomanPSMT'>&amp;sk_buff</span><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>。新缓冲区不是由套接字拥有。两个拷贝共享相同的数据包而不是结构。新缓冲区的引用计数为</span><span
+  lang=EN-US style='font-family:TimesNewRomanPSMT'>1</span><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>。如果分配失败，函数返回</span><span lang=EN-US style='font-family:
+  TimesNewRomanPSMT'>NULL</span><span style='font-family:宋体;mso-ascii-font-family:
+  TimesNewRomanPSMT;mso-hansi-font-family:TimesNewRomanPSMT'>，否则返回新的缓冲区。如果从中断调用这个函数，掩码只能使用</span><span
+  lang=EN-US style='font-family:TimesNewRomanPSMT'>GFP_ATOMIC</span><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>的</span><span lang=EN-US style='font-family:Courier-Oblique'>gfp_mask</span><span
+  style='font-family:宋体;mso-ascii-font-family:Courier-Oblique;mso-hansi-font-family:
+  Courier-Oblique'>。</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb_copy</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>创建一个</span><span lang=EN-US>sk_buff</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>的私有拷贝</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  lang=EN-US>struct sk_buff * <b style='mso-bidi-font-weight:normal'>skb_copy </b>(const
+  struct sk_buff * <i style='mso-bidi-font-style:normal'>sk</i>b, int <i
+  style='mso-bidi-font-style:normal'>gfp_mas</i>k)</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-family:Courier-Oblique'>skb</span><span
+  style='font-family:宋体;mso-ascii-font-family:Courier-Oblique;mso-hansi-font-family:
+  Courier-Oblique'>为要拷贝的缓冲区，</span><span lang=EN-US style='font-family:Courier-Oblique'>gfp_mask</span><span
+  style='font-family:宋体;mso-ascii-font-family:Courier-Oblique;mso-hansi-font-family:
+  Courier-Oblique'>为分配优先级。</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>既拷贝</span><span lang=EN-US style='font-family:TimesNewRomanPSMT'>&amp;sk_buff</span><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>也拷贝其数据。该函数用在调用者希望修改数据并需要数据的私有拷贝来进行改变时。失败返回</span><span
+  lang=EN-US style='font-family:TimesNewRomanPSMT'>NULL</span><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>，成功返回指向缓冲区的指针。</span><span lang=EN-US style='font-family:
+  TimesNewRomanPSMT'><o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>返回的缓冲区其引用计数为</span><span lang=EN-US style='font-family:
+  TimesNewRomanPSMT'>1</span><span style='font-family:宋体;mso-ascii-font-family:
+  TimesNewRomanPSMT;mso-hansi-font-family:TimesNewRomanPSMT'>。如果从中断调用，则必须传递的优先级为</span><span
+  lang=EN-US style='font-size:9.0pt;mso-bidi-font-size:10.0pt;font-family:Courier'>GFP_ATOMIC</span><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+  Courier;mso-hansi-font-family:Courier'>。</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-lastrow:yes;page-break-inside:avoid'>
+  <td width=166 valign=top style='width:99.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>skb_copy_expand</span></p>
+  </td>
+  <td width=140 valign=top style='width:84.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>拷贝并扩展</span><span lang=EN-US>sk_buff</span></p>
+  </td>
+  <td width=236 valign=top style='width:5.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  lang=EN-US>struct sk_buff * <b style='mso-bidi-font-weight:normal'>skb_copy_expand
+  </b>(const struct sk_buff * <i style='mso-bidi-font-style:normal'>sk</i>b,
+  int</span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><i
+  style='mso-bidi-font-style:normal'><span lang=EN-US>newheadroo</span></i><span
+  lang=EN-US>m, int <i style='mso-bidi-font-style:normal'>newtailroo</i>m, int <i
+  style='mso-bidi-font-style:normal'>gfp_mas</i>k);</span></p>
+  </td>
+  <td width=219 valign=top style='width:131.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  lang=EN-US style='font-family:Courier-Oblique'>skb</span><span
+  style='font-family:宋体;mso-ascii-font-family:Courier-Oblique;mso-hansi-font-family:
+  Courier-Oblique'>为要拷贝的缓冲区，</span><span lang=EN-US style='font-family:Courier-Oblique'>newheadroom</span><span
+  style='font-family:宋体;mso-ascii-font-family:Courier-Oblique;mso-hansi-font-family:
+  Courier-Oblique'>为头部的新空闲字节数，</span><span lang=EN-US style='font-family:Courier-Oblique'>newtailroom</span><span
+  style='font-family:宋体;mso-ascii-font-family:Courier-Oblique;mso-hansi-font-family:
+  Courier-Oblique'>为尾部的新空闲字节数。</span></p>
+  </td>
+  <td width=367 valign=top style='width:220.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>既拷贝</span><span lang=EN-US style='font-family:TimesNewRomanPSMT'>&amp;sk_buff</span><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>也拷贝其数据，同时分配额外的空间。当调用者希望修改数据并需要对私有数据进行改变，以及给新的<span
+  class=GramE>域更多</span>的空间时调用该函数。失败返回</span><span lang=EN-US style='font-family:
+  TimesNewRomanPSMT'>NULL</span><span style='font-family:宋体;mso-ascii-font-family:
+  TimesNewRomanPSMT;mso-hansi-font-family:TimesNewRomanPSMT'>，成功返回指向缓冲区的指针。</span><span
+  lang=EN-US style='font-family:TimesNewRomanPSMT'><o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-family:宋体;mso-ascii-font-family:TimesNewRomanPSMT;mso-hansi-font-family:
+  TimesNewRomanPSMT'>返回的缓冲区其引用计数为</span><span lang=EN-US style='font-family:
+  TimesNewRomanPSMT'>1</span><span style='font-family:宋体;mso-ascii-font-family:
+  TimesNewRomanPSMT;mso-hansi-font-family:TimesNewRomanPSMT'>。如果从中断调用，则必须传递的优先级为</span><span
+  lang=EN-US style='font-size:9.0pt;mso-bidi-font-size:10.0pt;font-family:Courier'>GFP_ATOMIC</span><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+  Courier;mso-hansi-font-family:Courier'>。</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

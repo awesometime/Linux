@@ -1,0 +1,1466 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="3.4.4.files/filelist.xml">
+<link rel=Edit-Time-Data href="3.4.4.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>中断处理程序的执行</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="chsdate" downloadurl=""/>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="chmetcnv" downloadurl=""/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>CLJ</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>CLJ</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:Created>2007-08-14T09:46:00Z</o:Created>
+  <o:LastSaved>2007-08-14T09:46:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>823</o:Words>
+  <o:Characters>4695</o:Characters>
+  <o:Lines>39</o:Lines>
+  <o:Paragraphs>11</o:Paragraphs>
+  <o:CharactersWithSpaces>5507</o:CharactersWithSpaces>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:PunctuationKerning/>
+  <w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	mso-font-kerning:5.0pt;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:宋体;
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	mso-font-kerning:1.0pt;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:15.6pt;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:329144082;
+	mso-list-type:simple;
+	mso-list-template-ids:1937021516;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:·;
+	mso-level-tab-stop:21.25pt;
+	mso-level-number-position:left;
+	margin-left:21.25pt;
+	text-indent:-21.25pt;
+	font-family:宋体;
+	mso-hansi-font-family:Wingdings;}
+@list l1
+	{mso-list-id:502357509;
+	mso-list-type:simple;
+	mso-list-template-ids:1937021516;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:·;
+	mso-level-tab-stop:21.25pt;
+	mso-level-number-position:left;
+	margin-left:21.25pt;
+	text-indent:-21.25pt;
+	font-family:宋体;
+	mso-hansi-font-family:Wingdings;}
+@list l2
+	{mso-list-id:1318269913;
+	mso-list-type:simple;
+	mso-list-template-ids:2097833208;}
+@list l2:level1
+	{mso-level-text:%1．;
+	mso-level-tab-stop:16.2pt;
+	mso-level-number-position:left;
+	margin-left:16.2pt;
+	text-indent:-16.2pt;}
+@list l3
+	{mso-list-id:1945770057;
+	mso-list-type:simple;
+	mso-list-template-ids:1937021516;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:·;
+	mso-level-tab-stop:21.25pt;
+	mso-level-number-position:left;
+	margin-left:21.25pt;
+	text-indent:-21.25pt;
+	font-family:宋体;
+	mso-hansi-font-family:Wingdings;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=ZH-CN style='tab-interval:21.0pt;text-justify-trim:punctuation'>
+
+<div class=Section1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal style='mso-outline-level:1'><st1:chsdate Year="1899"
+Month="12" Day="30" IsLunarDate="False" IsROCDate="False" w:st="on"><b
+ style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-size:10.5pt;
+ mso-bidi-font-size:10.0pt'>3.4.4</span></b></st1:chsdate><b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'> </span></b><b
+style='mso-bidi-font-weight:normal'><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>中断处理程序的执行</span></b><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>从前面的介绍，我们已经知道了</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'> i386</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>的中断机制及有关的初始化工作。现在，我们可以从中断请求的发生到</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>CPU</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>的响应，再到中断处理程序的调用和返回，沿着这一思路走一遍，以体会</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>Linux</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>内核对中断的响应及处理。</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt'><span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>假定外设的驱动程序都已完成了初始化工作，并且已把相应的中断服务例程挂入到特定的中断请求队列。</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'> </span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>又假定当前进程正在用户空间运行（随时可以接受中断），且外设已产生了一次中断请求。当这个中断请求通过中断控制器</span><st1:chmetcnv
+UnitName="a" SourceValue="8259" HasSpace="False" Negative="False" NumberType="1"
+TCSC="0" w:st="on"><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+ 10.0pt'>8259A</span></st1:chmetcnv><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>到达</span><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt'>CPU</span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>的中断请求引线</span><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt'>INTR</span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>时（参看图</span><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt'>3.1</span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>）</span><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt'>,CPU</span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>就在执行<span class=GramE>完当前</span>指令后来响应该中断。</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt'><span style='mso-spacerun:yes'>&nbsp;&nbsp; </span>CPU</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>从中断控制器的一个端口取得中断向量</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>I</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>，然后根据</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>I</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>从中断描述符表</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>IDT</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>中找到相应的表项，也就是找到相应的中断门。因为这是外部中断，不需要进行“门级”检查，</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>CPU</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>就可以从这个中断门获得中断处理程序的入口地址，假定为</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>IRQ0x05_interrupt</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>。因为这里假定中断发生时</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>CPU</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>运行在用户空间（</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>CPL</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>＝</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>3</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>），而中断处理程序属于内核（</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>DPL</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>＝</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>0</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>），因此，要进行堆栈的切换。也就是说，</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>CPU</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>从</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>TSS</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>中取出内核栈指针，并切换到内核<span
+class=GramE>栈</span>（此时<span class=GramE>栈</span>还为空）。当</span><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>CPU</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>进入</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>IRQ0x05_interrupt</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>时，内核<span
+class=GramE>栈</span>如图</span><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt'>3.5</span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>的</span><span lang=EN-US style='font-family:Wingdings;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";
+mso-char-type:symbol;mso-symbol-font-family:Wingdings'><span style='mso-char-type:
+symbol;mso-symbol-font-family:Wingdings'>&#129;</span></span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>，</span><span
+class=GramE><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>栈</span></span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>中<span class=GramE>除用户</span>栈指针、</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>EFLAGS</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>的内容以及返回地址外再无其他内容。另外，由于</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>CPU</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>进入的是中断门（而不是陷阱门），因此，这条中断线已被禁用，直到重新启用。</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt'><span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>我们用</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>IRQn_interrupt</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>来表示从</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>IRQ0x01_interrupt
+</span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>到</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>IRQ0x<st1:chmetcnv
+UnitName="F" SourceValue="0" HasSpace="False" Negative="False" NumberType="1"
+TCSC="0" w:st="on">0f</st1:chmetcnv>_interrupt</span><span style='font-size:
+10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>任意一个中断处理程序。这个中断处理程序实际上要调用</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>do_IRQ()</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>，而</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>do_IRQ()</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>要调用</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>handle_IRQ_event</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>（）函数；最后这个函数才真正地执行中断服务例程（</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>ISR</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>）。图</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>3.7</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>给出它们的调用关系：</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:26.65pt'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:26.65pt'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:26.65pt'><!--[if gte vml 1]><v:group
+ id="_x0000_s1026" style='position:absolute;left:0;text-align:left;
+ margin-left:71.5pt;margin-top:0;width:262.5pt;height:179.4pt;z-index:1'
+ coordorigin="2119,3388" coordsize="5250,3588">
+ <v:roundrect id="_x0000_s1027" style='position:absolute;left:2119;top:3388;
+  width:2100;height:468' arcsize="10923f" o:allowincell="f">
+  <v:textbox style='mso-next-textbox:#_x0000_s1027'>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+     10.0pt'>IRQn_interrupt</span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:roundrect><v:line id="_x0000_s1028" style='position:absolute' from="3274,3856"
+  to="3274,4324" o:allowincell="f">
+  <v:stroke endarrow="block"/>
+ </v:line><v:roundrect id="_x0000_s1029" style='position:absolute;left:2434;
+  top:4324;width:1995;height:468' arcsize="10923f" o:allowincell="f">
+  <v:textbox>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+     10.0pt'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>do_<span
+     class=GramE>IRQ()</span></span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:roundrect><v:roundrect id="_x0000_s1030" style='position:absolute;left:2959;
+  top:5260;width:2310;height:468' arcsize="10923f" o:allowincell="f">
+  <v:textbox>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+     10.0pt'>handle_IRQ_event</span><span style='font-size:10.5pt;mso-bidi-font-size:
+     10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+     "Times New Roman"'>（）</span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:roundrect><v:line id="_x0000_s1031" style='position:absolute' from="4009,4792"
+  to="4009,5260" o:allowincell="f">
+  <v:stroke endarrow="block"/>
+ </v:line><v:line id="_x0000_s1032" style='position:absolute' from="4324,5728"
+  to="4324,6196" o:allowincell="f">
+  <v:stroke endarrow="block"/>
+ </v:line><v:roundrect id="_x0000_s1033" style='position:absolute;left:3799;
+  top:6196;width:1260;height:780' arcsize="10923f" o:allowincell="f">
+  <v:textbox>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+     font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+     "Times New Roman"'>中断服务</span><span lang=EN-US style='font-size:10.5pt;
+     mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+     <p class=MsoNormal><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+     font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+     "Times New Roman"'>例程</span><span lang=EN-US style='font-size:10.5pt;
+     mso-bidi-font-size:10.0pt'>1<o:p></o:p></span></p>
+     <p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+     10.0pt'><o:p>&nbsp;</o:p></span></p>
+     <p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+     10.0pt'><o:p>&nbsp;</o:p></span></p>
+     <p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+     10.0pt'><o:p>&nbsp;</o:p></span></p>
+     <p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+     10.0pt'><o:p>&nbsp;</o:p></span></p>
+     <p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+     10.0pt'><o:p>&nbsp;</o:p></span></p>
+     <p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+     10.0pt'><o:p>&nbsp;</o:p></span></p>
+     <p class=MsoNormal><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+     font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+     "Times New Roman"'>例程</span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:roundrect><v:roundrect id="_x0000_s1034" style='position:absolute;left:6109;
+  top:6196;width:1260;height:780' arcsize="10923f" o:allowincell="f">
+  <v:textbox>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+     font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+     "Times New Roman"'>中断服务</span><span lang=EN-US style='font-size:10.5pt;
+     mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+     <p class=MsoNormal><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+     font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+     "Times New Roman"'>例程</span><span lang=EN-US style='font-size:10.5pt;
+     mso-bidi-font-size:10.0pt'>2<o:p></o:p></span></p>
+     <p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+     10.0pt'><o:p>&nbsp;</o:p></span></p>
+     <p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+     10.0pt'><o:p>&nbsp;</o:p></span></p>
+     <p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+     10.0pt'><o:p>&nbsp;</o:p></span></p>
+     <p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+     10.0pt'><o:p>&nbsp;</o:p></span></p>
+     <p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+     10.0pt'><o:p>&nbsp;</o:p></span></p>
+     <p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+     10.0pt'><o:p>&nbsp;</o:p></span></p>
+     <p class=MsoNormal><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+     font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+     "Times New Roman"'>例程</span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:roundrect><v:line id="_x0000_s1035" style='position:absolute' from="5059,6508"
+  to="6109,6508" o:allowincell="f">
+  <v:stroke endarrow="block"/>
+ </v:line></v:group><![endif]--><![if !vml]><span style='mso-ignore:vglayout;
+position:relative;z-index:1;left:94px;top:-1px;width:356px;height:245px'><img
+width=356 height=245 src="3.4.4.files/image001.gif" v:shapes="_x0000_s1026 _x0000_s1027 _x0000_s1028 _x0000_s1029 _x0000_s1030 _x0000_s1031 _x0000_s1032 _x0000_s1033 _x0000_s1034 _x0000_s1035"></span><![endif]><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:26.65pt'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p>&nbsp;</o:p></span></p>
+
+<br style='mso-ignore:vglayout' clear=ALL>
+
+<p class=MsoNormal style='mso-outline-level:1'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-outline-level:1'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-outline-level:1'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-outline-level:1'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-outline-level:1'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-outline-level:1'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-outline-level:1'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-outline-level:1'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-outline-level:1'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-outline-level:1'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-outline-level:1'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>图</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>3.7</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>中断处理函数的调用关系</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:16.2pt;text-indent:-16.2pt;mso-list:l2 level1 lfo1;
+tab-stops:list 16.2pt'><![if !supportLists]><span lang=EN-US style='font-size:
+10.5pt;mso-bidi-font-size:10.0pt;mso-fareast-font-family:"Times New Roman"'><span
+style='mso-list:Ignore'>1．</span></span><![endif]><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>中断处理程序</span><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>IRQn_interrupt<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:16.2pt'><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>我们首先看一下从</span><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>IRQ0x01_interrupt </span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>到</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>IRQ0x<st1:chmetcnv
+UnitName="F" SourceValue="0" HasSpace="False" Negative="False" NumberType="1"
+TCSC="0" w:st="on">0f</st1:chmetcnv>_interrupt</span><span style='font-size:
+10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>的这</span><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>16</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>个函数是如何定义的，在</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>i8259.c</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>中定义了如下宏：</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:16.2pt;background:#BFBFBF;mso-shading:
+white;mso-pattern:gray-25 auto'><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt'>#define BI(x<span class=GramE>,y</span>) \<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:16.2pt;background:#BFBFBF;mso-shading:
+white;mso-pattern:gray-25 auto'><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>BUILD_IRQ(x##y)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:16.2pt;background:#BFBFBF;mso-shading:
+white;mso-pattern:gray-25 auto'><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:16.2pt;background:#BFBFBF;mso-shading:
+white;mso-pattern:gray-25 auto'><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt'>#define BUILD_16_IRQS(x) \<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:16.2pt;background:#BFBFBF;mso-shading:
+white;mso-pattern:gray-25 auto'><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>BI(x<span class=GramE>,0</span>) BI(x,1) BI(x,2) BI(x,3) \<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:16.2pt;background:#BFBFBF;mso-shading:
+white;mso-pattern:gray-25 auto'><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=PT-BR style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+mso-ansi-language:PT-BR'>BI(x,4) BI(x,5) BI(x,6) BI(x,7) \<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:16.2pt;background:#BFBFBF;mso-shading:
+white;mso-pattern:gray-25 auto'><span lang=PT-BR style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;mso-ansi-language:PT-BR'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>BI(x,8) BI(x,9) BI(x,a) BI(x,b) \<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:16.2pt;background:#BFBFBF;mso-shading:
+white;mso-pattern:gray-25 auto'><span lang=PT-BR style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;mso-ansi-language:PT-BR'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>BI(x,c) BI(x,d) BI(x,e) BI(x,f)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=PT-BR style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+mso-ansi-language:PT-BR'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=PT-BR style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+mso-ansi-language:PT-BR'>BUILD_16_IRQS(0x0)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:16.2pt'><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>经过</span><span lang=PT-BR
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-ansi-language:PT-BR'>gcc</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>的预处理</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman";mso-ansi-language:
+PT-BR'>，</span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>宏定义</span><span lang=PT-BR style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;mso-ansi-language:PT-BR'>BUILD_16_IRQS(0x0) </span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>会<span class=GramE>被展开</span>成</span><span
+lang=PT-BR style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-ansi-language:
+PT-BR'>BUILD_IRQ</span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-ansi-language:PT-BR'>（</span><span lang=PT-BR
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-ansi-language:PT-BR'>0x00</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman";mso-ansi-language:
+PT-BR'>）</span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>至</span><span lang=PT-BR style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;mso-ansi-language:PT-BR'>BUILD_IRQ</span><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-ansi-language:PT-BR'>（</span><span
+lang=PT-BR style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-ansi-language:
+PT-BR'>0x<st1:chmetcnv UnitName="F" SourceValue="0" HasSpace="False"
+Negative="False" NumberType="1" TCSC="0" w:st="on">0f</st1:chmetcnv></span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman";mso-ansi-language:
+PT-BR'>）</span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>。</span><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt'>BUILD_IRQ</span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>宏是一段嵌入式汇编代码</span><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt'>(</span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>在</span><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt'>/include/i386/hw_irq.h</span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>中</span><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt'>)</span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>，为了有助于理解，我们把它展开成下面的汇编语言片段：</span><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoPlainText style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText align=left style='text-align:left;text-indent:21.25pt;
+background:#BFBFBF;mso-shading:white;mso-pattern:gray-25 auto'><span
+lang=EN-US>IRQn_interrupt:</span></p>
+
+<p class=MsoPlainText align=left style='text-align:left;background:#BFBFBF;
+mso-shading:white;mso-pattern:gray-25 auto'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span style='mso-tab-count:
+2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class=GramE>pushl</span>
+$n-256</span></p>
+
+<p class=MsoPlainText style='margin-left:20.9pt;text-indent:21.6pt;background:
+#BFBFBF;mso-shading:white;mso-pattern:gray-25 auto'><span class=GramE><span
+lang=EN-US>jmp</span></span><span lang=EN-US> common_interrupt</span></p>
+
+<p class=MsoPlainText><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoPlainText><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span></span>把<span
+class=GramE>中断号减</span><span lang=EN-US>256</span>的结果保存在<span class=GramE>栈</span>中，这就是进入中断处理程序后第一个压入堆栈的值，也就是堆栈中<span
+lang=EN-US>ORIG_EAX</span>的值，如图<span lang=EN-US>3.6</span>。这是一个负数，正数留给系统调用使用。对于每个中断处理程序，唯一不同的就是压入<span
+class=GramE>栈</span>中的这个数。然后，所有的中断处理程序都跳到一段相同的代码<span lang=EN-US>common_interrupt</span>。这段代码可以在<span
+lang=EN-US>BUILD_COMMON_IRQ </span>宏中找到，同样，我们略去其嵌入式汇编源代码，而把这个<span class=GramE>宏展开</span>成下列的汇编语言片段：</p>
+
+<p class=MsoPlainText align=left style='text-align:left;text-indent:21.25pt;
+background:#BFBFBF;mso-shading:white;mso-pattern:gray-25 auto'><span
+lang=EN-US>common_interrupt: </span></p>
+
+<p class=MsoPlainText align=left style='text-align:left;mso-outline-level:1;
+background:#BFBFBF;mso-shading:white;mso-pattern:gray-25 auto'><span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>SAVE_ALL
+</span></p>
+
+<p class=MsoPlainText align=left style='text-align:left;background:#BFBFBF;
+mso-shading:white;mso-pattern:gray-25 auto'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span style='mso-tab-count:
+2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class=GramE>call</span>
+do_IRQ </span></p>
+
+<p class=MsoNormal style='text-indent:16.2pt;background:#BFBFBF;mso-shading:
+white;mso-pattern:gray-25 auto'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span style='mso-tab-count:
+1'> </span><span class=GramE>jmp</span> ret_from_intr</span><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt'><span style='mso-spacerun:yes'>&nbsp; </span>SAVE_ALL</span><span
+class=GramE><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>宏已经</span></span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>在前面介绍过，它把中断处理程序会使用的所有</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>CPU</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>寄存器都保存在<span
+class=GramE>栈</span>中。然后，</span><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt'>BUILD_COMMON_IRQ </span><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>宏调用</span><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>do_IRQ(<span
+style='mso-spacerun:yes'>&nbsp; </span>)</span><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>函数，因为通过</span><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>CALL</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>调用这个函数，因此，该函数的返回地址被压入<span
+class=GramE>栈</span>。当执行完</span><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt'>do_IRQ(<span style='mso-spacerun:yes'>&nbsp;
+</span>)</span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>，就跳转到</span><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt'>ret_from_intr(<span style='mso-spacerun:yes'>&nbsp;
+</span>)</span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>地址（参见后面的“从中断和异常返回）。</span><span lang=EN-US style='font-size:
+10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:16.2pt;text-indent:-16.2pt;mso-list:l2 level1 lfo1;
+tab-stops:list 16.2pt'><![if !supportLists]><span lang=EN-US style='mso-fareast-font-family:
+"Times New Roman"'><span style='mso-list:Ignore'>2．<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]><span lang=EN-US>do_IRQ(<span
+style='mso-spacerun:yes'>&nbsp; </span>)</span><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>函数</span></p>
+
+<p class=MsoNormal style='margin-left:16.2pt'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;</span>do_IRQ()</span><span style='font-size:
+10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>这个函数处理所有外设的中断请求。当这个函数执行时，内核<span
+class=GramE>栈</span>从<span class=GramE>栈</span>顶到<span class=GramE>栈</span>底包括：</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:21.25pt;text-indent:-21.25pt;
+mso-list:l3 level1 lfo2;tab-stops:list 21.25pt'><![if !supportLists]><span
+lang=EN-US style='mso-hansi-font-family:Wingdings;mso-bidi-font-family:宋体'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US>do_IRQ(<span
+style='mso-spacerun:yes'>&nbsp; </span>)</span>的返回地址</p>
+
+<p class=MsoPlainText style='margin-left:21.25pt;text-indent:-21.25pt;
+mso-list:l3 level1 lfo2;tab-stops:list 21.25pt'><![if !supportLists]><span
+lang=EN-US style='mso-hansi-font-family:Wingdings;mso-bidi-font-family:宋体'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>由<span lang=EN-US>SAVE_ALL </span>推进<span
+class=GramE>栈</span>中的一组寄存器的值</p>
+
+<p class=MsoPlainText style='margin-left:21.25pt;text-indent:-21.25pt;
+mso-list:l3 level1 lfo2;tab-stops:list 21.25pt'><![if !supportLists]><span
+lang=EN-US style='mso-hansi-font-family:Wingdings;mso-bidi-font-family:宋体'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US>ORIG_EAX</span>（即<span
+lang=EN-US>n-256</span>）</p>
+
+<p class=MsoNormal style='margin-left:21.25pt;text-indent:-21.25pt;mso-list:
+l0 level1 lfo4;tab-stops:list 21.25pt'><![if !supportLists]><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-hansi-font-family:
+Wingdings;mso-bidi-font-family:宋体'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>CPU</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>自动保存的寄存器</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt'><span style='mso-spacerun:yes'>&nbsp; </span></span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>该函数的实现用到中断线的状态，下面给予具体说明：</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoPlainText style='background:white'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span>#define IRQ_INPROGRESS<span
+style='mso-spacerun:yes'>&nbsp; </span>1<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>/* </span>正在执行这个<span lang=EN-US>IRQ</span>的一个处理程序<span
+lang=EN-US>*/</span></p>
+
+<p class=MsoPlainText style='background:white'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span>#define IRQ_DISABLED<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>2<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>/* </span>由设备驱动程序已经禁用了这条<span
+lang=EN-US>IRQ</span>中断线<span lang=EN-US> */</span></p>
+
+<p class=MsoPlainText style='background:white'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span>#define IRQ_PENDING<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>4<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>/* </span>一个<span
+lang=EN-US>IRQ</span>已经出现在中断线上，且被应答，但还没有为它提供服务<span lang=EN-US> */</span></p>
+
+<p class=MsoPlainText style='background:white'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span>#define IRQ_REPLAY<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>8<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>/* </span>当<span lang=EN-US>Linux</span>重新发送一个已被删除的<span
+lang=EN-US>IRQ</span>时<span lang=EN-US> */</span></p>
+
+<p class=MsoPlainText style='background:white'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span>#define IRQ_AUTODETECT<span
+style='mso-spacerun:yes'>&nbsp; </span>16<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>/* </span>当进行硬件设备探测时，内核使用这条<span
+lang=EN-US>IRQ</span>中断线<span lang=EN-US> */</span></p>
+
+<p class=MsoPlainText style='background:white'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span>#define IRQ_WAITING<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>32<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>/*</span>当对硬件设备进行探测时，设置这个状态以标记正在被测试的<span
+lang=EN-US>irq */</span></p>
+
+<p class=MsoPlainText style='background:white'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span>#define IRQ_LEVEL<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>64<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>/* IRQ level triggered */</span></p>
+
+<p class=MsoPlainText style='background:white'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span>#define IRQ_MASKED<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>128<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>/* IRQ masked - shouldn't be
+seen again */</span></p>
+
+<p class=MsoPlainText style='background:white'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span>#define IRQ_PER_CPU<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>256<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>/* IRQ is per CPU */</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt'><span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>这</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>8</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>个状态的前</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>5</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>个状态比较常用，因此我们给出了具体解释。另外，我们还看到每个状态的常量是</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>2</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>的<span class=GramE>幂</span>次方。最大值为</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>256</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>（</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>2<sup>8</sup></span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>）</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>, </span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>因此可以用一个字节来表示这</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>8</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>个状态，其中每一位对应一个状态。</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>该函数在</span><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>arch</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>／</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>/i386/kernel/irq.c</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>中定义如下：</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span class=GramE><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt'>asmlinkage</span></span><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'> unsigned int do_IRQ(struct
+pt_regs regs)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>{<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/* <span
+style='mso-spacerun:yes'>&nbsp;</span></span><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>函数返回</span><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>0</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>则意味着这个</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>irq</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>正在由另一个</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>CPU</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>进行处理，</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:42.5pt;text-indent:21.25pt;background:
+#BFBFBF;mso-shading:white;mso-pattern:gray-25 auto'><span style='font-size:
+10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>或这条中断线被禁用</span><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>*/<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span>int irq = regs.orig_eax &amp; 0xff; <span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;</span>/* </span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>还原中断号</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'> */<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>int
+cpu = smp_processor_id();<span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>／</span><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt'>*</span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>获得</span><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt'>CPU</span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>号</span><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt'>*/<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;</span>irq_desc_t *desc = irq_desc + irq;<span
+style='mso-spacerun:yes'>&nbsp; </span></span><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>／</span><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>*</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>在</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>irq_desc[]</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>数组中获得</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>irq </span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>的描述符</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>*</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>／</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;</span><span class=GramE>struct</span> irqaction
+* action;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>unsigned</span> int status;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>kstat.irqs[</span>cpu][irq]++;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>spin_lock(&amp;desc-&gt;lock);<span style='mso-spacerun:yes'>&nbsp;
+</span></span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>／＊针对多处理机加锁＊／</span><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt'><span style='mso-spacerun:yes'>&nbsp;&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>desc-&gt;handler-&gt;ack(irq);<span style='mso-spacerun:yes'>&nbsp;
+</span></span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>／＊</span><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt'>CPU</span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>对中断请求给予确认＊／</span><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;</span><span class=GramE>status</span> =
+desc-&gt;status &amp; ~(IRQ_REPLAY | IRQ_WAITING);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>status</span> |= IRQ_PENDING; /* we _want_ to handle it */<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>action</span> = NULL;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>if</span> (!(status &amp; (IRQ_DISABLED | IRQ_INPROGRESS))) {<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>action</span> = desc-&gt;action;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>status</span> &amp;= ~IRQ_PENDING; /* we commit to
+handling */<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>status</span> |= IRQ_INPROGRESS; /* we are handling it
+*/<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>desc</span>-&gt;status = status;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>if</span> (!action)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>goto</span> out;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>for</span> (;;) {<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>spin_unlock(&amp;desc-&gt;lock);<span style='mso-spacerun:yes'>&nbsp;
+</span></span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>／＊进入临界区＊</span><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='mso-spacerun:yes'>&nbsp;</span>handle_IRQ_<span
+class=GramE>event(</span>irq, &amp;regs, action);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>spin_lock(&amp;desc-&gt;lock);<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span style='font-size:
+10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>／＊出临界区＊／</span><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>if</span> (!(desc-&gt;status &amp; IRQ_PENDING))<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>break</span>;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>desc</span>-&gt;status &amp;= ~IRQ_PENDING;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>desc</span>-&gt;status &amp;= ~IRQ_INPROGRESS;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span class=GramE><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt'>out</span></span><span lang=EN-US style='font-size:
+10.5pt;mso-bidi-font-size:10.0pt'>:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>/*<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>* The -&gt;<span class=GramE>end(</span>) handler has to deal with
+interrupts which got<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>* disabled while the handler was running.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>*/<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>desc</span>-&gt;handler-&gt;end(irq);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;</span>spin_<span class=GramE>unlock(</span>&amp;desc-&gt;lock);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>if</span> (softirq_pending(cpu))<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>do_softirq();<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>／</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>*</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>处理软中断</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>*</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>／</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>return</span> 1;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>}<o:p></o:p></span></p>
+
+<p class=MsoNormal style='background:#BFBFBF;mso-shading:white;mso-pattern:
+gray-25 auto'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>下面对这个函数进行进一步的讨论：</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:42.5pt;text-indent:-21.25pt;mso-list:
+l1 level1 lfo3;tab-stops:list 21.25pt'><![if !supportLists]><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-hansi-font-family:
+Wingdings;mso-bidi-font-family:宋体'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>当执行到</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>for (;;)</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>这个无限循环时，就准备对中断请求队列进行处理，这是由</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>handle_IRQ_event </span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>（）函数完成的。因为中断请求队列为一临界资源，因此在进入这个函数前要加锁。</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:42.5pt;text-indent:-21.25pt;mso-list:
+l1 level1 lfo3;tab-stops:list 21.25pt'><![if !supportLists]><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-hansi-font-family:
+Wingdings;mso-bidi-font-family:宋体'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>handle_IRQ_event </span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>（）函数的主要代码片段为：</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:21.25pt;background:#BFBFBF;mso-shading:
+white;mso-pattern:gray-25 auto'><span class=GramE><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>if</span></span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>
+(!(action-&gt;flags &amp; SA_INTERRUPT))<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:21.25pt;background:#BFBFBF;mso-shading:
+white;mso-pattern:gray-25 auto'><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>__sti();<span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>/*</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>关中断</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>*/<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:21.25pt;background:#BFBFBF;mso-shading:
+white;mso-pattern:gray-25 auto'><span class=GramE><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>do</span></span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'> {<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:21.25pt;background:#BFBFBF;mso-shading:
+white;mso-pattern:gray-25 auto'><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+class=GramE>status</span> |= action-&gt;flags;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:21.25pt;background:#BFBFBF;mso-shading:
+white;mso-pattern:gray-25 auto'><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>action</span>-&gt;handler(irq, action-&gt;dev_id,
+regs);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:21.25pt;background:#BFBFBF;mso-shading:
+white;mso-pattern:gray-25 auto'><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>action</span> = action-&gt;next;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:21.25pt;background:#BFBFBF;mso-shading:
+white;mso-pattern:gray-25 auto'><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>} while (action); <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:21.25pt;background:#BFBFBF;mso-shading:
+white;mso-pattern:gray-25 auto'><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt'><span style='mso-spacerun:yes'>&nbsp;&nbsp; </span>__cli();<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>/*</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>开中断</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>*/<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:21.25pt'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;</span></span><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>这个循环依次调用请求队列中的每个中断服务例程。中断服务例程及其参数已经在前面进行过简单描</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'> </span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>述，至于更具体的解释将在驱动程序一章进行描述。</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:42.5pt;text-indent:-21.25pt;mso-list:
+l1 level1 lfo3;tab-stops:list 21.25pt'><![if !supportLists]><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-hansi-font-family:
+Wingdings;mso-bidi-font-family:宋体'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>这里要说明的是，中断服务例程都在关中断的条件下进行（不包括非屏蔽中断），这也是为什么</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>CPU</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>在穿过中断门时自动关闭中断的原因。但是，关中<span
+class=GramE>断时间</span>绝不能太长，否则就可能丢失其它重要的中断。也就是说，中断服务例程应该处理最紧急的事情，而把剩下的事情交给另外一部分来处理。即后半部分（</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>bottom half</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>）来处理，这一部分内容将在下一节进行讨论。</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:42.5pt;text-indent:-21.25pt;mso-list:
+l1 level1 lfo3;tab-stops:list 21.25pt'><![if !supportLists]><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-hansi-font-family:
+Wingdings;mso-bidi-font-family:宋体'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>经验表明，应该避免在同一条中断线上的中断嵌套，内核通过</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>IRQ_PENDING</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>标志位的应用保证了这一点。当</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>do_IRQ()</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>执行到</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>for (;;)</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>循环时，</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>desc-&gt;status </span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>中的</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>IRQ_PENDING</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>的标志位肯定为</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>0</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>（想想为什么？）。当</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>CPU</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>执行完</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>handle_IRQ_event </span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>（）函数返回时，如果这个标志位仍然为</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>0</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>，那么循环就此结束。如果这个标志位变为</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>1</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>，那就说明这条中断线上又有中断产生（对单</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>CPU</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>而言），所以循环又执行一次。通过这种循环方式，就把可能发生在同一中断线上的嵌套循环化解为“串行”。</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:42.5pt;text-indent:-21.25pt;mso-list:
+l1 level1 lfo3;tab-stops:list 21.25pt'><![if !supportLists]><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-hansi-font-family:
+Wingdings;mso-bidi-font-family:宋体'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>不同的</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>CPU</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>不允许并发地进入同一中断服务例程，否则，那就要求所有的中断服务例程必须是“可重入”的纯代码。可重入代码的设计和实现就复杂多了，因此，</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>Linux</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>在设计内核时巧妙地“避难就易”，以解决问题为主要目标。</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:42.5pt;text-indent:-21.25pt;mso-list:
+l1 level1 lfo3;tab-stops:list 21.25pt'><![if !supportLists]><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-hansi-font-family:
+Wingdings;mso-bidi-font-family:宋体'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>在循环结束后调用</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>desc-&gt;handler-&gt;end</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>（）函数，具体来说，如果没有设置</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>IRQ_DISABLED</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>标志位，就调用低级函数</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>enable_<st1:chmetcnv
+UnitName="a" SourceValue="8259" HasSpace="False" Negative="False" NumberType="1"
+TCSC="0" w:st="on">8259A</st1:chmetcnv>_irq</span><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>（）来启用这条中断线。</span><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:42.5pt;text-indent:-21.25pt;mso-list:
+l1 level1 lfo3;tab-stops:list 21.25pt'><![if !supportLists]><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-hansi-font-family:
+Wingdings;mso-bidi-font-family:宋体'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>如果这个中断有后半部分</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>,</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>就调用</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>do_softirq()</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>执行后半部分。</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

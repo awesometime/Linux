@@ -1,0 +1,428 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="7.2.3.files/filelist.xml">
+<title>系统调用</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="chsdate" downloadurl=""/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>CLJ</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>CLJ</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:Created>2007-08-15T08:38:00Z</o:Created>
+  <o:LastSaved>2007-08-15T08:38:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>256</o:Words>
+  <o:Characters>1462</o:Characters>
+  <o:Lines>12</o:Lines>
+  <o:Paragraphs>3</o:Paragraphs>
+  <o:CharactersWithSpaces>1715</o:CharactersWithSpaces>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:PunctuationKerning/>
+  <w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	mso-font-kerning:1.0pt;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:15.6pt;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+</head>
+
+<body lang=ZH-CN style='tab-interval:21.0pt;text-justify-trim:punctuation'>
+
+<div class=Section1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><st1:chsdate Year="1899" Month="12" Day="30"
+IsLunarDate="False" IsROCDate="False" w:st="on"><b style='mso-bidi-font-weight:
+ normal'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+ color:black;mso-font-kerning:0pt'>7.2.3</span></b></st1:chsdate><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'> </span></b><b
+style='mso-bidi-font-weight:normal'><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>系统调用<span lang=EN-US><o:p></o:p></span></span></b></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>除了<span lang=EN-US>signal()</span>系统调用，<span lang=EN-US>Linux</span>还提供关于信号的系统调用如下：<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>调用原型<span lang=EN-US><span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>功能<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp; </span>int
+sigaction(sig,&amp;handler,&amp;oldhandler)<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>定义对信号的处理操作<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp; </span>int
+sigreturn(&amp;context)<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>从信号返回<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp; </span>int
+sigprocmask(int how, sigset_t *mask,<span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span></span><span style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>检查或修改信号屏蔽<span lang=EN-US> <o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>sigset_t *old)<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp; </span>int
+sigpending(sigset_t mask)<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>替换信号掩码并使进程挂起<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp; </span>int
+kill(pid_t pid, int sig)<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>发送信号到进程<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp; </span>long
+alarm(long secs)<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>设置事件闹钟<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp; </span>int
+pause(void)<span style='mso-tab-count:1'>&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>将调用进程挂起直到下一个进程<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>其中<span lang=EN-US>sigset_t</span>定义为：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>typedef unsigned long sigset_t;<span style='mso-tab-count:
+2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/* </span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>至少<span lang=EN-US>32</span>位<span lang=EN-US>*/<o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>下面介绍几个典型的系统调用。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>1. kill</span><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>系统调用<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>从前面所叙述的可以看到，一个进程接收到的信号，或者是由异常的错误产生<span
+lang=EN-US>(</span>如浮点异常<span lang=EN-US>)</span>，或者是用户在键盘上用中断和退出信号干涉而产生，那么，一个进程能否给另一个进程发送信号？回答是肯定的，但发送者进程必需有适当的权限。<span
+lang=EN-US>Kill()</span>系统调用可以完成此任务：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span class=GramE><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>int</span></span><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'> kill(pid_t pig, int sig)<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>参数<span
+lang=EN-US>sig</span>规定发送哪一个信号，参数<span lang=EN-US>pid(</span>进程标识号<span
+lang=EN-US>)</span>规定把信号发送到何处，<span lang=EN-US>pig</span>各种不同值具有下列意义：<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>pid&gt;0<span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>把信号<span lang=EN-US>sig</span>发送给进程标识号为<span
+lang=EN-US>pid</span>的进程。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>pid=0<span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>假设调用<span lang=EN-US>kill()</span>的进程其组标识号为<span
+lang=EN-US>p, </span>则把信号<span lang=EN-US>sig</span>发送给与<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>p</span><span style='font-family:
+宋体;mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>相等的其它所有进程。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>pid=-1<span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span>Linux</span><span style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>规定把信号<span lang=EN-US>sig</span>发送给系统中除去<span
+lang=EN-US>init</span>进程和调用者<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>进程以外的所有进程。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>pid&lt;-1<span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span></span><span style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>把信号发送给进程组<span lang=EN-US>-pid</span>中的所有进程。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>为了用<span lang=EN-US>kill()</span>发送信号，调用进程的有效用户<span
+lang=EN-US>ID</span>必须是<span lang=EN-US>root</span>，或者必须和接收进程的实际或有效用户<span
+lang=EN-US>ID</span>相同。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>2.<span style='mso-spacerun:yes'>&nbsp; </span>pause()</span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>和<span lang=EN-US>alarm()</span>系统调用<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>当一个进程需要等待另一个进程完成某项操作时，它将执行<span
+lang=EN-US>pause()</span>调用，当这项操作已完成时，另一个进程可以发送一个预约的信号给这一暂停的进程，它将强迫<span
+lang=EN-US>pause()</span>返回，并且允许收到信号的进程恢复执行，知道它正在等待的事件现在已经出现。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>对于许多实际应用，需要在一段指定时间后，中断进程的原有操作，以进行某种其它的处理，例如在不可靠的通信线路上重传一个丢失的包，为了处理此类情况，系统提供了<span
+lang=EN-US>alarm()</span>系统调用。每个进程都有一个闹钟计时器与之相联，在经过预先设置的时间后，进程可以用它来给自己发送<span
+lang=EN-US>SIGALARM</span>信号。<span lang=EN-US>Alarm()</span>调用只取一个参数<span
+lang=EN-US>secs</span>，它是在闹钟关闭之前所经过的秒数。如果传递一个<span lang=EN-US>0</span><span
+class=GramE>值给</span><span lang=EN-US>alarm()</span>，这将关闭任何当前正在运行的闹钟计时器。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>Alarm()</span><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>返回值是以前的闹钟计时器值，如果当前没有设置任何闹钟计时器，这将是零，或者是当作出该调用时，闹钟的剩余时间。<span
+lang=EN-US> <o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>某些情况下，进程在信号到达之前不要做任何操作，例如一个测验阅读和理解速度的<span
+lang=EN-US>CAI</span>系统，它先在屏幕上显示一些课文，然后调用<span lang=EN-US>alarm()</span>设定在<span
+lang=EN-US>30s</span>后向自己发送一个信号，以激活程序进行一些处理。当学生阅读课文时，程序无需执行任何操作，它可以采用的一种方法是执行空操作循环以等待时间到，但假如此时系统中还有其它进程运行，这将浪费<span
+lang=EN-US>CPU</span>的时间，好的方法是使用<span lang=EN-US>pause()</span>系统调用，它将挂起调用进程直到信号到来，这段时间里别的进程可以使用<span
+lang=EN-US>CPU</span>。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

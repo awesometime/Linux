@@ -1,0 +1,903 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="10.4.2.files/filelist.xml">
+<title>从版本2.0到2.2内核API的变化</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="chsdate" downloadurl=""/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>CLJ</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>CLJ</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>1</o:TotalTime>
+  <o:Created>2007-08-17T03:40:00Z</o:Created>
+  <o:LastSaved>2007-08-17T03:40:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>786</o:Words>
+  <o:Characters>4482</o:Characters>
+  <o:Lines>37</o:Lines>
+  <o:Paragraphs>10</o:Paragraphs>
+  <o:CharactersWithSpaces>5258</o:CharactersWithSpaces>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:PunctuationKerning/>
+  <w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	mso-font-kerning:1.0pt;}
+p.MsoDate, li.MsoDate, div.MsoDate
+	{mso-style-next:正文;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:宋体;
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:15.6pt;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:1056440674;
+	mso-list-type:simple;
+	mso-list-template-ids:-1919143702;}
+@list l0:level1
+	{mso-level-text:%1．;
+	mso-level-tab-stop:15.6pt;
+	mso-level-number-position:left;
+	margin-left:15.6pt;
+	text-indent:-15.6pt;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+</head>
+
+<body lang=ZH-CN style='tab-interval:21.0pt;text-justify-trim:punctuation'>
+
+<div class=Section1 style='layout-grid:15.6pt'>
+
+<p class=MsoDate><st1:chsdate Year="1899" Month="12" Day="30"
+IsLunarDate="False" IsROCDate="False" w:st="on"><span lang=EN-US>10.4.2</span></st1:chsdate><span
+lang=EN-US> </span>从版本<span lang=EN-US>2.0</span>到<span lang=EN-US>2.2</span>内核<span
+lang=EN-US>API</span>的变化</p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>与<span lang=EN-US>Linux2.0</span>相比，<span lang=EN-US>2.2</span>在性能、资源的利用、健壮性以及可扩展性等方面已经有了很大的改善，这些改善势必导致内核<span
+lang=EN-US>API</span>的变化。所谓内核<span lang=EN-US>API</span>就是指为进行内核扩展而提供的编程接口，内核的<span
+class=GramE>编程指</span>编写驱动程序、文件系统及其他的内核代码。有关驱动程序的内容请参见下一章。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='margin-left:15.6pt;text-align:left;
+text-indent:-15.6pt;mso-list:l0 level1 lfo1;tab-stops:list 15.6pt;mso-layout-grid-align:
+none;text-autospace:none'><![if !supportLists]><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";mso-bidi-font-family:
+宋体;color:black;mso-font-kerning:0pt'><span style='mso-list:Ignore'>1．<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>用户空间与内核空间之间数据的拷贝<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:20.4pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>早在<span
+lang=EN-US>Linux2.1.x</span>版本时，<span lang=EN-US>Liuns</span>就提出了一种有效的办法来改善内核空间与用户空间之间数据的拷贝。我们知道，内核空间与用户空间之间数据的拷贝要通过一个缓冲区，在以前的内核中，对这个缓冲区有效性的检查是通过<span
+lang=EN-US>verify_area()</span>函数的，如果这个缓冲区有效，则调用<span lang=EN-US>memcpy_tofs()</span>把数据从内核空间拷贝到用户空间。但是，<span
+lang=EN-US>verify_area()</span>函数是低效的，因为它必须检查每一个页面，看其是否是一个有效的映射。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:20.4pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>在<span
+lang=EN-US>2.1.x</span>（以及后来的版本）中，取消了对用户空间缓冲区每个页面的检查，取而代之的是用异常来处理非法的缓冲区。这就避免了在<span
+lang=EN-US>SMP</span>上的竞争条件及有效性检查。<span lang=EN-US>verify_area()</span>函数现在仅仅用来检查缓冲区的范围是否合法，这是一个快速的操作。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span style='font-family:
+宋体;mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>因此，如果你要把数据拷贝到用户空间，就使用<span
+lang=EN-US>copy_to_user()</span>函数，其用法如下：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span style='mso-tab-count:
+1'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>if</span> ( copy_to_user (ubuff,
+kbuff, length) ) return -EFAULT;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span style='font-family:
+宋体;mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>这里，<span
+lang=EN-US>ubuff</span>是用户空间的缓冲区，<span lang=EN-US>kbuff</span>是内核空间的缓冲区，而<span
+lang=EN-US>length</span>是要拷贝的字节数。如果<span lang=EN-US>copy_to_user()</span>函数返回一个非<span
+lang=EN-US>0</span>值，就意味着某些数据没有被拷贝（由于无效的缓冲区）。在这种情况下，返回<span lang=EN-US>-EFAULT</span>以表示缓冲区是无效的。类似地，从用户空间拷贝到内核空间的用法如下：<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span style='mso-tab-count:
+1'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>if</span> ( copy_from_user
+(kbuff, ubuff, length) ) return -EFAULT;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp; </span></span><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>注意，这两个函数都自动调用<span
+lang=EN-US>verify_area()</span>函数，你没必要自己调用它。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>2</span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>． 文件操作的方法<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>在内核<st1:chsdate Year="1899" Month="12" Day="30"
+IsLunarDate="False" IsROCDate="False" w:st="on"><span lang=EN-US>2.1.42</span></st1:chsdate>版本以后，增加了一个目录高速缓存（<span
+lang=EN-US>dcache</span>）层，这个层加速了目录搜索操作（大约能提高<span lang=EN-US>4</span>倍），但同时也需要改变文件操作接口。对驱动程序的编写者，这个变化相对比较简单：原来传递给<span
+lang=EN-US>file_operations</span>某些方法的参数为<span lang=EN-US>struct inode *</span>，现在改为<span
+lang=EN-US>struct dentry *</span>。如果你的驱动程序要引用<span lang=EN-US>inode</span>，下面代码就足够了：<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span style='mso-tab-count:
+1'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>struct</span> inode *inode =
+dentry-&gt;d_inode;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span style='font-family:
+宋体;mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>假定<span
+lang=EN-US>dentry</span>是目录项的变量名。实际上，有些驱动程序就不涉及<span lang=EN-US>inode</span>，因此可忽略这一步。然而，你必须改变的是，重新声明<span
+lang=EN-US>file_operations</span>中的函数。注意，某些方法还是把<span lang=EN-US>inode</span>而不是<span
+lang=EN-US>dentry</span>作为参数来传递。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span style='font-family:
+宋体;mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>有些方法甚至没有提供<span
+lang=EN-US>dentry</span>，仅仅提供了<span lang=EN-US>struct file *</span>，在这种情况下，你可以用下面的代码提取出<span
+lang=EN-US>dentry</span>：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span style='mso-tab-count:
+1'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>struct</span> dentry *dentry =
+file-&gt;f_dentry;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>假定<span lang=EN-US>file</span>是指向<span lang=EN-US>file</span>指针的变量名。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>下面是内核<span lang=EN-US>2.2.x</span>文件操作的方法：<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>loff_t</span>
+llseek (struct file *, loff_t, int);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>ssize_t</span>
+read (struct file *, char *, size_t, loff_t *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>ssize_t</span>
+write (struct file *, const char *, size_t, loff_t *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>int</span>
+readdir (struct file *, void *, filldir_t);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>unsigned</span>
+int poll (struct file *, struct poll_table_struct *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>int</span>
+ioctl (struct inode *, struct file *, unsigned int, unsigned long);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>int</span>
+mmap (struct file *, struct vm_area_struct *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>int</span>
+open (struct inode *, struct file *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>int</span>
+flush (struct file *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>int</span>
+release (struct inode *, struct file *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>int</span>
+fsync (struct file *, struct dentry *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>int</span>
+fasync (int, struct file *, int);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>int</span>
+check_media_change (kdev_t dev);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>int</span>
+revalidate (kdev_t dev);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>int</span>
+lock (struct file *, int, struct file_lock *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>在你声明自己的<span lang=EN-US>file_operations</span>结构时，应当确保把自己的方法放置在与上面一致的位置。不过，还有另外一种我们提到过的方法，其形式如下：<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span class=GramE><span lang=EN-US style='font-family:
+宋体;mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>static</span></span><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'> struct file_operations mydev_fops = {<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span style='mso-tab-count:
+1'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>open</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>mydev_open,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span style='mso-tab-count:
+1'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>release</span>: mydev_close,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span style='mso-tab-count:
+1'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>read</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>mydev_read,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span style='mso-tab-count:
+1'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>write</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>mydev_write,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>};<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp; </span>gcc</span><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>编译程序能够把这些方法放在正确的位置，并把未定义的方法置为<span
+lang=EN-US>NULL</span>。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp; </span></span><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>另外还值得注意的是，<span
+lang=EN-US>Linux2.2</span>中引入了<span lang=EN-US>pread() </span>和<span
+lang=EN-US>pwrite()</span>系统调用，这就允许进程可以从一个文件的指定位置进行读和写，这与另一个<span lang=EN-US>lseek()</span>系统调用类似但不完全相同。其不同之处是，<span
+lang=EN-US>pread() </span>和<span lang=EN-US>pwrite()</span>系统调用能对一个文件进行并发访问。为了对这些新的系统调用进行支持，在<span
+lang=EN-US>read()</span>和<span lang=EN-US>write()</span>方法中增加了第<span
+lang=EN-US>4</span>个（或最后一个）参数，这个参数是指向<span lang=EN-US>offset</span>的一个指针。作为驱动程序的编写者，你不必关心文件的位置，因此可以忽略这个参数。不过，为了正确性期间，你最好在你的驱动程序中避免使用新的系统调用，就像你不必支持<span
+lang=EN-US>llseek()</span>方法一样，你也可以在<span lang=EN-US>read()</span>和<span
+lang=EN-US>write()</span>方法的最顶行增加如下行来避免新旧系统调用的差异：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span style='mso-tab-count:
+1'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>if</span> (ppos !=
+&amp;file-&gt;f_pos) return </span><span lang=EN-US style='mso-ascii-font-family:
+宋体;color:black;mso-font-kerning:0pt'>–</span><span lang=EN-US style='font-family:
+宋体;mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>ESPIPE<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:20.4pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>假定<span
+lang=EN-US>ppos</span>是指向<span lang=EN-US>offset</span>指针的变量名，<span lang=EN-US>file</span>是指向<span
+lang=EN-US>struct file</span>结构的变量名。对于<span lang=EN-US>read() </span>和<span
+lang=EN-US>write()</span>系统调用，传递给参数<span lang=EN-US>offset</span>的为<span
+lang=EN-US>file-&gt;f_pos</span>的地址，而对于<span lang=EN-US>pread() </span>和<span
+lang=EN-US>pwrite()</span>系统调用，传递给<span lang=EN-US>offset</span>的为<span
+lang=EN-US>ppos</span>的地址，由此可以很容易地区别这种两种情况。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:20.4pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>如果你确实关心文件的位置，那就必须使用和更新由<span
+lang=EN-US>ppos</span>所指向的值，以跟踪进程正读在何处。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>3</span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>． 信号的处理<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp; </span></span><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>新增加的<span
+lang=EN-US>signal_pending()</span>函数时的信号的处理更加容易和健壮。<span lang=EN-US>2.0</span>处理方式是<span
+lang=EN-US>:<o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span style='mso-tab-count:
+1'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>if</span> (current-&gt;signal
+&amp; ~current-&gt;blocked)<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp; </span>2.2</span><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>是<span
+lang=EN-US>:<o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span style='mso-tab-count:
+1'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>if</span> ( signal_pending
+(current) )<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>4</span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>．<span lang=EN-US> I/O</span>空间映射<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:20.4pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>任何系统都会有输入输出<span
+lang=EN-US>,</span>因此就会涉及对外部设备的访问。在早期的计算机中，外设通常只有几个寄存器，通过这几个寄存器就可以完成对外设的所有操作。而现在的情况则大不一样，外设通常自带几<span
+lang=EN-US>MB</span>的存储器，从自<span lang=EN-US>PCI</span>总线出现以后，更是如此。所以，必须将外设卡上的存储器映射到内存空间，实际上是虚存空间（<span
+lang=EN-US>3GB</span>以上）。在以前的<span lang=EN-US>Linux</span>内核版本中，这样的映射是通过<span
+lang=EN-US>vremap</span>（）建立的，现在改名为<span lang=EN-US>ioremap(),</span>以更确切地反映其真正的意图。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>5</span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>．<span lang=EN-US> I/O</span>事件的多路技术<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>select() </span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>和<span lang=EN-US> poll()</span>系统调用可以让一个进程同时处理多个文件描述符，也就是说可以使进程检测同时等待的多个<span
+lang=EN-US>I/O</span>设备，当没有设备准备好时，<span lang=EN-US>select()</span>阻塞，其中任<span
+class=GramE>一</span>设备准备好时，<span lang=EN-US>select()</span>就返回。在<span
+lang=EN-US>Linux2.0</span>中，驱动程序通过在<span lang=EN-US>file_operations</span>结构中提供<span
+lang=EN-US>select()</span>方法来支持这种技术，而在<span lang=EN-US>2.2</span>中，驱动程序必须提供的是<span
+lang=EN-US>poll()</span>方法，这种方法具有更大的灵活性。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>6</span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>．丢弃初始化函数和数据<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span style='font-family:
+宋体;mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>当内核初始化全部完成以后，就可以丢弃以后不再需要的函数和数据，这意味着存放这些函数和数据的内存可以重新得到使用。但这仅仅应用在编译进内核的驱动程序，而<span
+class=GramE>不</span>适合于可安装模块。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:20.4pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>定义一个以后要丢弃的变量的形式为：<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:20.4pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:21.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span class=GramE><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>static</span></span><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'> int mydata __initdata = 0;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:21.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:20.4pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>定义一个以后要丢弃的函数的形式为：<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:20.4pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>__<span class=GramE>initfunc(</span>void
+myfunc (void))<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>{<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:21.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>__initdata </span><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>和<span lang=EN-US>
+__initfunc</span>关键字把代码和数据放在一个特殊的“初始化”区段。较理想的做法应当是，尽可能地把更多的代码和数据放在初始化区段，当然，这里的代码和数据指的是初始化以后（当<span
+lang=EN-US>init</span>进程启动时）不再使用的。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>7</span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>．定时的设定<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>新增加了一些定时设定函数。<span lang=EN-US>2.0</span>设定<span
+class=GramE>定时是</span>这样的：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span style='mso-tab-count:
+1'>&nbsp;&nbsp;&nbsp; </span><span style='mso-spacerun:yes'>&nbsp; </span><span
+class=GramE>current</span>-&gt;timeout = jiffies + timeout;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span style='mso-tab-count:
+1'>&nbsp;&nbsp;&nbsp; </span><span style='mso-spacerun:yes'>&nbsp; </span><span
+class=GramE>schedule</span> ();<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>2.2</span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>是：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span style='mso-tab-count:
+1'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>timeout</span> =
+schedule_timeout (timeout);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>同理，如果你需要在一个等待队列上睡眠，但需要定时，<span lang=EN-US>2.0</span>操作是：<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span style='mso-tab-count:
+1'>&nbsp;&nbsp;&nbsp; </span><span style='mso-spacerun:yes'>&nbsp;</span><span
+class=GramE>current</span>-&gt;timeout = jiffies + timeout;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span style='mso-tab-count:
+1'>&nbsp;&nbsp;&nbsp; </span><span style='mso-spacerun:yes'>&nbsp;</span>interruptible_sleep_on
+(&amp;wait);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>2.2</span><span style='font-family:
+宋体;mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>是：<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span style='mso-tab-count:
+1'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>timeout</span> =
+interruptible_sleep_on_timeout (&amp;wait, timeout);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:20.4pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>注意，这些新函数返回的是剩余时间的多少。在某些情况下，这些函数在定时时间还没到就返回。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>8</span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>．向后兼容的宏<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>你可以把下面的代码包含进自己编写的代码中，这样就不必费神维护是为<span lang=EN-US>Linux2.2.x
+</span>还是为<span lang=EN-US> 2.0.x</span>所编译的驱动程序。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>#include
+&lt;linux/version.h&gt;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>#ifndef KERNEL_VERSION<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>#<span
+style='mso-spacerun:yes'>&nbsp; </span>define</span> KERNEL_VERSION(a,b,c)
+(((a) &lt;&lt; 16) + ((b) &lt;&lt; 8) + (c)<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>#endif<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>#if (LINUX_VERSION_CODE &lt;
+KERNEL_<span class=GramE>VERSION(</span>2,1,0))<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>#<span
+style='mso-spacerun:yes'>&nbsp; </span>include</span> &lt;linux/mm.h&gt;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>static</span>
+inline unsigned long copy_to_user (void *to, const void *from,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span style='mso-tab-count:
+5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp; </span><span class=GramE>unsigned</span> long
+n)<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>{<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class=GramE>if</span>
+( !verify_area (VERIFY_WRITE, to, n) ) return n;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;</span>memcpy_tofs (to, from,
+n);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span class=GramE>return</span> 0;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span class=GramE>static</span>
+inline unsigned long copy_from_user (void *to, const void *from,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span style='mso-tab-count:
+5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>unsigned</span>
+long n)<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>{<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+class=GramE>if</span> ( !verify_area (VERIFY_READ, from, n) ) return n;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>memcpy_fromfs
+(to, from, n);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+class=GramE>return</span> 0;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;</span><span class=GramE>#<span
+style='mso-spacerun:yes'>&nbsp; </span>define</span> __initdata<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>#<span
+style='mso-spacerun:yes'>&nbsp; </span>define</span> __initfunc(func) func<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>#else<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>#<span
+style='mso-spacerun:yes'>&nbsp; </span>include</span> &lt;asm/uaccess.h&gt;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>#endif<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>#ifndef signal_pending<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>#<span
+style='mso-spacerun:yes'>&nbsp; </span>define</span> signal_pending(p) (
+(p)-&gt;signal &amp; ~(p)-&gt;blocked )<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>#endif<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

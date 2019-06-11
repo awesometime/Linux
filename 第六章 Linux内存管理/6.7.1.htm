@@ -1,0 +1,398 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="6.7.1.files/filelist.xml">
+<title>Linux使用的缓存</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="chsdate" downloadurl=""/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>CLJ</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>CLJ</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:Created>2007-08-15T08:17:00Z</o:Created>
+  <o:LastSaved>2007-08-15T08:17:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>247</o:Words>
+  <o:Characters>1410</o:Characters>
+  <o:Lines>11</o:Lines>
+  <o:Paragraphs>3</o:Paragraphs>
+  <o:CharactersWithSpaces>1654</o:CharactersWithSpaces>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:PunctuationKerning/>
+  <w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	mso-font-kerning:1.0pt;}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:21.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:宋体;
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:15.6pt;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:1589071949;
+	mso-list-type:simple;
+	mso-list-template-ids:-1622660772;}
+@list l0:level1
+	{mso-level-text:%1．;
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;
+	mso-ansi-font-weight:bold;}
+@list l1
+	{mso-list-id:1628269784;
+	mso-list-type:simple;
+	mso-list-template-ids:-188437242;}
+@list l1:level1
+	{mso-level-start-at:4;
+	mso-level-text:%1;
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+</head>
+
+<body lang=ZH-CN style='tab-interval:21.0pt;text-justify-trim:punctuation'>
+
+<div class=Section1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none;vertical-align:middle'><st1:chsdate Year="1899"
+Month="12" Day="30" IsLunarDate="False" IsROCDate="False" w:st="on"><span
+ lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+ color:black;mso-font-kerning:0pt'>6.7.1</span></st1:chsdate><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'> Linux</span><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>使用的缓存<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>不管在硬件设计还是软件设计中，高速缓存是获得高性能的常用手段。<span lang=EN-US>Linux </span>使用了<span
+class=GramE>多种和</span>内存管理相关的高速缓存。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt;mso-outline-level:1;mso-list:l0 level1 lfo1;tab-stops:list 18.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";mso-bidi-font-family:宋体;color:black;
+mso-font-kerning:0pt'><span style='mso-list:Ignore'>1．<span style='font:7.0pt "Times New Roman"'>
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>缓冲区高速缓存</span></b><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:18.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>缓冲区高速缓存中包含了<span class=GramE>由块设备</span>使用的数据缓冲区。这些缓冲区中包含了从设备中读取的数据块或写入设备的数据块。缓冲区高速缓存由设备标识号和块标号索引，因此可以快速找出数据块。如果数据能够在缓冲区高速缓存中找到，则系统就没有必要在物理<span
+class=GramE>块设备</span>上进行实际的读操作。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:18.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";mso-font-kerning:0pt'>内核为每个缓冲区维护很多信息以有助于缓和写操作，这些信息包括一个“脏（<span
+lang=EN-US>dirty</span>）”位，表示内存中的缓冲区已被修改，必须写到磁盘；还包括一个时间标志，表示缓冲区被刷新到磁盘之前已经在内存中停留了多长时间。因为缓冲区的有关信息被保存在缓冲区首部，所以，这些数据结构连同用户数据本身的缓冲区都需要维护。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoBodyTextIndent style='margin-left:0cm;text-indent:18.0pt'>缓冲区高速缓存的大小可以变化。当需要新缓冲区而现在又没有可用的缓冲区时，就按需分配页面。当空闲内存变得不足时，例如上一节看到的情况，就释放缓冲区并反复使用相应的页面。</p>
+
+<p class=MsoNormal align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt;mso-outline-level:1;mso-list:l0 level1 lfo1;tab-stops:list 18.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";mso-bidi-font-family:宋体;color:black;
+mso-font-kerning:0pt'><span style='mso-list:Ignore'>2．<span style='font:7.0pt "Times New Roman"'>
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>页面高速缓存<span lang=EN-US><o:p></o:p></span></span></b></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:21.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";mso-font-kerning:0pt'>页面高速缓存是页面<span
+lang=EN-US>I/O</span>操作访问数据所使用的磁盘高速缓存。我们在文件系统会看到，<span lang=EN-US>read( )</span>、<span
+lang=EN-US>write( )</span>和<span lang=EN-US>mmap( )</span>系统调用对常规文件的访问都是通过页面高速缓存来完成的。因为页面<span
+lang=EN-US>I/O</span>操作要传输整页数据，因此高速缓存中所保留的信息单元是一个整页面。一个页面包含的数据未必是物理上相邻的磁盘块，因此就不能使用设备号<span
+class=GramE>和块号来</span>标识页面。相反，页面高速缓存中一个页面的标识是通过文件的索引节点和文件中的偏移量达到的。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:21.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";mso-font-kerning:0pt'>与页面高速缓存有关的操作主要有三种：当访问的文件部分不在高速缓存中时增加<span
+class=GramE>一</span>页面，当高速缓存变得太大时删除<span class=GramE>一</span>页面，以及查找一个给定文件偏移<span
+class=GramE>量所在</span>的页面。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:18.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-outline-level:1;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>3</span><b style='mso-bidi-font-weight:normal'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>．交换高速缓存</span></b><span lang=EN-US style='font-family:
+宋体;mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>只有修改后的（脏）页面才保存在交换文件中。修改后的页面写入交换文件后，如果该页面再次被交换但未被修改时，就没有必要写入交换文件，相反，只需丢弃该页面。交换高速缓存实际包含了一个页面表项链表，系统的每个物理页面对应一个页面表项。对交换出的页面，该页面表项包含保存该页面的交换文件信息，以及该页面在交换文件中的位置信息。如果某个交换页面表项非零，则表明保存在交换文件中的对应物理页面没有被修改。如果这一页面在后续的操作中被修改，则处于交换缓存中的页面表项被清零。<span
+lang=EN-US> Linux </span>需要从物理内存中交换出某个页面时，它首先分析交换缓存中的信息，如果缓存中包含该物理页面的<span
+class=GramE>一个非零页面表</span>项，则说明该页面交换出内存后还没有被修改过，这时，系统只需丢弃该页面。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>这里给出有关交换缓存的部分函数及功能：位于<span lang=EN-US>/
+linux/mm/swap_state.c </span>中。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>初始化交换缓冲，设定大小，位置的函数：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+class=GramE><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>extern</span></span><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'> unsigned long init_swap_cache(unsigned long, unsigned
+long);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>显示交换缓冲信息的函数：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+class=GramE><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>extern</span></span><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'> void show_swap_cache_info(void);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>加入交换缓冲的函数：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+class=GramE><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>int</span></span><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'> add_to_swap_cache(unsigned long index, unsigned long entry)<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>参数<span lang=EN-US>index</span>是进入缓冲区的索引（<span
+lang=EN-US>index</span>是索引表中的某一项），<span lang=EN-US>entry</span>是‘页面表项’（即此页面在交换文件中的位置记录，这个记录类似页面表项，参见交换机制）<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>复制被换出的页面：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+class=GramE><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>extern</span></span><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'> void swap_duplicate(unsigned long);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>当使用<span lang=EN-US>copy_page_tables()</span>调用，来实现子进程在<span
+lang=EN-US>fork()</span>时继承被换出的页面，可参阅交换机制一节。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-outline-level:1;mso-layout-grid-align:none;text-autospace:none;vertical-align:
+middle'><span style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>从缓冲区中移去某页面<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>delete_from_swap_<span class=GramE>cache(</span>page_nr);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt;mso-list:l1 level1 lfo2;tab-stops:list 18.0pt;mso-layout-grid-align:
+none;text-autospace:none;vertical-align:middle'><![if !supportLists]><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt'><span
+style='mso-list:Ignore'>4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>硬件高速缓存<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:18.0pt;
+mso-layout-grid-align:none;text-autospace:none;vertical-align:middle'><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>常见的硬件缓存是对页面表项的缓存，这一工作实际由处理器完成，其操作和具体的处理器硬件有关（但管理要由软件完成），对这一缓存接下来要进一步描述。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,2265 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="8.2.6.files/filelist.xml">
+<link rel=Edit-Time-Data href="8.2.6.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>有关操作的数据结构</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="chsdate" downloadurl=""/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>CLJ</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>CLJ</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:Created>2007-08-15T09:07:00Z</o:Created>
+  <o:LastSaved>2007-08-15T09:07:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1366</o:Words>
+  <o:Characters>7787</o:Characters>
+  <o:Lines>64</o:Lines>
+  <o:Paragraphs>18</o:Paragraphs>
+  <o:CharactersWithSpaces>9135</o:CharactersWithSpaces>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:PunctuationKerning/>
+  <w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	mso-font-kerning:1.0pt;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:宋体;
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:1.0pt;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:15.6pt;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="3074"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=ZH-CN style='tab-interval:21.0pt;text-justify-trim:punctuation'>
+
+<div class=Section1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><st1:chsdate Year="1899" Month="12" Day="30"
+IsLunarDate="False" IsROCDate="False" w:st="on"><b style='mso-bidi-font-weight:
+ normal'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+ color:black;mso-font-kerning:0pt'>8.2.6</span></b></st1:chsdate><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'> </span></b><b
+style='mso-bidi-font-weight:normal'><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>有关操作的数据结构<span lang=EN-US><o:p></o:p></span></span></b></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>VFS</span><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>毕竟是虚拟的，它无法涉及到具体文件系统的细节，所以必然在<span
+lang=EN-US>VFS</span>和具体文件系统之间有一些接口，这就是<span lang=EN-US>VFS</span>设计的一些有关操作的数据结构。这些数据结构就<span
+class=GramE>好象</span>是一个标准，具体文件系统要想被<span lang=EN-US>Linux</span>支持，就必须按这个标准来编写自己操作函数。实际上，也正是这样，各种<span
+lang=EN-US>Linux</span>支持的具体文件系统都有一套自己的操作函数，在安装时，这些结构体的成员指针将被初始化，指向对应的函数。如果说<span
+lang=EN-US>VFS</span>体现了<span lang=EN-US>Linux</span>的优越性的话，那么这些数据结构的设计就体现了<span
+lang=EN-US>VFS</span>的优越性所在。图<span lang=EN-US>8.5</span>是<span lang=EN-US>VFS</span>和具体文件系统的关系示意图。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>这个示意图还无法完全反映这种关系。因为对每个具体文件系统来说，<span
+lang=EN-US>VFS</span>都有相应的数据结构对应，而不是如图中那样简单化了。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=center style='text-align:center;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><!--[if gte vml 1]><o:wrapblock><v:shapetype
+  id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+  path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+  <v:stroke joinstyle="miter"/>
+  <v:formulas>
+   <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+   <v:f eqn="sum @0 1 0"/>
+   <v:f eqn="sum 0 0 @1"/>
+   <v:f eqn="prod @2 1 2"/>
+   <v:f eqn="prod @3 21600 pixelWidth"/>
+   <v:f eqn="prod @3 21600 pixelHeight"/>
+   <v:f eqn="sum @0 0 1"/>
+   <v:f eqn="prod @6 1 2"/>
+   <v:f eqn="prod @7 21600 pixelWidth"/>
+   <v:f eqn="sum @8 21600 0"/>
+   <v:f eqn="prod @7 21600 pixelHeight"/>
+   <v:f eqn="sum @10 21600 0"/>
+  </v:formulas>
+  <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+  <o:lock v:ext="edit" aspectratio="t"/>
+ </v:shapetype><v:shape id="_x0000_s1026" type="#_x0000_t75" style='position:absolute;
+  left:0;text-align:left;margin-left:0;margin-top:0;width:382.25pt;height:200.4pt;
+  z-index:1' o:allowincell="f">
+  <v:imagedata src="8.2.6.files/image001.png" o:title="图8－5VFS和实际文件系统的关系示意图"/>
+  <w:wrap type="topAndBottom"/>
+ </v:shape><![endif]--><![if !vml]><img width=510 height=267
+ src="8.2.6.files/image002.gif" v:shapes="_x0000_s1026"><![endif]><!--[if gte vml 1]></o:wrapblock><![endif]--><br
+style='mso-ignore:vglayout' clear=ALL>
+<span style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>图<span lang=EN-US>8.5<span
+style='mso-spacerun:yes'>&nbsp; </span>VFS</span>和具体文件系统的关系示意图<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>有关操作的数据结构主要有以下几个，分别用来操作<span
+lang=EN-US>VFS</span>中的几个重要的数据结构。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>1.</span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>超级块操作 <span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";
+mso-font-kerning:0pt'>超级块操作是由</span><span lang=EN-US style='mso-font-kerning:
+0pt'>super_operations</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman";mso-font-kerning:
+0pt'>数据结构来描述的，该结构的起始地址存放在超级块的</span><span lang=EN-US style='mso-font-kerning:
+0pt'>s_op</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-font-kerning:0pt'>域中。该结构定义于</span><span
+lang=EN-US style='mso-font-kerning:0pt'>fs.h</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";
+mso-font-kerning:0pt'>中：</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>/*<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>* NOTE: write_inode,
+delete_inode, clear_inode, put_inode can be called<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>* <span class=GramE>without</span>
+the big kernel lock held in all filesystems.<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>*/<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span class=GramE><span lang=EN-US style='font-family:
+宋体;mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>struct</span></span><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'> super_operations {<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>void</span> (*read_inode) (struct inode *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>void</span> (*read_inode2) (struct inode *, void *) ;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>void</span> (*dirty_inode) (struct inode *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>void</span> (*write_inode) (struct inode *, int);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>void</span> (*put_inode) (struct inode *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>void</span> (*delete_inode) (struct inode *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>void</span> (*put_super) (struct super_block *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>void</span> (*write_super) (struct super_block *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>void</span> (*write_super_lockfs) (struct super_block *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>void</span> (*unlockfs) (struct super_block *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*statfs) (struct super_block *, struct statfs *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*remount_fs) (struct super_block *, int *, char *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>void</span> (*clear_inode) (struct inode *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>void</span> (*umount_begin) (struct super_block *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>｝<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>其中的每个函数就叫做超级块的一个方法，表<span lang=EN-US>8.3</span>给予描述：<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;tab-stops:52.5pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp; </span></span><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>表<span
+lang=EN-US>8.3 </span>超级<span class=GramE>块对象</span>的方法及其描述<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp; </span><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0cm 5.4pt 0cm 5.4pt;mso-border-insideh:.5pt solid windowtext;
+ mso-border-insidev:.5pt solid windowtext'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=230 valign=top style='width:138.0pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:20.4pt;
+  mso-layout-grid-align:none;text-autospace:none'><span style='font-family:
+  宋体;mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>函数形式<span
+  lang=EN-US><o:p></o:p></span></span></p>
+  </td>
+  <td width=468 valign=top style='width:281.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-hansi-font-family:
+  "Times New Roman";color:black;mso-font-kerning:0pt'>描述<span lang=EN-US><o:p></o:p></span></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=230 valign=top style='width:138.0pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>Read_inode(inode)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=468 valign=top style='width:281.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+  "Times New Roman";color:black;mso-font-kerning:0pt'><span
+  style='mso-spacerun:yes'>&nbsp;</span></span><span lang=EN-US>Inode</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>的地址是该函数的参数，</span><span lang=EN-US>inode</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>中的</span><span lang=EN-US>i_no</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>域表示从磁盘要读取的具体文件系统的</span><span lang=EN-US>inode</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>，</span><span style='font-family:宋体;mso-hansi-font-family:
+  "Times New Roman";color:black;mso-font-kerning:0pt'>用磁盘上的数据填充参数</span><span
+  lang=EN-US>inode</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>的域。</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=230 valign=top style='width:138.0pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>Dirty_inode(inode)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=468 valign=top style='width:281.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-hansi-font-family:
+  "Times New Roman";color:black;mso-font-kerning:0pt'>把</span><span lang=EN-US>inode</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>标记为“脏”</span><span lang=EN-US style='font-family:宋体;
+  mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=230 valign=top style='width:138.0pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>Write_inode(inode)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=468 valign=top style='width:281.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainText>用参数指定的<span lang=EN-US>inode</span>更新某个文件系统的<span
+  lang=EN-US>inode</span>。<span lang=EN-US>inode</span>的<span lang=EN-US>i_ino</span>域标识指定磁盘上文件系统的索引节点。<span
+  lang=EN-US style='color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=230 valign=top style='width:138.0pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>Put_inode(inode)<span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span></span><span lang=EN-US
+  style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+  mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=468 valign=top style='width:281.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainText>释放参数指定的索引节点对象。释放一个对象并不意味着释放内存，因为其它进程可能仍然在使用这个对象。该方法是可选的（即并非所有的文件系统都有相应的处理函数）<span
+  lang=EN-US style='color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td width=230 valign=top style='width:138.0pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>Delete_inode(inode)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=468 valign=top style='width:281.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>删除那些包含文件、磁盘索引节点及</span><span
+  lang=EN-US>VFS</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>索引节点的数据块</span><span lang=EN-US
+  style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+  mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td width=230 valign=top style='width:138.0pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>Notify_change(dentry, iattr)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=468 valign=top style='width:281.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>依照参数</span><span
+  lang=EN-US>iattr</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>的<span
+  class=GramE>值修改</span>索引节点的一些属性。如果没有定义该函数，</span><span lang=EN-US>VFS</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>转去执行</span><span lang=EN-US>write_inode(<span
+  style='mso-spacerun:yes'>&nbsp; </span>) </span><span style='font-family:
+  宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>方法。</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7'>
+  <td width=230 valign=top style='width:138.0pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>Put_super(super)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=468 valign=top style='width:281.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>释放超级<span
+  class=GramE>块对象</span></span><span lang=EN-US style='font-family:宋体;
+  mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8'>
+  <td width=230 valign=top style='width:138.0pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>Write_super(super)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=468 valign=top style='width:281.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>将超级块的信息写回磁盘，该方法是可选的</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9'>
+  <td width=230 valign=top style='width:138.0pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>Statfs(super, buf, bufsize)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=468 valign=top style='width:281.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>将文件系统的统计信息填写在</span><span
+  lang=EN-US>buf</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>缓冲区中。</span><span lang=EN-US
+  style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+  mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10'>
+  <td width=230 valign=top style='width:138.0pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainText><span lang=EN-US>Remount_fs(super, flags, data) </span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+  "Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=468 valign=top style='width:281.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>用新的选项重新安装文件系统（当某个安装选项必须被修改时进行调用）</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:11'>
+  <td width=230 valign=top style='width:138.0pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>Clear_inode(inode)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=468 valign=top style='width:281.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>与</span><span
+  lang=EN-US>put_inode</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>类似，但同时也把索引节点对应文件中的数据占用的所有页释放</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:12;mso-yfti-lastrow:yes'>
+  <td width=230 valign=top style='width:138.0pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainText><span lang=EN-US>Umount_begin(super) </span></p>
+  <p class=MsoPlainText style='text-indent:21.25pt'><span lang=EN-US
+  style='color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=468 valign=top style='width:281.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainText>中断一个安装操作（只在网络文件系统中使用）。<span lang=EN-US
+  style='color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp; </span></span><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>上面这些方法对所有的文件系统都是适用的，但对于一个具体的文件系统来说，可能只用到其中的几个方法。如果那些方法没有定义，则对应的域为空。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>2</span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>．索引节点操作<span lang=EN-US>inode_operations <o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>索引节点操作是由<span
+lang=EN-US>inode_operations</span>结构来描述的，主要是用来将<span lang=EN-US>VFS</span>对索引节点的操作转化为具体文件系统处理相应操作的函数，在<span
+lang=EN-US>fs.h</span>中描述如下：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span class=GramE><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>struct</span></span><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'> inode_operations {<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*create) (struct inode *,struct dentry *,int);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>struct</span> dentry * (*lookup) (struct inode *,struct dentry *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*link) (struct dentry *,struct inode *,struct dentry
+*);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*unlink) (struct inode *,struct dentry *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*symlink) (struct inode *,struct dentry *,const char
+*);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*mkdir) (struct inode *,struct dentry *,int);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*rmdir) (struct inode *,struct dentry *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*mknod) (struct inode *,struct dentry *,int,int);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*rename) (struct inode *, struct dentry *,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>struct</span> inode *, struct dentry *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*readlink) (struct dentry *, char *,int);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*follow_link) (struct dentry *, struct nameidata *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>void</span> (*truncate) (struct inode *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*permission) (struct inode *, int);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*revalidate) (struct dentry *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*setattr) (struct dentry *, struct iattr *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*getattr) (struct dentry *, struct iattr *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>};<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>表<span
+lang=EN-US>8.4</span>对索引节点的每个方法给予描述：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>表<span
+lang=EN-US>8.4 </span>索引节点对象的方法及其描述<span lang=EN-US><o:p></o:p></span></span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0cm 5.4pt 0cm 5.4pt;mso-border-insideh:.5pt solid windowtext;
+ mso-border-insidev:.5pt solid windowtext'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=239 valign=top style='width:143.1pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-hansi-font-family:
+  "Times New Roman";color:black;mso-font-kerning:0pt'>函数形式<span lang=EN-US><o:p></o:p></span></span></p>
+  </td>
+  <td width=460 valign=top style='width:275.9pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-hansi-font-family:
+  "Times New Roman";color:black;mso-font-kerning:0pt'>描述<span lang=EN-US><o:p></o:p></span></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=239 valign=top style='width:143.1pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainText><span lang=EN-US>Create(dir, dentry, mode) </span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+  "Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=460 valign=top style='width:275.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>在某个目录下，为与</span><span
+  lang=EN-US>dentry</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>目录<span
+  class=GramE>项相关</span>的常规文件创建一个新的磁盘索引节点。</span><span lang=EN-US
+  style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+  mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=239 valign=top style='width:143.1pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>Lookup(dir, dentry)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=460 valign=top style='width:275.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainText>查找索引节点所在的目录，这个索引节点所对应的文件名就包含在<span lang=EN-US>dentry</span>目录项中。<span
+  lang=EN-US style='color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=239 valign=top style='width:143.1pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>Link(old_dentry, dir, new_dentry)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=460 valign=top style='width:275.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>创建一个新的名为</span><span
+  lang=EN-US>new_dentry</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>硬链接，这个新的硬连接指向</span><span
+  lang=EN-US>dir</span><span class=GramE><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>目录下名为</span></span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>的</span><span lang=EN-US>old_dentry</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>文件。</span><span lang=EN-US style='font-family:宋体;
+  mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=239 valign=top style='width:143.1pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>unlink(dir, dentry)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=460 valign=top style='width:275.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>从</span><span
+  lang=EN-US>dir</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>目录删除</span><span lang=EN-US>dentry</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>目录项所指文件的硬链接</span><span lang=EN-US style='font-family:
+  宋体;mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td width=239 valign=top style='width:143.1pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>symlink(dir, dentry, symname)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=460 valign=top style='width:275.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>在某个目录下，为与目录<span
+  class=GramE>项相关</span>的符号<span class=GramE>链创建</span>一个新的索引节点</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td width=239 valign=top style='width:143.1pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>mkdir(dir, dentry, mode)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=460 valign=top style='width:275.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainText>在某个目录下，为与目录项对应的目录创建一个新的索引节点。<span lang=EN-US
+  style='color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7'>
+  <td width=239 valign=top style='width:143.1pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>mknod(dir, dentry, mode, rdev)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=460 valign=top style='width:275.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>在</span><span
+  lang=EN-US>dir</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>目录下，为与目录<span class=GramE>项对象</span>相关的特殊文件创建一个新的磁盘索引节点。其中参数</span><span
+  lang=EN-US>mode </span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>和</span><span
+  lang=EN-US> rdev</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>分别表示文件的类型和该设备的主码。</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8'>
+  <td width=239 valign=top style='width:143.1pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>rename(old_dir, old_dentry,
+  new_dir, new_dentry)</span><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+  "Times New Roman";color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=460 valign=top style='width:275.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>将</span><span
+  lang=EN-US>old_dir</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>目录下的文件</span><span
+  lang=EN-US> old_dentry</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>移到</span><span
+  lang=EN-US>new_dir</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>目录下，新文件名包含在</span><span
+  lang=EN-US> new_dentry</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>指向的目录项中</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9'>
+  <td width=239 valign=top style='width:143.1pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>readlink(dentry, buffer, buflen)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=460 valign=top style='width:275.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainText>将<span lang=EN-US>dentry</span>所指定的符号链中对应的文件路径名拷贝到<span
+  lang=EN-US>buffer</span>所指定的内存区。<span lang=EN-US style='color:black;
+  mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10'>
+  <td width=239 valign=top style='width:143.1pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>follow_link(inode, dir)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=460 valign=top style='width:275.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>解释</span><span
+  lang=EN-US>inode</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>索引节点所指定的符号链；如果该符号链是相对路径名，从指定的</span><span
+  lang=EN-US>dir</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>目录开始进行查找。</span><span lang=EN-US
+  style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+  mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:11'>
+  <td width=239 valign=top style='width:143.1pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>truncate(inode)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=460 valign=top style='width:275.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>修改索引节点</span><span
+  lang=EN-US>inode</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>所指文件的长度。在调用该方法之前，必须将</span><span
+  lang=EN-US>inode</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>对象的</span><span
+  lang=EN-US>i_size</span><span class=GramE><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>域设置</span></span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>为需要的新长度值。</span><span lang=EN-US style='font-family:宋体;
+  mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:12'>
+  <td width=239 valign=top style='width:143.1pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>permission(inode, mask)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=460 valign=top style='width:275.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainText>确认是否允许对<span lang=EN-US>inode</span>索引节点所指的文件进行指定模式的访问。<span
+  lang=EN-US style='color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:13'>
+  <td width=239 valign=top style='width:143.1pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>revalidate(dentry)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=460 valign=top style='width:275.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>更新由目录项所指定文件的已缓存的属性（通常由网络文件系统调用）</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:14'>
+  <td width=239 valign=top style='width:143.1pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+  "Times New Roman";color:black;mso-font-kerning:0pt'>Setattr</span><span
+  style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+  mso-font-kerning:0pt'>（</span><span lang=EN-US>dentry</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>，</span><span lang=EN-US>attr</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>）</span><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+  "Times New Roman";color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=460 valign=top style='width:275.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-hansi-font-family:
+  "Times New Roman";color:black;mso-font-kerning:0pt'>设置目录项的属性<span lang=EN-US><o:p></o:p></span></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:15;mso-yfti-lastrow:yes'>
+  <td width=239 valign=top style='width:143.1pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+  "Times New Roman";color:black;mso-font-kerning:0pt'>Getattr</span><span
+  style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+  mso-font-kerning:0pt'>（</span><span lang=EN-US>dentry</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>，</span><span lang=EN-US>attr</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>）</span><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+  "Times New Roman";color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=460 valign=top style='width:275.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainText><span style='color:black;mso-font-kerning:0pt'>获得目录项的属性<span
+  lang=EN-US><o:p></o:p></span></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;</span><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span style='font-family:
+宋体;mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>以上这些方法均适用于所有的文件系统<span
+lang=EN-US>,</span>但对某一个具体文件系统来说<span lang=EN-US>,</span>可能只用到其中的一部分方。例如，<span
+lang=EN-US>msdos</span>文件系统其公用索引节点的操作在<span lang=EN-US>fs/msdos/namei.c</span>中定义如下：<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>struct</span>
+inode_operations msdos_dir_inode_operations = {<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>create</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>msdos_create,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>lookup</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>msdos_lookup,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>unlink</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>msdos_unlink,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>mkdir</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>msdos_mkdir,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>rmdir</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>msdos_rmdir,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>rename</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>msdos_rename,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>setattr</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>fat_notify_change,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>};<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>3</span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>．目录项操作<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp; </span></span><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>目录<span
+class=GramE>项操作</span>是由<span lang=EN-US>dentry_operations</span>数据结构来描述的，定义于<span
+lang=EN-US>include/linux/dcache.h</span>中：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span class=GramE><span lang=EN-US style='font-family:
+宋体;mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>struct</span></span><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'> dentry_operations {<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*d_revalidate)(struct dentry *, int);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*d_hash) (struct dentry *, struct qstr *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*d_compare) (struct dentry *, struct qstr *, struct
+qstr *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*d_delete)(struct dentry *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>void</span> (*d_release)(struct dentry *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>void</span> (*d_iput)(struct dentry *, struct inode *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>};<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>下表给出目录<span class=GramE>项对象</span>的方法及其描述：<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>表<span lang=EN-US>8.5 </span>目录<span
+class=GramE>项对象</span>的方法及其描述<span lang=EN-US><o:p></o:p></span></span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0cm 5.4pt 0cm 5.4pt;mso-border-insideh:.5pt solid windowtext;
+ mso-border-insidev:.5pt solid windowtext'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=213 valign=top style='width:127.8pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+  "Times New Roman";color:black;mso-font-kerning:0pt'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+  style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+  mso-font-kerning:0pt'>函数形成<span lang=EN-US><o:p></o:p></span></span></p>
+  </td>
+  <td width=485 valign=top style='width:291.2pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-hansi-font-family:
+  "Times New Roman";color:black;mso-font-kerning:0pt'>描述<span lang=EN-US><o:p></o:p></span></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=213 valign=top style='width:127.8pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>d_revalidate(dentry)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=485 valign=top style='width:291.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainText style='margin-left:21.25pt'><span style='color:black;
+  mso-font-kerning:0pt'>判定目录项是否有效。</span>默认情况下，<span lang=EN-US>VFS</span>函数什么也不做，而网络文件系统可以指定自己的函数。</p>
+  <p class=MsoPlainText style='margin-left:21.25pt'><span lang=EN-US
+  style='color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=213 valign=top style='width:127.8pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>d_hash(dentry, hash)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=485 valign=top style='width:291.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>生成一个哈希值；对目录项哈希表而言，这是一个具体文件系统的哈希函数。参数</span><span
+  lang=EN-US>dentry</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>标识包含该路径分量的目录。参数</span><span
+  lang=EN-US>hash</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>指向一个结构，该结构包含要查找的路径名分量以及由</span><span
+  lang=EN-US>hash</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>函数生成的哈希值。</span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+  "Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=213 valign=top style='width:127.8pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>d_compare(dir, name1, name2)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=485 valign=top style='width:291.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainText>比较两个文件名；<span lang=EN-US>name1</span>应该属于<span
+  lang=EN-US>dir</span>所指目录。默认情况下，<span lang=EN-US>VFS</span>的这个函数就是常用的字符串匹配函数。不过，每个文件系统可用自己的方式实现这一方法。例如，<span
+  lang=EN-US>MS-DOS</span>文件系统不区分大写和小写字母。</p>
+  <p class=MsoPlainText><span lang=EN-US style='color:black;mso-font-kerning:
+  0pt'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=213 valign=top style='width:127.8pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>d_delete(dentry)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=485 valign=top style='width:291.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>如果对目录项的最后一个引用被删除（</span><span
+  lang=EN-US>d_count</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>变为“</span><span
+  lang=EN-US>0</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>”），就调用该方法。默认情况下，</span><span
+  lang=EN-US>VFS</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>的这个函数什么也不做。</span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+  "Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td width=213 valign=top style='width:127.8pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>d_release(dentry)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=485 valign=top style='width:291.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainText>当要释放一个目录项时（放入<span lang=EN-US>slab</span>分配器），就调用该方法。默认情况下，<span
+  lang=EN-US>VFS</span>的这个函数什么也不做。</p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+  "Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;mso-yfti-lastrow:yes'>
+  <td width=213 valign=top style='width:127.8pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>d_iput(dentry, ino)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=485 valign=top style='width:291.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainText>当要丢弃目录项对应的索引节点时，就调用该方法。默认情况下，<span lang=EN-US>VFS</span>的这个函数调用<span
+  lang=EN-US>iput</span>（ ）释放索引节点。</p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+  "Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>4</span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>．文件操作<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>文件操作是由<span
+lang=EN-US>file_operations</span>结构来描述的。其定义在<span lang=EN-US>fs.h</span>中：<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp; </span>/*<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span class=GramE><span lang=EN-US style='font-family:
+宋体;mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>813<span
+style='mso-spacerun:yes'>&nbsp; </span>*</span></span><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'> NOTE:<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span class=GramE><span lang=EN-US style='font-family:
+宋体;mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>814<span
+style='mso-spacerun:yes'>&nbsp; </span>*</span></span><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'> read, write, poll, fsync, readv, writev can be called<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span class=GramE><span lang=EN-US style='font-family:
+宋体;mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>815<span
+style='mso-spacerun:yes'>&nbsp; </span>*</span></span><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span>without the big kernel lock held in all filesystems.<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp; </span>*/<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;</span><span class=GramE>struct</span>
+file_operations {<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>struct</span> module *owner;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>loff_t (*llseek)
+(struct file *, loff_t, int);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>ssize_t (*read)
+(struct file *, char *, size_t, loff_t *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>ssize_t (*write)
+(struct file *, const char *, size_t, loff_t *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*readdir) (struct file *, void *, filldir_t);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>unsigned</span> int (*poll) (struct file *, struct
+poll_table_struct *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*ioctl) (struct inode *, struct file *, unsigned int,
+unsigned long);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*mmap) (struct file *, struct vm_area_struct *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*open) (struct inode *, struct file *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*flush) (struct file *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*release) (struct inode *, struct file *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*fsync) (struct file *, struct dentry *, int datasync);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*fasync) (int, struct file *, int);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*lock) (struct file *, int, struct file_lock *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>ssize_t (*readv) (struct
+file *, const struct iovec *, unsigned long, loff_t *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>ssize_t (*writev) (struct
+file *, const struct iovec *, unsigned long, loff_t *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>ssize_t (*sendpage) (struct
+file *, struct page *, int, size_t, loff_t *, int);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>unsigned</span>
+long (*get_unmapped_area)(struct file *, unsigned long, unsigned long,<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>unsigned long,
+unsigned long);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>};<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span style='font-family:
+宋体;mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>这个数据结构就是连接<span
+lang=EN-US>VFS</span>文件操作与具体文件系统的文件操作之间的枢纽，也是编写设备驱动程序的重要接口，后面还会给出进一步的说明。对每个函数的描述如表<span
+lang=EN-US>8.6</span>：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>表<span lang=EN-US>8.6 </span>文件操作的描述<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0cm 5.4pt 0cm 5.4pt;mso-border-insideh:.5pt solid windowtext;
+ mso-border-insidev:.5pt solid windowtext'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=222 valign=top style='width:132.9pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-hansi-font-family:
+  "Times New Roman";color:black;mso-font-kerning:0pt'>函数形式<span lang=EN-US><o:p></o:p></span></span></p>
+  </td>
+  <td width=477 valign=top style='width:286.1pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-hansi-font-family:
+  "Times New Roman";color:black;mso-font-kerning:0pt'>描述<span lang=EN-US><o:p></o:p></span></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=222 valign=top style='width:132.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+  "Times New Roman";color:black;mso-font-kerning:0pt'>Owner</span><span
+  style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+  mso-font-kerning:0pt'>（）<span lang=EN-US><o:p></o:p></span></span></p>
+  </td>
+  <td width=477 valign=top style='width:286.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+  "Times New Roman";color:black;mso-font-kerning:0pt'><span
+  style='mso-spacerun:yes'>&nbsp;</span></span><span style='font-family:宋体;
+  mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>指向模块的指针。只有驱动程序才把<span
+  class=GramE>这个域置为</span><span lang=EN-US>THIS_MODULE</span>，文件系统一般忽略这个域。<span
+  lang=EN-US><o:p></o:p></span></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=222 valign=top style='width:132.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>llseek(file, offset, whence)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=477 valign=top style='width:286.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>修改文件指针</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=222 valign=top style='width:132.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>read(file, buf, count, offset)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=477 valign=top style='width:286.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>从文件的</span><span
+  lang=EN-US> offset</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>处开始读出</span><span
+  lang=EN-US>count</span><span class=GramE><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>个</span></span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>字节，然后增加</span><span lang=EN-US>*offset</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>的值</span><span lang=EN-US style='font-family:宋体;
+  mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=222 valign=top style='width:132.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>write(file, buf, count, offset)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=477 valign=top style='width:286.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>从文件的</span><span
+  lang=EN-US>*offset</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>处开始写入</span><span
+  lang=EN-US>count</span><span class=GramE><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>个</span></span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>字节，然后增加</span><span lang=EN-US>*offset</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>的值</span><span lang=EN-US style='font-family:宋体;
+  mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td width=222 valign=top style='width:132.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>readdir(dir, dirent, filldir)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=477 valign=top style='width:286.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>返回</span><span
+  lang=EN-US>dir</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>所指目录的下一个目录项，这个值存入参数</span><span
+  lang=EN-US>dirent</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>；参数</span><span
+  lang=EN-US>filldir</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>存放一个辅助函数的地址，该函数可以提取目录项的各个域</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td width=222 valign=top style='width:132.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>poll(file, poll_table)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=477 valign=top style='width:286.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>检查是否存在关于某文件的操作事件，如果没有则睡眠，直到发生该类操作事件为止</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7'>
+  <td width=222 valign=top style='width:132.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>ioctl(inode, file, cmd, arg)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=477 valign=top style='width:286.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>向一个基本硬件设备发送命令。该方法只适用于设备文件。</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8'>
+  <td width=222 valign=top style='width:132.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>mmap(file, vma)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=477 valign=top style='width:286.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>执行文件的内存映射，并将这个映射放入进程的地址空间</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9'>
+  <td width=222 valign=top style='width:132.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>open(inode, file)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=477 valign=top style='width:286.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>通过创建一个新的文件而打开一个文件，并把它链接到相应的索引节点</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10'>
+  <td width=222 valign=top style='width:132.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>flush(file)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=477 valign=top style='width:286.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>当关闭对一个打开文件的引用时，就调用该方法。也就是说，减少该文件对象</span><span
+  lang=EN-US>f_count</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>域的值。该方法的实际用途是依赖于具体文件系统的。</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:11'>
+  <td width=222 valign=top style='width:132.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>release(inode, file)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=477 valign=top style='width:286.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>释放文件对象。当关闭对打开文件的最后一个引用时，也就是说，该文件对象</span><span
+  lang=EN-US>f_count</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>域的值变为</span><span
+  lang=EN-US>0</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>时，调用该方法。</span><span lang=EN-US
+  style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+  mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:12'>
+  <td width=222 valign=top style='width:132.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>fsync(file, dentry)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=477 valign=top style='width:286.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>将</span><span
+  lang=EN-US>file</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>文件在高速缓存中的全部数据写入磁盘</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:13'>
+  <td width=222 valign=top style='width:132.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>fasync(file, on)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=477 valign=top style='width:286.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>通过信号来启用或禁用异步</span><span
+  lang=EN-US>I/O</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>通告</span><span lang=EN-US
+  style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+  mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:14'>
+  <td width=222 valign=top style='width:132.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>check_media_change(dev)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=477 valign=top style='width:286.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainText style='margin-left:21.25pt'><span class=GramE>检测自</span>上次对设备文件操作以来是否存在介质的改变（可以对<span
+  class=GramE>块设备</span>使用这一方法，因为它支持可移动介质<span lang=EN-US style='font-family:
+  "Courier New";mso-ascii-font-family:宋体;mso-bidi-font-family:"Times New Roman"'>——</span>比如软盘和<span
+  lang=EN-US>CD-ROM</span>）。</p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+  "Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:15'>
+  <td width=222 valign=top style='width:132.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>revalidate(dev)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=477 valign=top style='width:286.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>恢复设备的一致性（由网络文件系统使用，这是在确认某个远程设备上的介质已被改变之后才使用。</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:16'>
+  <td width=222 valign=top style='width:132.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>lock(file, cmd, file_lock)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=477 valign=top style='width:286.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>对</span><span
+  lang=EN-US>file</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>文件申请一个锁</span><span lang=EN-US
+  style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+  mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:17'>
+  <td width=222 valign=top style='width:132.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>readv(file, iovec, count, offset)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=477 valign=top style='width:286.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-hansi-font-family:
+  "Times New Roman";color:black;mso-font-kerning:0pt'>与<span lang=EN-US>read()</span>类似，所不同的是，<span
+  lang=EN-US>readv</span>（）把读入的数据放在多个缓冲区中（叫缓冲区向量）。<span lang=EN-US><o:p></o:p></span></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:18;mso-yfti-lastrow:yes'>
+  <td width=222 valign=top style='width:132.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US>Writev(file, buf, iovec, offset)</span><span
+  lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+  color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=477 valign=top style='width:286.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span style='font-family:宋体;mso-hansi-font-family:
+  "Times New Roman";color:black;mso-font-kerning:0pt'>与<span lang=EN-US>write()</span>类似。所不同的是，<span
+  lang=EN-US>writev()</span>把数据写入多个缓冲区中（叫缓冲区向量）<span lang=EN-US><o:p></o:p></span></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:36.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>VFS</span><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>中定义的这个<span lang=EN-US>file_operations</span>数据结构相当于一个标准模板，对于一个具体的文件系统来说，可能只用到其中的一些函数。注意，<span
+lang=EN-US>2.2</span>和<span lang=EN-US>2.4</span>版在对<span lang=EN-US>file_operations</span>进行初始化时有所不同，在<span
+lang=EN-US>2.2</span>版中，如果某个函数没有定义，则将其置为<span lang=EN-US>NULL</span>，如：<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:36.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span class=GramE><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>struct</span></span><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'> file_operations device_fops = {<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:36.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-tab-count:1'> </span>NULL,<span
+style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/*
+seek */<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:36.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-tab-count:1'> </span>device_read,<span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/* read */<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:36.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-tab-count:1'> </span>device_write,<span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/* write */<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:36.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-tab-count:1'> </span>NULL,<span
+style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/*
+readdir */<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:36.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-tab-count:1'> </span>NULL,<span
+style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/*
+poll */<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:36.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-tab-count:1'> </span>NULL,<span
+style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/*
+ioctl */<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:36.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-tab-count:1'> </span>NULL,<span
+style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/*
+mmap */<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:36.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-tab-count:1'> </span>device_open,<span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/* open */<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:36.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-tab-count:1'> </span>NULL,<span
+style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/*
+flush */<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:36.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-tab-count:1'> </span>device_release<span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp; </span>/* release */<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:36.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>};<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp; </span></span><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>这是标准<span
+lang=EN-US>C</span>的用法，在<span lang=EN-US>2.4</span>版中，采用了<span lang=EN-US>gcc</span>的扩展用法，如：<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span><span class=GramE>struct</span> file_operations
+device_fops = {<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span style='mso-tab-count:
+1'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>read :</span> device_read,<span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp; </span>/* read */<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span style='mso-tab-count:
+1'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>write :</span> device_write,<span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/* write */<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span style='mso-tab-count:
+1'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>open :</span> device_open,<span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp; </span>/* open */<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span style='mso-tab-count:
+1'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>release :</span> device_release<span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span>/* release */<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>};<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>这种方式显然简单明了，在设备驱动程序的开发中，经常会用到这种形式。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

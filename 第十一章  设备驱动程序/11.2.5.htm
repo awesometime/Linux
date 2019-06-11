@@ -1,0 +1,522 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="11.2.5.files/filelist.xml">
+<link rel=Edit-Time-Data href="11.2.5.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>中断处理</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="chsdate" downloadurl=""/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>CLJ</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>CLJ</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>2</o:TotalTime>
+  <o:Created>2007-08-17T03:54:00Z</o:Created>
+  <o:LastSaved>2007-08-17T03:54:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>433</o:Words>
+  <o:Characters>2472</o:Characters>
+  <o:Lines>20</o:Lines>
+  <o:Paragraphs>5</o:Paragraphs>
+  <o:CharactersWithSpaces>2900</o:CharactersWithSpaces>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:PunctuationKerning/>
+  <w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:宋体;
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	mso-font-kerning:1.0pt;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:15.6pt;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=ZH-CN style='tab-interval:21.0pt;text-justify-trim:punctuation'>
+
+<div class=Section1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal style='tab-stops:list 42.5pt'><st1:chsdate Year="1899"
+Month="12" Day="30" IsLunarDate="False" IsROCDate="False" w:st="on"><span
+ lang=EN-US>11.2.5</span></st1:chsdate><span lang=EN-US> </span>中断处理</p>
+
+<p class=MsoNormal style='tab-stops:list 42.5pt'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span style='font-size:
+10.5pt;mso-bidi-font-size:10.0pt;font-weight:normal'>设备一般都比<span lang=EN-US>CPU</span>慢得多。因此一般情况下，当一个进程通过设备驱动程序<span
+class=GramE>向设备</span>发出读写请求后，<span lang=EN-US>CPU</span>并不等待<span lang=EN-US>I/O</span>操作的完成，而是让正在执行的进程去睡眠，<span
+lang=EN-US>CPU</span>自己<span class=GramE>做别</span>的事情，例如唤醒另一个进程执行。当设备完成<span
+lang=EN-US>I/O</span>操作需要通知<span lang=EN-US>CPU</span>时，会向<span lang=EN-US>CPU</span>发出一个中断请求；然后<span
+lang=EN-US>CPU</span>根据中断请求来决定调用相应的设备驱动程序。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>当设备执行某个命令时，如“将读取磁头移动到软盘的第<span lang=EN-US>42</span>扇区上”，设备驱动程序可以从查询方式和中断方式中选择一种来判断设备是否已经完成此命令。<span
+lang=EN-US> <o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>查询方式意味着需要经常读取设备的状态，一直到设备状态表明请求已经完成为止。如果设备驱动程序被连接进内核，这时使用查询方式将会带来灾难性后果：内核将在此过程中无所事事，直到设备完成目前的请求。有一种方法可以有效的改善这一弊端，就是通过使用系统定时器，使内核周期性调用设备驱动程序中的某个例程来检查设备状态。
+使用定时器是查询方式中最好的一种，但更有效的方法是使用中断。<span lang=EN-US> <o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='tab-stops:list 42.5pt'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-weight:normal'>基于中断的设备驱动程序，指的是在硬件设备需要服务时向<span
+lang=EN-US> CPU </span>发一个中断信号，引发中断服务子程序执行 。这样就大大地提高了系统资源的利用率，使内核不必一直等到设备执行<span
+class=GramE>完任务</span>后才开始有事可干，而是在设备工作期间内核就可以转去处理其它的事务，收到中断请求信号时再回头响应设备。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'>1. Linux </span><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;font-weight:normal'>对中断的管理<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>Linux </span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-weight:normal'>内核为了将来自硬件设备的中断传递到相应的设备驱动程序，在驱动程序初始化的时候就将其对应的中断程序进行了登记，即通过调用函数<span
+lang=EN-US> request_irq (<span style='mso-spacerun:yes'>&nbsp; </span>) </span>将其中断信息添加到结构为<span
+lang=EN-US>irqaction</span>的数组中，从而使中断号和中断服务程序联系起来。请参见第四章。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-weight:normal'>request_irq
+(<span style='mso-spacerun:yes'>&nbsp; </span>)</span><span style='font-size:
+10.5pt;mso-bidi-font-size:10.0pt;font-weight:normal'>函数原形如下<span lang=EN-US>:<o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-weight:normal'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span>int request_irq(unsigned int irq,<span style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/*<span
+style='mso-spacerun:yes'>&nbsp; </span></span><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;font-weight:normal'>中断请求号<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span>*/<o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>void
+(*handler)(int, void *, struct pt_regs *),<span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>/*<span
+style='mso-spacerun:yes'>&nbsp; </span></span><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;font-weight:normal'>指向中断服务子程序<span lang=EN-US> */<o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>unsigned
+long irqflags,<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/*<span
+style='mso-spacerun:yes'>&nbsp; </span></span><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;font-weight:normal'>中断类型<span lang=EN-US> */<o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;</span>const char * devname,<span
+style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/*<span
+style='mso-spacerun:yes'>&nbsp; </span></span><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;font-weight:normal'>设备的名字<span lang=EN-US> */<o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;</span>void *dev_id)</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-weight:normal'>；<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>另外，<span lang=EN-US>irqaction</span>的数据结构如下，其图示如图<span
+lang=EN-US>11.5</span>。<span lang=EN-US><span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>struct</span> irqaction {<span style='mso-tab-count:
+1'> </span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>void</span>
+(*handler)(int, void *, struct pt_regs *);<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span style='mso-tab-count:
+1'>&nbsp;&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>unsigned</span>
+long flags;<span style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>unsigned</span>
+long mask;<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>const</span>
+char *name;<span style='mso-tab-count:1'>&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>void</span>
+*dev_id;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span><span class=GramE>struct</span>
+irqaction *next;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span>};<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:42.0pt;text-indent:21.0pt'><span
+class=GramE><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>static</span></span><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;font-weight:normal'> struct irqaction
+*irq_action[NR_IRQS+1] <o:p></o:p></span></p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shapetype id="_x0000_t75" coordsize="21600,21600"
+ o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f"
+ stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1026" type="#_x0000_t75" style='position:absolute;
+ left:0;text-align:left;margin-left:90pt;margin-top:10pt;width:408.15pt;
+ height:291.65pt;z-index:1'>
+ <v:imagedata src="11.2.5.files/image001.png" o:title="'b5"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:1;left:0px;margin-left:120px;margin-top:14px;width:544px;
+height:389px'><img width=544 height=389 src="11.2.5.files/image002.gif" v:shapes="_x0000_s1026"></span><![endif]><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='mso-spacerun:yes'>&nbsp;</span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:252.0pt;text-indent:21.0pt'><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;</span></span><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;font-weight:normal'>图<span lang=EN-US>11.5 irqaction</span>的数据结构<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;</span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-weight:normal'>根据设备的中断号可以在数组<span
+lang=EN-US> irq_action </span>检索到设备的中断信息。对中断资源的请求在驱动程序初始化时就已经完成。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>在传统的<span lang=EN-US> PC </span>体系结构中 ，有些中断已经被固定下来。软盘设备正是这种情况，它的中断号总为<span
+lang=EN-US>6</span>。有时设备驱动程序可能不知道设备使用的中断号，对<span lang=EN-US>PCI</span>设备来说这不是什么大问题，它们总是可以通过设备配置头知道其中断号。但对于<span
+lang=EN-US>ISA</span>设备则没有取得中断号的方便方式，<span lang=EN-US>Linux</span>通过让设备驱动程序检测它们的中断号来解决这个问题。<span
+lang=EN-US> <o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>让我们来看一下对<span lang=EN-US>ISA</span>设备中断号的检测过程。设备驱动程序首先迫使<span
+lang=EN-US> ISA </span>设备引起一个中断，系统中所有未被分配的中断都被打开。此时设备引发的中断可以通过可编程中断控制器来发送出去，在它接受到<span
+lang=EN-US> CPU </span>的响应信号以后将中断号放置在数据线上，<span lang=EN-US>Linux </span>读取此数据并将其内容返回给设备驱动程序。非<span
+lang=EN-US> 0 </span>结果则表示在此次检测中有中断发生，设备驱动程序然后将关闭检测并将所有未分配中断屏蔽掉， 这样<span
+lang=EN-US>ISA</span>设备驱动程序就成功的找到了设备的<span lang=EN-US>IRQ</span>号。<span
+lang=EN-US> <o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>基于<span lang=EN-US>PCI</span>系统比基于<span lang=EN-US>ISA</span>系统有更多的动态性。<span
+lang=EN-US>ISA</span>设备使用的中断引脚通常是通过硬件设备上的跳线来设置的。而每个<span lang=EN-US> PCI </span>设备都对应一个配置头，<span
+lang=EN-US> PCI</span>设备在系统启动与初始化<span lang=EN-US>PCI</span>时由<span lang=EN-US>PCI
+BIOS </span>或<span lang=EN-US> PCI</span>子系统来分配中断，将其放入配置头中，故而驱动程序可以方便的获得<span
+lang=EN-US>PCI</span>设备使用的中断号。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>系统中可能存在许多<span lang=EN-US>PCI</span>中断源，比如在使用<span
+lang=EN-US>PCI-PCI</span>桥接器时。这些中断源的个数可能将超出系统可编程中断控制器的引脚数。此时<span lang=EN-US>PCI</span>设备必须共享中断号，中断控制器上的一个引脚可能被多个<span
+lang=EN-US>PCI</span>设备同时使用。<span lang=EN-US>Linux</span>让中断的第一个请求者<span
+class=GramE>申明此</span>中断是否可以共享，中断的共享将导致<span lang=EN-US> irq_action </span>数组中的一个入口同时指向几个<span
+lang=EN-US>irqaction</span>数据结构，如图<span lang=EN-US>11.5</span>所示。当共享中断发生时<span
+lang=EN-US>Linux</span>将调用对应此中断源的所有中断处理过程。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'>2. Linux<span style='mso-spacerun:yes'>&nbsp;
+</span></span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>对中断的处理<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span>Linux</span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>中断处理子系统的一个基本任务是将中断正确联系到中断处理代码中的正确位置。这些代码必须了解系统的中断拓扑结构。例如在中断控制器上引脚<span
+lang=EN-US>6</span>上发生的软盘控制器中断必须被辨认出的确来自软盘并同系统的软盘设备驱动的中断服务子程序联系起来。<span
+lang=EN-US> <o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>中断发生时，<span lang=EN-US> Linux </span>首先读取系统可编程中断控制器中中断状态寄存器，判断出中断源，将其转换成<span
+lang=EN-US>irq_action </span>数组中偏移值（例如来自软盘控制器引脚<span lang=EN-US>6</span>的中断将被转换成对应于<span
+lang=EN-US>irq_action</span>数组中的第<span lang=EN-US>7</span>个指针），然后调用其相应的中断处理程序。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>当<span lang=EN-US> Linux </span>内核调用设备驱动程序的中断服务子程序时，必须找出中断产生的原因以及相应的解决办法，这是通过读取设备上的状态寄存器的内容来完成的。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>下面我们结合输入<span lang=EN-US>/</span>输出系统的层次结构来看一下中断在驱动程序工作的过程中的作用：<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>（<span lang=EN-US>1</span>）用户发出某种输入<span lang=EN-US>/</span>输出请求<span
+lang=EN-US>;<o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>（<span lang=EN-US>2</span>）调用驱动程序的<span lang=EN-US> read() </span>函数或<span
+lang=EN-US> request()<span style='mso-spacerun:yes'>&nbsp; </span></span>函数，将完成的输入<span
+lang=EN-US>/</span>输出的指令送给设备控制器，现在设备驱动程序等待操作的发生。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>（<span lang=EN-US>3</span>）<span class=GramE>一</span>小段时间以后，硬设备准备好完成指令的操作，并产生中断信号标志事件的发生。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>（<span lang=EN-US>4</span>）中断信号导致调用驱动程序的中断服务子程序，它将所要的数据从硬设备复制到设备驱动程序的缓冲区中，并通知正在等待的<span
+lang=EN-US>read() </span>函数和<span lang=EN-US>request()</span>函数，现在数据可供使用。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>（<span lang=EN-US>5</span>）在数据可供使用时，<span lang=EN-US>read()</span>或<span
+lang=EN-US>request()</span>函数现在可将数据提供给用户进程。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>上述过程是经过了简化了的，但却反映了中断的主要过程的主要方面。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

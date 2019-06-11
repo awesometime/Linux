@@ -1,0 +1,372 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="10.3.1.files/filelist.xml">
+<title>实现机制</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="chsdate" downloadurl=""/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>CLJ</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>CLJ</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:Created>2007-08-17T03:37:00Z</o:Created>
+  <o:LastSaved>2007-08-17T03:37:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>211</o:Words>
+  <o:Characters>1207</o:Characters>
+  <o:Lines>10</o:Lines>
+  <o:Paragraphs>2</o:Paragraphs>
+  <o:CharactersWithSpaces>1416</o:CharactersWithSpaces>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:PunctuationKerning/>
+  <w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	mso-font-kerning:1.0pt;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:15.6pt;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:1236281190;
+	mso-list-type:simple;
+	mso-list-template-ids:1492303052;}
+@list l0:level1
+	{mso-level-text:（%1）;
+	mso-level-tab-stop:51.6pt;
+	mso-level-number-position:left;
+	margin-left:51.6pt;
+	text-indent:-36.0pt;}
+@list l1
+	{mso-list-id:1700162400;
+	mso-list-type:simple;
+	mso-list-template-ids:442665504;}
+@list l1:level1
+	{mso-level-text:（%1）;
+	mso-level-tab-stop:46.2pt;
+	mso-level-number-position:left;
+	margin-left:46.2pt;
+	text-indent:-36.0pt;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+</head>
+
+<body lang=ZH-CN style='tab-interval:21.0pt;text-justify-trim:punctuation'>
+
+<div class=Section1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><st1:chsdate Year="1899" Month="12" Day="30"
+IsLunarDate="False" IsROCDate="False" w:st="on"><span lang=EN-US
+ style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+ mso-font-kerning:0pt'>10.3.1</span></st1:chsdate><span style='font-family:
+宋体;mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>实现机制<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp; </span></span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>有两种装入模块的方法，第一种是用<span lang=EN-US>insmod</span>命令人工把模块插入到内核，第二种是一种更灵活的方法，当需要时装入模块，这就是所谓的请求装入。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp; </span></span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>当内核发现需要一个模块时，例如，用户安装一个不在内核的文件系统时，内核将请求内核守护进程<span
+lang=EN-US>(kerneld)</span>装入一个合适的模块。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp;</span></span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>内核守护进程（<span lang=EN-US>kerneld</span>）是一个标准的用户进程，但它具有超级用户权限。<span
+lang=EN-US>Kerneld</span>通常是在系统启动时就开始执行，它打开<span lang=EN-US>IPC</span>（<span
+lang=EN-US>Inter-Process Communication</span>）到内核的通道，内核通过给<span lang=EN-US>kerneld</span>发送消息请求执行各种任务。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>Kerneld</span><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>的主要功能是装入和卸载内核模块，但它也具有承担其它任务的能力，例如，<span
+class=GramE>当必要</span>时，通过串行链路启动<span lang=EN-US>PPP</span>链路，不需要时，则关闭它。<span
+lang=EN-US>Kerneld</span>并不执行这些任务，它通过运行诸如<span lang=EN-US>insmod</span>这样的程序来做这些工作，<span
+lang=EN-US>kerneld</span>仅仅是内核的一个代理。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>insmod </span><span style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'>实用程序必须找到请求装入的内核模块，请求装入的内核模块通常保存在<span
+lang=EN-US>/lib/modules/kernel-version/</span>目录下。内核模块被连接成目标文件，与系统中其它程序不同的是，这种目标文件是可重定位的<span
+lang=EN-US>(</span>它们是<span lang=EN-US>a.out</span>或<span lang=EN-US>elf</span>格式的目标文件<span
+lang=EN-US>)</span>。<span lang=EN-US>insmods</span>实用程序位于／<span lang=EN-US>sbin</span>目录下，该程序执行以下操作：<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='margin-left:46.2pt;text-indent:-36.0pt;mso-list:l1 level1 lfo1;
+tab-stops:list 46.2pt'><![if !supportLists]><span lang=EN-US style='mso-bidi-font-family:
+宋体'><span style='mso-list:Ignore'>（1）<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>从命令行中读取要装入的模块名。</span></p>
+
+<p class=MsoNormal style='margin-left:46.2pt;text-indent:-36.0pt;mso-list:l1 level1 lfo1;
+tab-stops:list 46.2pt'><![if !supportLists]><span lang=EN-US style='mso-bidi-font-family:
+宋体'><span style='mso-list:Ignore'>（2）<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>确定模块代码所在的文件在系统目录树中的位置，即</span><span
+lang=EN-US>/lib/modules</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>／</span><span
+lang=EN-US style='font-family:宋体;mso-hansi-font-family:"Times New Roman";
+color:black;mso-font-kerning:0pt'>kernel-version/</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>目录。</span></p>
+
+<p class=MsoNormal style='margin-left:42.25pt;text-indent:-36.0pt;mso-list:
+l1 level1 lfo1;tab-stops:list 46.2pt'><![if !supportLists]><span lang=EN-US
+style='mso-bidi-font-family:宋体'><span style='mso-list:Ignore'>（3）<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>计算存放模块代码、模块名和</span><span
+lang=EN-US>module</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>结构所需要的内存区大小。调用</span><span lang=EN-US>create_module(
+)</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>系统调用，向它传递新模块的模块名和大小。</span></p>
+
+<p class=MsoNormal style='margin-left:42.25pt;text-indent:-36.0pt;mso-list:
+l1 level1 lfo1;tab-stops:list 46.2pt'><![if !supportLists]><span lang=EN-US
+style='mso-bidi-font-family:宋体'><span style='mso-list:Ignore'>（4）<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>用</span><span
+lang=EN-US>QM_MODULES</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>子命令反复调用</span><span
+lang=EN-US>query_module( )</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>系统调用来获得所有已安装模块的模块名。</span></p>
+
+<p class=MsoNormal style='margin-left:42.25pt;text-indent:-36.0pt;mso-list:
+l1 level1 lfo1;tab-stops:list 46.2pt'><![if !supportLists]><span lang=EN-US
+style='mso-bidi-font-family:宋体'><span style='mso-list:Ignore'>（5）<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>用</span><span
+lang=EN-US>QM_SYMBOL</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>子命令反复调用</span><span
+lang=EN-US>query_module( )</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>系统调用来获得内核符号表和所有已经安装到内核的模块的符号表。</span></p>
+
+<p class=MsoNormal style='margin-left:42.25pt;text-indent:-36.0pt;mso-list:
+l1 level1 lfo1;tab-stops:list 46.2pt'><![if !supportLists]><span lang=EN-US
+style='mso-bidi-font-family:宋体'><span style='mso-list:Ignore'>（6）<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>使用内核符号表、模块符号表以及</span><span
+lang=EN-US>create_module( )</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>系统调用所返回的地址重新定位该模块文件中所包含的文件的代码。这就意味着用相应的逻辑地址偏移量来替换所有出现的外部符号和全局符号。</span></p>
+
+<p class=MsoNormal style='margin-left:42.25pt;text-indent:-36.0pt;mso-list:
+l1 level1 lfo1;tab-stops:list 46.2pt'><![if !supportLists]><span lang=EN-US
+style='mso-bidi-font-family:宋体'><span style='mso-list:Ignore'>（7）<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>在用户态地址空间中分配一个内存区，并把</span><span
+lang=EN-US>module</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>结构、模块名以及为正在运行的内核所重定位的模块代码的一个拷贝装载到这个内存区中。如果该模块定义了</span><span
+lang=EN-US>init_module( )</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>函数，那么</span><span
+lang=EN-US>module</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>结构的</span><span lang=EN-US>init</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>域就被设置成该模块的</span><span lang=EN-US>init_module( )</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>函数重新分配的地址。同理，如果模块定义了</span><span lang=EN-US>cleanup_module(
+)</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>函数，那么</span><span lang=EN-US>cleanup</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>域就被设置成模块的</span><span lang=EN-US>cleanup_module( )</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>函数所重新分配的地址。</span></p>
+
+<p class=MsoNormal style='margin-left:42.25pt;text-indent:-36.0pt;mso-list:
+l1 level1 lfo1;tab-stops:list 46.2pt'><![if !supportLists]><span lang=EN-US
+style='mso-bidi-font-family:宋体'><span style='mso-list:Ignore'>（8）<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>调用</span><span
+lang=EN-US>init_module( )</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>系统调用，向它传递上一步中所创建的用户态的内存区地址。</span></p>
+
+<p class=MsoNormal style='margin-left:42.25pt;text-indent:-36.0pt;mso-list:
+l1 level1 lfo1;tab-stops:list 46.2pt'><![if !supportLists]><span lang=EN-US
+style='mso-bidi-font-family:宋体'><span style='mso-list:Ignore'>（9）<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>释放用户态内存区并结束。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为了取消模块的安装，用户需要调用</span><span
+lang=EN-US>/sbin/rmmod</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>实用程序，它执行以下操作：</span></p>
+
+<p class=MsoNormal style='margin-left:51.6pt;text-indent:-36.0pt;mso-list:l0 level1 lfo2;
+tab-stops:list 42.25pt 51.6pt'><![if !supportLists]><span lang=EN-US
+style='mso-bidi-font-family:宋体'><span style='mso-list:Ignore'>（1）<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>从命令行中读取要卸载<span class=GramE>的模块的模块</span>名。</span></p>
+
+<p class=MsoNormal style='margin-left:51.6pt;text-indent:-36.0pt;mso-list:l0 level1 lfo2;
+tab-stops:list 42.25pt 51.6pt'><![if !supportLists]><span lang=EN-US
+style='mso-bidi-font-family:宋体'><span style='mso-list:Ignore'>（2）<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>使用</span><span lang=EN-US>QM_MODULES</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>子命令调用</span><span lang=EN-US>query_module( )</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>系统调用来取得已经安装的模块的链表。</span></p>
+
+<p class=MsoNormal style='margin-left:51.6pt;text-indent:-36.0pt;mso-list:l0 level1 lfo2;
+tab-stops:list 42.25pt 51.6pt'><![if !supportLists]><span lang=EN-US
+style='mso-bidi-font-family:宋体'><span style='mso-list:Ignore'>（3）<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>使用</span><span lang=EN-US>QM_REFS</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>子命令多次调用</span><span lang=EN-US>query_module( )</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>系统调用来检索已安装的模块间的依赖关系。如果<span class=GramE>一个要且在</span>的模块上面还安装有某一模块，就结束。</span></p>
+
+<p class=MsoNormal style='margin-left:51.6pt;text-indent:-36.0pt;mso-list:l0 level1 lfo2;
+tab-stops:list 42.25pt 51.6pt'><![if !supportLists]><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";mso-bidi-font-family:
+宋体;color:black;mso-font-kerning:0pt'><span style='mso-list:Ignore'>（4）<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>调用</span><span lang=EN-US>delete_module( )</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>系统调用，向其传递模块名。</span><span lang=EN-US style='font-family:
+宋体;mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

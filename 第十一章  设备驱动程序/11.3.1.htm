@@ -1,0 +1,870 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="11.3.1.files/filelist.xml">
+<link rel=Edit-Time-Data href="11.3.1.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title> 块设备驱动程序的注册</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="chsdate" downloadurl=""/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>CLJ</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>CLJ</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:Created>2007-08-17T03:57:00Z</o:Created>
+  <o:LastSaved>2007-08-17T03:57:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>563</o:Words>
+  <o:Characters>3212</o:Characters>
+  <o:Lines>26</o:Lines>
+  <o:Paragraphs>7</o:Paragraphs>
+  <o:CharactersWithSpaces>3768</o:CharactersWithSpaces>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:PunctuationKerning/>
+  <w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:宋体;
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	mso-font-kerning:1.0pt;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:15.6pt;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=ZH-CN style='tab-interval:21.0pt;text-justify-trim:punctuation'>
+
+<div class=Section1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal align=left style='text-align:left;mso-outline-level:1;
+mso-layout-grid-align:none;text-autospace:none'><st1:chsdate Year="1899"
+Month="12" Day="30" IsLunarDate="False" IsROCDate="False" w:st="on"><span
+ lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:
+ 0pt;font-weight:normal'>11.3.1</span></st1:chsdate><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'> </span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;mso-font-kerning:0pt;font-weight:normal'>块设备驱动程序的注册<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;font-weight:normal'>对于<span
+class=GramE>块设备</span>来说，驱动程序的注册不仅在其初始化的时候进行而且在编译的时候也要进行注册。在初始化时通过<span
+lang=EN-US> register_blkdev( ) </span>函数将相应的<span class=GramE>块设备</span>添加到数组<span
+lang=EN-US> blkdevs </span>中，该数组在<span lang=EN-US>fs/block_dev.c</span>中定义如下：<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span class=GramE><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:
+0pt;font-weight:normal'>static</span></span><span lang=EN-US style='font-size:
+10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;font-weight:normal'>
+struct {<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>const</span> char *name;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>struct</span> block_device_operations *bdops;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'>} <span class=GramE>blkdevs[</span>MAX_BLKDEV];<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;mso-font-kerning:0pt;font-weight:normal'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:19.8pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;font-weight:normal'>从<span
+lang=EN-US>Linux2.4</span>开始，<span class=GramE>块设备表</span>的定义与下一节要介绍的字符设备表的定义有所不同。因为每种具体的<span
+class=GramE>块设备</span>都有一套具体的操作，因而各自有一个类似于<span lang=EN-US>file_operations</span>那样的数据结构，称为<span
+lang=EN-US>block_device_operations</span>结构，其定义为：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:19.8pt;
+mso-layout-grid-align:none;text-autospace:none'><span class=GramE><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:
+0pt;font-weight:normal'>struct</span></span><span lang=EN-US style='font-size:
+10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;font-weight:normal'>
+block_device_operations {<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:19.8pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*open) (struct inode *, struct file *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:19.8pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*release) (struct inode *, struct file *);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:19.8pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*ioctl) (struct inode *, struct file *, unsigned,
+unsigned long);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:19.8pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*check_media_change) (kdev_t);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:19.8pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> (*revalidate) (kdev_t);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:19.8pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>struct</span> module *owner;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:19.8pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'>};<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:19.8pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;font-weight:normal'>如果说<span
+lang=EN-US>file_operation</span>结构是连接虚拟的<span lang=EN-US>VFS</span>文件的操作与具体文件系统的文件操作之间的枢纽，那么<span
+lang=EN-US>block_device_operations</span>就是连接抽象的<span class=GramE>块设备</span>操作与具体<span
+class=GramE>块设备</span>操作之间的枢纽。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:19.8pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;font-weight:normal'>具体的<span
+class=GramE>块设备</span>是由主设备<span class=GramE>号唯一</span>确定的，因此，主设备<span
+class=GramE>号唯一</span>地确定了一个具体的<span lang=EN-US>block_device_operations</span>数据结构。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;font-weight:normal'>下面我们来看<span
+lang=EN-US> register_blkdev</span>（ ）函数的具体实现，其代码在<span lang=EN-US>fs/block_dev.c</span>中：<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='margin-left:24.35pt;text-align:left;
+mso-layout-grid-align:none;text-autospace:none'><span class=GramE><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:
+0pt;font-weight:normal'>int</span></span><span lang=EN-US style='font-size:
+10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;font-weight:normal'>
+register_blkdev(unsigned int major, const char * name, struct
+block_device_operations *bdops)<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'>{<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>if</span> (major == 0) {<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>for</span> (major = MAX_BLKDEV-1; major &gt; 0;
+major--) {<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>if</span> (blkdevs[major].bdops == NULL) {<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>blkdevs[</span>major].name = name;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>blkdevs[</span>major].bdops = bdops;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>return</span> major;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;</span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>return</span> -EBUSY;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>if</span> (major &gt;= MAX_BLKDEV)<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>return</span> -EINVAL;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>if</span> (blkdevs[major].bdops &amp;&amp; blkdevs[major].bdops !=
+bdops)<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>return</span> -EBUSY;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>blkdevs[</span>major].name = name;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>blkdevs[</span>major].bdops = bdops;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>return</span> 0;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'>}<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;font-weight:normal'>这个函数的第一个参数是主设备号，第二个参数是设备名称的字符串，第三项参数是指向具体设备操作的指针。如果一切顺利则返回<span
+lang=EN-US>0</span>，否则返回负值。如果指定的主设备号为<span lang=EN-US>0</span>，此函数将会搜索空闲的<span
+class=GramE>主设备号分配给</span>该设备驱动程序并将其作为返回值。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;font-weight:normal'>那么，<span
+class=GramE>块设备</span>注册到系统以后，怎样与文件系统联系起来呢，也就是说，文件系统怎么调用已注册的块设备，这还得从<span
+lang=EN-US>file_operations</span>结构说起。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;font-weight:normal'>我们先来看一下<span
+class=GramE>块设备</span>的<span lang=EN-US>file_operations</span>结构的定义，其位于<span
+lang=EN-US>fs/block_dev.c</span>中：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span class=GramE><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:
+0pt;font-weight:normal'>struct</span></span><span lang=EN-US style='font-size:
+10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;font-weight:normal'>
+file_operations def_blk_fops = {<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>open</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>blkdev_open,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>release</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>blkdev_close,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>llseek</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>block_llseek,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>read</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>generic_file_read,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+class=GramE>write</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>generic_file_write,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>mmap</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>generic_file_mmap,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>fsync</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>block_fsync,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>ioctl</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>blkdev_ioctl,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'>};<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;font-weight:normal'>下面我们以<span
+lang=EN-US>open()</span>系统调用为例，说明用户进程中的一个系统调用如何最终与物理<span class=GramE>块设备</span>的操作联系起来。在此，我们仅仅给出几个<span
+lang=EN-US>open</span>（）函数的调用关系，如图<span lang=EN-US>11.6</span>所示。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><!--[if gte vml 1]><v:group
+ id="_x0000_s1026" style='position:absolute;left:0;text-align:left;
+ margin-left:116.6pt;margin-top:8pt;width:211.2pt;height:136pt;z-index:1'
+ coordorigin="3190,3036" coordsize="4224,2720" o:allowincell="f">
+ <v:line id="_x0000_s1027" style='position:absolute' from="3190,3174" to="3190,3538">
+  <v:stroke endarrow="block"/>
+ </v:line><v:line id="_x0000_s1028" style='position:absolute' from="3190,4586"
+  to="3190,4950">
+  <v:stroke endarrow="block"/>
+ </v:line><v:line id="_x0000_s1029" style='position:absolute' from="3190,5270"
+  to="3190,5634">
+  <v:stroke endarrow="block"/>
+ </v:line><v:line id="_x0000_s1030" style='position:absolute' from="3490,3036"
+  to="4290,3036"/>
+ <v:shapetype id="_x0000_t88" coordsize="21600,21600" o:spt="88" adj="1800,10800"
+  path="m,qx10800@0l10800@2qy21600@11,10800@3l10800@1qy,21600e" filled="f">
+  <v:formulas>
+   <v:f eqn="val #0"/>
+   <v:f eqn="sum 21600 0 #0"/>
+   <v:f eqn="sum #1 0 #0"/>
+   <v:f eqn="sum #1 #0 0"/>
+   <v:f eqn="prod #0 9598 32768"/>
+   <v:f eqn="sum 21600 0 @4"/>
+   <v:f eqn="sum 21600 0 #1"/>
+   <v:f eqn="min #1 @6"/>
+   <v:f eqn="prod @7 1 2"/>
+   <v:f eqn="prod #0 2 1"/>
+   <v:f eqn="sum 21600 0 @9"/>
+   <v:f eqn="val #1"/>
+  </v:formulas>
+  <v:path arrowok="t" o:connecttype="custom" o:connectlocs="0,0;21600,@11;0,21600"
+   textboxrect="0,@4,7637,@5"/>
+  <v:handles>
+   <v:h position="center,#0" yrange="0,@8"/>
+   <v:h position="bottomRight,#1" yrange="@9,@10"/>
+  </v:handles>
+ </v:shapetype><v:shape id="_x0000_s1031" type="#_x0000_t88" style='position:absolute;
+  left:4090;top:3720;width:200;height:1456'/>
+ <v:shapetype id="_x0000_t202" coordsize="21600,21600" o:spt="202" path="m,l,21600r21600,l21600,xe">
+  <v:stroke joinstyle="miter"/>
+  <v:path gradientshapeok="t" o:connecttype="rect"/>
+ </v:shapetype><v:shape id="_x0000_s1032" type="#_x0000_t202" style='position:absolute;
+  left:4290;top:4222;width:3124;height:546' stroked="f">
+  <v:textbox style='mso-next-textbox:#_x0000_s1032'>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+     font-weight:normal'>位于<span lang=EN-US>/fs/open.c</span>中<span lang=EN-US><o:p></o:p></span></span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:line id="_x0000_s1033" style='position:absolute' from="3720,5756"
+  to="4420,5756"/>
+ <v:line id="_x0000_s1034" style='position:absolute' from="3190,3902" to="3190,4266">
+  <v:stroke endarrow="block"/>
+ </v:line></v:group><![endif]--><![if !vml]><span style='mso-ignore:vglayout;
+position:absolute;z-index:1;left:0px;margin-left:149px;margin-top:10px;
+width:290px;height:183px'><img width=290 height=183
+src="11.3.1.files/image001.gif" v:shapes="_x0000_s1026 _x0000_s1027 _x0000_s1028 _x0000_s1029 _x0000_s1030 _x0000_s1031 _x0000_s1032 _x0000_s1033 _x0000_s1034"></span><![endif]><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:
+0pt;font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>open()<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;</span></span><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;font-weight:normal'>位于用户程序中<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span>sys_<span class=GramE>open()</span><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span>filp_<span class=GramE>open()</span><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span>dentry_<span class=GramE>open()</span><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;mso-font-kerning:0pt;font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;mso-font-kerning:0pt;font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span>blkdev_open()<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;</span></span><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;font-weight:normal'>位于<span
+lang=EN-US>fs/block_dev.c</span>中<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;mso-font-kerning:0pt;font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;mso-font-kerning:0pt;font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+mso-font-kerning:0pt;font-weight:normal'>图<span lang=EN-US>11.6 </span>几个<span
+lang=EN-US>open()</span>函数的调用关系<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;font-weight:normal'>如图所示，当调用<span
+lang=EN-US>open</span>（）系统调用时，其最终会调用到<span lang=EN-US>def_blk_fops </span>的<span
+lang=EN-US>blkdev_open</span>（）函数。<span lang=EN-US>blkdev_open</span>（）函数的任务就是根据主设备号找到对应的<span
+lang=EN-US>block_device_operations</span>结构，然后再调用<span lang=EN-US>block_device_operations</span>结构中的函数指针<span
+lang=EN-US>open</span>所指向的函数，如果<span lang=EN-US>open</span>所指向的函数非空，就调用该函数打开最终的物理块设备。这就简单地说明了<span
+class=GramE>块设备</span>注册以后，从最上层的系统调用到具体的打开一个设备的过程。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;font-weight:normal'>另外要说明的是<span
+lang=EN-US>,</span>如果选择了通过设备文件系统<span lang=EN-US>Devfs</span>进行注册<span
+lang=EN-US>,</span>则调用<span lang=EN-US>devfs_register_blkdev()</span>函数<span
+lang=EN-US>,</span>该函数的说明及代码在<span lang=EN-US>fs/devfs/base.c</span>中定义如下<span
+lang=EN-US>:<o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'>/**<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-left:36.0pt;text-align:left;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'>*<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>devfs_register_blkdev - Optionally register a conventional block driver.<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span style='mso-spacerun:yes'>&nbsp; </span><span
+class=GramE>*<span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>@major: The major number for the driver.</span><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span style='mso-spacerun:yes'>&nbsp; </span><span
+class=GramE>*<span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>@name: The name of the driver (as seen in /proc/devices).</span><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span style='mso-spacerun:yes'>&nbsp; </span>*<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>@bdops: <span
+class=GramE>The &amp;</span>block_device_operations structure pointer.<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span style='mso-spacerun:yes'>&nbsp; </span>*<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span style='mso-spacerun:yes'>&nbsp; </span>*<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>This function
+will register a block driver provided the &quot;devfs=only&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span style='mso-spacerun:yes'>&nbsp; </span>*<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>option</span> was not provided at boot time.<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span style='mso-spacerun:yes'>&nbsp; </span>*<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Returns 0 on
+success, else a negative error code on failure.<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span>*/<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span class=GramE><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:
+0pt;font-weight:normal'>int</span></span><span lang=EN-US style='font-size:
+10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;font-weight:normal'>
+devfs_register_blkdev (unsigned int major, const char *name,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>struct</span> block_device_operations *bdops)<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'>{<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>if</span> (boot_options &amp; OPTION_ONLY) return 0;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>return</span> register_blkdev (major, name, bdops);<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.35pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-font-kerning:0pt;
+font-weight:normal'>}<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span>/<span
+class=GramE>*<span style='mso-spacerun:yes'>&nbsp; </span>End</span> Function
+devfs_register_blkdev<span style='mso-spacerun:yes'>&nbsp; </span>*/<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

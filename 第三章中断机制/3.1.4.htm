@@ -1,0 +1,496 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="3.1.4.files/filelist.xml">
+<link rel=Edit-Time-Data href="3.1.4.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>中断描述符表</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="chsdate" downloadurl=""/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>CLJ</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>ls</o:LastAuthor>
+  <o:Revision>3</o:Revision>
+  <o:TotalTime>1</o:TotalTime>
+  <o:Created>2007-08-18T07:53:00Z</o:Created>
+  <o:LastSaved>2009-05-05T05:40:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>158</o:Words>
+  <o:Characters>901</o:Characters>
+  <o:Lines>7</o:Lines>
+  <o:Paragraphs>2</o:Paragraphs>
+  <o:CharactersWithSpaces>1057</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:PunctuationKerning/>
+  <w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	mso-font-kerning:5.0pt;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:宋体;
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	mso-font-kerning:1.0pt;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:15.6pt;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:611324149;
+	mso-list-type:simple;
+	mso-list-template-ids:1937021516;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:·;
+	mso-level-tab-stop:21.25pt;
+	mso-level-number-position:left;
+	margin-left:21.25pt;
+	text-indent:-21.25pt;
+	font-family:宋体;
+	mso-hansi-font-family:Wingdings;}
+@list l1
+	{mso-list-id:1528331526;
+	mso-list-type:simple;
+	mso-list-template-ids:1937021516;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:·;
+	mso-level-tab-stop:21.25pt;
+	mso-level-number-position:left;
+	margin-left:21.25pt;
+	text-indent:-21.25pt;
+	font-family:宋体;
+	mso-hansi-font-family:Wingdings;}
+@list l2
+	{mso-list-id:2106808084;
+	mso-list-type:simple;
+	mso-list-template-ids:1937021516;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:·;
+	mso-level-tab-stop:21.25pt;
+	mso-level-number-position:left;
+	margin-left:21.25pt;
+	text-indent:-21.25pt;
+	font-family:宋体;
+	mso-hansi-font-family:Wingdings;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="4098"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=ZH-CN style='tab-interval:21.0pt;text-justify-trim:punctuation'>
+
+<div class=Section1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal><st1:chsdate Year="1899" Month="12" Day="30"
+IsLunarDate="False" IsROCDate="False" w:st="on"><b style='mso-bidi-font-weight:
+ normal'><span lang=EN-US>3.1.4</span></b></st1:chsdate><b style='mso-bidi-font-weight:
+normal'><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>中断描述符表</span><span lang=EN-US><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>在实地址模式中，</span><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>CPU</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>把内存中从</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>0</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>开始的</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>1K</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>字节作为一个中断向量表。表中的每个表项占四个字节，由两个字节的段地址和两个字节的偏移量组成，这样构成的地址便是相应中断处理程序的入口地址。但是，在保护模式下，由四字节的表项构成的中断向量表显然满足不了要求。这是因为，</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:Wingdings;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";
+mso-char-type:symbol;mso-symbol-font-family:Wingdings'><span style='mso-char-type:
+symbol;mso-symbol-font-family:Wingdings'>&#129;</span></span><span style='font-size:
+10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>除了两个字节的段描述符，偏移量必用四字节来表示；</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:Wingdings;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";
+mso-char-type:symbol;mso-symbol-font-family:Wingdings'><span style='mso-char-type:
+symbol;mso-symbol-font-family:Wingdings'>&#8218;</span></span><span style='font-size:
+10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>要有反映模式切换的信息。因此，在保护模式下，中断向量表中的表项由</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>8</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>个字节组成，如图</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>3.2</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>所示，中断向量表也改叫做中断描述符表</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>IDT</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>（</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>Interrupt
+Descriptor Table</span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>）。其中的每个表项叫做一个门描述符（</span><span lang=EN-US style='font-size:
+10.5pt;mso-bidi-font-size:10.0pt'>gate descriptor</span><span style='font-size:
+10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>），“门”的含义是当中断发生时必须先通过这些门，然后才能进入相应的处理程序。</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:54.3pt;mso-char-indent-count:5.17'><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:277.5pt;
+ height:174.75pt'>
+ <v:imagedata src="3.1.4.files/image001.gif" o:title="32"/>
+</v:shape><![endif]--><![if !vml]><img width=370 height=233
+src="3.1.4.files/image001.gif" v:shapes="_x0000_i1025"><![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:54.3pt;mso-char-indent-count:5.17'><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:54.3pt;mso-char-indent-count:5.17'><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>图</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>3.2</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>门描述符的一般格式</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>其中类型占</span><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>3</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>位，表示门描述符的类型，主要门描述符是：</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:21.25pt;text-indent:-21.25pt;
+mso-list:l2 level1 lfo2;tab-stops:list 21.25pt'><![if !supportLists]><span
+lang=EN-US style='mso-hansi-font-family:Wingdings;mso-bidi-font-family:宋体'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>中断门（<span lang=EN-US>Interrupt gate</span>）</p>
+
+<p class=MsoPlainText style='margin-left:21.0pt'>其类型码为<span lang=EN-US>110,</span>中断门包含了一个中断或异常处理程序所在段的选择符和段内偏移量。当控制权通过中断门进入中断处理程序时，处理器清<span
+lang=EN-US>IF</span>标志，即关中断，以避免嵌套中断的发生。中断门中的<span lang=EN-US>DPL</span>（<span
+lang=EN-US>Descriptor Privilege Level</span>）为<span lang=EN-US>0</span>，因此，用户态的进程不能访问<span
+lang=EN-US>Intel</span>的中断门。所有的中断处理程序都由中断门激活，并全部限制在内核态。</p>
+
+<p class=MsoPlainText style='margin-left:21.25pt;text-indent:-21.25pt;
+mso-list:l1 level1 lfo4;tab-stops:list 21.25pt'><![if !supportLists]><span
+lang=EN-US style='mso-hansi-font-family:Wingdings;mso-bidi-font-family:宋体'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>陷阱门（<span lang=EN-US>Trap gate</span>）<i
+style='mso-bidi-font-style:normal'><span lang=EN-US><o:p></o:p></span></i></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>其类型码为</span><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>111,</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>与中断门类似，其唯一的区别是，控制权通过陷阱门进入处理程序时维持</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>IF</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>标志位不变，也就是说，不关中断。</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:21.25pt;text-indent:-21.25pt;mso-list:
+l0 level1 lfo6;tab-stops:list 21.25pt'><![if !supportLists]><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-hansi-font-family:
+Wingdings;mso-bidi-font-family:宋体'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>系统门（</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>System gate</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>）</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:21.25pt'><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>这是</span><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>Linux</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>内核特别设置的，用来让用户态的进程访问</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>Intel</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>的陷阱门，因此，门描述符的</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>DPL</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>3</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>。通过系统门来激活</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>4</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>个</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>Linux</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>异常处理程序，它们的向量是</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>3</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>、</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>4</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>、</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>5</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>及</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>128</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>，也就是说，在用户态下，可以使用</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>int3</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>、</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>into</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>、</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>bound </span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>及</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>int0x80</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>四条汇编指令。</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:group id="_x0000_s1026" style='position:absolute;
+ left:0;text-align:left;margin-left:57.75pt;margin-top:80.8pt;width:273pt;
+ height:23.4pt;z-index:1' coordorigin="2119,2892" coordsize="5460,468">
+ <v:rect id="_x0000_s1027" style='position:absolute;left:2119;top:2892;width:5460;
+  height:468' o:allowincell="f">
+  <v:textbox style='mso-next-textbox:#_x0000_s1027'>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span lang=EN-US><span
+     style='mso-spacerun:yes'>&nbsp;</span>32</span><span style='font-family:
+     宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>位基址值</span><span
+     lang=EN-US><span style='mso-tab-count:7'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+     style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+     "Times New Roman"'>界限</span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:rect><v:line id="_x0000_s1028" style='position:absolute' from="5794,2892"
+  to="5794,3360" o:allowincell="f"/>
+</v:group><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:1;left:0px;margin-left:76px;margin-top:107px;width:370px;
+height:37px'><img width=370 height=37 src="3.1.4.files/image002.gif" v:shapes="_x0000_s1026 _x0000_s1027 _x0000_s1028"></span><![endif]><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>最后，在保护模式下，中断描述符表在内存的位置不再限于从地址</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>0</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>开始的地方，而是可以放在内存的任何地方。为此，</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>CPU</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>中增设了一个中断描述符表寄存器</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>IDTR</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>，用来存放中断描述符表在内存的起始地址。中断描述符表寄存器</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>IDTR</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>是一个</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>48</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>位的寄存器，其低</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>16</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>位保存中断描述符表的大小，高</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>32</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>位保存</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>IDT</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>的基址，如图</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>3.3</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>所示。</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>47<span style='mso-tab-count:7'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>16 15<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>0<span style='mso-tab-count:11'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>图</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>3.3 </span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>中断描述符表寄存器</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt'>IDTR<span
+style='mso-tab-count:14'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

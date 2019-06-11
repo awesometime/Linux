@@ -1,0 +1,459 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="11.2.7.files/filelist.xml">
+<title> I/O 空间的映射</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="chsdate" downloadurl=""/>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="chmetcnv" downloadurl=""/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>CLJ</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>CLJ</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>1</o:TotalTime>
+  <o:Created>2007-08-17T03:56:00Z</o:Created>
+  <o:LastSaved>2007-08-17T03:56:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>300</o:Words>
+  <o:Characters>1710</o:Characters>
+  <o:Lines>14</o:Lines>
+  <o:Paragraphs>4</o:Paragraphs>
+  <o:CharactersWithSpaces>2006</o:CharactersWithSpaces>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:PunctuationKerning/>
+  <w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:MingLiU;
+	panose-1:2 2 3 9 0 0 0 0 0 0;
+	mso-font-alt:細明體;
+	mso-font-charset:136;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:3 137232384 22 0 1048577 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:"\@MingLiU";
+	panose-1:2 2 3 9 0 0 0 0 0 0;
+	mso-font-charset:136;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:3 137232384 22 0 1048577 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:宋体;
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	mso-font-kerning:1.0pt;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.MsoDate, li.MsoDate, div.MsoDate
+	{mso-style-next:正文;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:宋体;
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	mso-font-kerning:1.0pt;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:15.6pt;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+</head>
+
+<body lang=ZH-CN style='tab-interval:21.0pt;text-justify-trim:punctuation'>
+
+<div class=Section1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal><st1:chsdate Year="1899" Month="12" Day="30"
+IsLunarDate="False" IsROCDate="False" w:st="on"><span lang=EN-US
+ style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-weight:normal'>11.2.7</span></st1:chsdate><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-weight:normal'>
+I/O </span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-weight:
+normal'>空间的映射<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;font-weight:normal'>很多硬件设备都有自己的内存，通常称之为<span
+lang=EN-US>I/O</span>空间。例如，所有比较新的图形卡都有几<span lang=EN-US>MB</span>的<span
+lang=EN-US>RAM</span>，称为显存，用它来存放要在屏幕上显示的屏幕影像。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoDate><span lang=EN-US>1</span>．地址映射</p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>根据设备和总线类型的不同，<span lang=EN-US>PC</span>体系结构中的<span
+lang=EN-US>I/O</span>空间可以在三个不同的物理地址范围之间进行映射：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>（<span lang=EN-US>1</span>）对于连接到<span lang=EN-US>ISA</span>总线上的大多数设备<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-weight:normal'>I/O</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-weight:normal'>空间通常被映射到从<span
+lang=EN-US>0xa0000</span>到<span lang=EN-US>0xfffff</span>的物理地址范围，这就在<span
+lang=EN-US>640K</span>和<span lang=EN-US>1MB</span>之间留出了一段空间，这就是所谓的“洞”。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>（<span lang=EN-US>2</span>）对于使用<span lang=EN-US>VESA</span>本地总线（<span
+lang=EN-US>VLB</span>）的一些老设备<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>这是主要由图形卡使用的一条专用总线：<span lang=EN-US>I/O</span>空间被映射到从<span
+lang=EN-US>0xe00000</span>到<span lang=EN-US>0xffffff</span>的地址范围中，也就是<span
+lang=EN-US>14MB</span>到<span lang=EN-US>16MB</span>之间。因为这些设备使页表的初始化更加复杂，因此已经不生产这种设备。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>（<span lang=EN-US>3</span>）对于连接到<span lang=EN-US>PCI</span>总线的设备<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span>I/O</span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>空间被映射到很大的物理地址区间，位于<span lang=EN-US>RAM</span>物理地址的顶端。这种设备的处理比较简单。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'>2</span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'>．访问<span lang=EN-US>I/O</span>空间<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>内核如何访问一个<span lang=EN-US>I/O</span>空间单元？让我们从<span
+lang=EN-US>PC</span>体系结构开始入手，这个问题很容易就可以解决，之后我们再进一步讨论其他体系结构。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>不要忘了内核程序作用于虚拟地址，因此<span lang=EN-US>I/O</span>空间单元必须表示成大于<span
+lang=EN-US>PAGE_OFFSET</span>的地址。在后面的讨论中，我们假设<span lang=EN-US>PAGE_OFFSET</span>等于<span
+lang=EN-US>0xc0000000</span>，也就是说，内核虚拟地址是在第<st1:chmetcnv UnitName="g"
+SourceValue="4" HasSpace="False" Negative="False" NumberType="1" TCSC="0"
+w:st="on"><span lang=EN-US>4G</span></st1:chmetcnv>。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>内核驱动程序必须把<span lang=EN-US>I/O</span>空间单元的物理地址转换成内核空间的虚拟地址。在<span
+lang=EN-US>PC</span>体系结构中，这可以简单地把<span lang=EN-US>32</span>位的物理地址和<span
+lang=EN-US>0xc0000000</span>常量进行或运算得到。例如，假设内核需要把物理地址为<span lang=EN-US>0x000b0fe4</span>的<span
+lang=EN-US>I/O</span>单元的值存放在<span lang=EN-US>t1</span>中，把物理地址为<span lang=EN-US>0xfc000000</span>的<span
+lang=EN-US>I/O</span>单元的值存放在<span lang=EN-US>t2</span>中，就可以使用下面的表达式来完成这项功能：<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span>t1 = *((unsigned char *<span class=GramE>)(</span>0xc00b0fe4)); <o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span>t2 = *((unsigned char *<span class=GramE>)(</span>0xfc000000)); <o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>在第六章我们已经介绍过<span lang=EN-US>,</span>在初始化阶段<span lang=EN-US>,</span>内核已经把可用的<span
+lang=EN-US>RAM</span>物理地址映射到虚拟地址空间第<st1:chmetcnv UnitName="g" SourceValue="4"
+HasSpace="False" Negative="False" NumberType="1" TCSC="0" w:st="on"><span
+ lang=EN-US>4G</span></st1:chmetcnv>的最初部分。因此，分<span class=GramE>页机制</span>把出现在第一个语句中的虚拟地址<span
+lang=EN-US>0xc00b0fe4</span>映射回到原来的<span lang=EN-US>I/O</span>物理地址<span
+lang=EN-US>0x000b0fe4</span>，这正好落在从<span lang=EN-US>640K</span>到<span
+lang=EN-US>1MB</span>的这段“<span lang=EN-US>ISA</span>洞”中。这正是我们所期望的。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>但是，对于第二个语句来说，这里有一个问题，因为其<span lang=EN-US>I/O</span>物理地址超过了系统<span
+lang=EN-US>RAM</span>的最大物理地址。因此，虚拟地址<span lang=EN-US>0xfc000000</span>就不需要与物理地址<span
+lang=EN-US>0xfc000000</span>相对应。在这种情况下，为了在内核页表中包括对这个<span lang=EN-US>I/O</span>物理地址进行映射的虚拟地址，必须对页表进行修改：这可以通过调用<span
+lang=EN-US>ioremap( )</span>函数来实现。<span lang=EN-US>ioremap( )</span>和<span
+lang=EN-US>vmalloc( )</span>函数类似，都调用<span lang=EN-US>get_vm_area( ) </span>建立一个新的<span
+lang=EN-US>vm_struct</span>描述符，其描述的虚拟地址区间为所请求<span lang=EN-US>I/O</span>空间区的大小。然后，<span
+lang=EN-US>ioremap( )</span>函数适当地更新所有进程的对应页表项。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>因此，第二个语句的正确形式应该为：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=PT-BR style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+mso-ansi-language:PT-BR;font-weight:normal'>io_mem = ioremap(0xfb000000,
+0x200000); <o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;mso-ansi-language:PT-BR;font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-weight:normal'>t2 =
+*((unsigned char *<span class=GramE>)(</span>io_mem + 0x100000)); <o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>第一条语句建立一个<span lang=EN-US>2</span></span><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-fareast-font-family:MingLiU;
+font-weight:normal'>MB</span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'>的虚拟地址区间，从<span lang=EN-US>0xfb000000</span>开始；第二条语句读取地址<span
+lang=EN-US>0xfc000000</span>的内存单元。驱动程序以后要取消这种映射，就必须使用<span lang=EN-US>iounmap(
+)</span>函数。</span><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;mso-fareast-font-family:MingLiU;font-weight:normal'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-weight:normal'>现在让我们考虑<span class=GramE>一下除</span></span><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-fareast-font-family:MingLiU;
+font-weight:normal'>PC</span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'>之外的体系结构。在这种情况下，把</span><span lang=EN-US
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-fareast-font-family:MingLiU;
+font-weight:normal'>I/O</span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'>物理地址加上<span lang=EN-US>0xc0000000</span>常量所得到的相应虚拟地址并不总是正确的。为了提高内核的可移植性，</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-fareast-font-family:
+MingLiU;font-weight:normal'>Linux</span><span style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;font-weight:normal'>特意包含了下面这些宏来访问</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-fareast-font-family:
+MingLiU;font-weight:normal'>I/O</span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-family:MingLiU;mso-ascii-font-family:宋体;mso-hansi-font-family:"Times New Roman";
+font-weight:normal'>空间</span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'>：</span><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;mso-fareast-font-family:MingLiU;font-weight:normal'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>readb</span>, readw, readl <o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-weight:normal'>分别从一个</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-fareast-font-family:
+MingLiU;font-weight:normal'>I/O</span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-family:MingLiU;mso-ascii-font-family:宋体;mso-hansi-font-family:"Times New Roman";
+font-weight:normal'>空间</span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'>单元读取</span><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;mso-fareast-font-family:MingLiU;font-weight:normal'>1</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-weight:normal'>、</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-fareast-font-family:
+MingLiU;font-weight:normal'>2</span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'>或者<span lang=EN-US>4</span>个字节<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp; </span><span
+class=GramE>writeb</span>, writew, writel <o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-weight:normal'>分别向一个</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-fareast-font-family:
+MingLiU;font-weight:normal'>I/O</span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-family:MingLiU;mso-ascii-font-family:宋体;mso-hansi-font-family:"Times New Roman";
+font-weight:normal'>空间</span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'>单元写入</span><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;mso-fareast-font-family:MingLiU;font-weight:normal'>1</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-weight:normal'>、</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-fareast-font-family:
+MingLiU;font-weight:normal'>2</span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'>或者<span lang=EN-US>4</span>个字节<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span>memcpy_fromio, memcpy_toio <o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-weight:normal'>把一个数据块从一个</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-fareast-font-family:
+MingLiU;font-weight:normal'>I/O</span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-family:MingLiU;mso-ascii-font-family:宋体;mso-hansi-font-family:"Times New Roman";
+font-weight:normal'>空间</span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'>单元拷贝到动态内存中，另一个函数正好相反，把一个数据块从动态内存中拷贝到一个</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-fareast-font-family:
+MingLiU;font-weight:normal'>I/O</span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-family:MingLiU;mso-ascii-font-family:宋体;mso-hansi-font-family:"Times New Roman";
+font-weight:normal'>空间</span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'>单元<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span>memset_io <o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-weight:normal'>用一个固定的值填充一个</span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-fareast-font-family:
+MingLiU;font-weight:normal'>I/O</span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-family:MingLiU;mso-ascii-font-family:宋体;mso-hansi-font-family:"Times New Roman";
+font-weight:normal'>空间</span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'>区域</span><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;mso-fareast-font-family:MingLiU;font-weight:normal'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+font-family:MingLiU;mso-ascii-font-family:宋体;mso-hansi-font-family:"Times New Roman";
+font-weight:normal'>对于</span><span lang=EN-US style='font-size:10.5pt;
+mso-bidi-font-size:10.0pt;font-weight:normal'>0xfc000000 </span><span
+lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-fareast-font-family:
+MingLiU;font-weight:normal'>I/O</span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'>单元的访问推荐使用这样的方法：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=PT-BR style='font-size:10.5pt;mso-bidi-font-size:10.0pt;
+mso-ansi-language:PT-BR;font-weight:normal'>io_mem = ioremap(0xfb000000,
+0x200000); <o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;mso-ansi-language:PT-BR;font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>t2 = readb(io_mem +
+0x100000); <o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;mso-ansi-language:PT-BR;font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;font-weight:normal'>使用这些宏</span><span
+style='font-size:10.5pt;mso-bidi-font-size:10.0pt;mso-ansi-language:PT-BR;
+font-weight:normal'>，</span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'>就可以隐藏不同平台访问</span><span lang=PT-BR style='font-size:
+10.5pt;mso-bidi-font-size:10.0pt;mso-fareast-font-family:MingLiU;mso-ansi-language:
+PT-BR;font-weight:normal'>I/O</span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-family:MingLiU;mso-ascii-font-family:宋体;mso-hansi-font-family:"Times New Roman";
+font-weight:normal'>空间</span><span style='font-size:10.5pt;mso-bidi-font-size:
+10.0pt;font-weight:normal'>所用方法的差异。</span><span lang=PT-BR style='font-size:
+10.5pt;mso-bidi-font-size:10.0pt;mso-ansi-language:PT-BR;font-weight:normal'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

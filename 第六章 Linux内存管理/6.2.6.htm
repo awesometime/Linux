@@ -1,0 +1,2049 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="6.2.6.files/filelist.xml">
+<title>内存管理区</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="chsdate" downloadurl=""/>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="chmetcnv" downloadurl=""/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>CLJ</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>CLJ</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:Created>2007-08-15T07:50:00Z</o:Created>
+  <o:LastSaved>2007-08-15T07:50:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1879</o:Words>
+  <o:Characters>10712</o:Characters>
+  <o:Lines>89</o:Lines>
+  <o:Paragraphs>25</o:Paragraphs>
+  <o:CharactersWithSpaces>12566</o:CharactersWithSpaces>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:PunctuationKerning/>
+  <w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	mso-font-kerning:1.0pt;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:15.6pt;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:946619721;
+	mso-list-type:simple;
+	mso-list-template-ids:1937021516;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:·;
+	mso-level-tab-stop:21.25pt;
+	mso-level-number-position:left;
+	margin-left:21.25pt;
+	text-indent:-21.25pt;
+	font-family:宋体;
+	mso-hansi-font-family:Wingdings;}
+@list l1
+	{mso-list-id:1951351663;
+	mso-list-type:simple;
+	mso-list-template-ids:1937021516;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:·;
+	mso-level-tab-stop:21.25pt;
+	mso-level-number-position:left;
+	margin-left:21.25pt;
+	text-indent:-21.25pt;
+	font-family:宋体;
+	mso-hansi-font-family:Wingdings;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+</head>
+
+<body lang=ZH-CN style='tab-interval:21.0pt;text-justify-trim:punctuation'>
+
+<div class=Section1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal><st1:chsdate Year="1899" Month="12" Day="30"
+IsLunarDate="False" IsROCDate="False" w:st="on"><span lang=EN-US>6.2.6</span></st1:chsdate><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>内存管理区</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>前面已经提到，物理内存被划分为三个区来管理，它们是</span><span
+lang=EN-US>ZONE_DMA</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>、</span><span
+lang=EN-US>ZONE_NORMAL </span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>和</span><span
+lang=EN-US>ZONE_HIGHMEM</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>。每个区都用</span><span
+lang=EN-US>struct zone_struct</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>结构来表示，定义于</span><span
+lang=EN-US>include/linux/mmzone.h</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>：</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>typedef</span> struct zone_struct {</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/*</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>* Commonly
+accessed fields:</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>*/</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>spinlock_t</span>
+lock;</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>unsigned</span>
+long<span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>free_pages;</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>unsigned</span>
+long<span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>pages_min,
+pages_low, pages_high;</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>int</span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>need_balance;</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/*</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>* <span
+class=GramE>free</span> areas of different sizes</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>*/</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>free_area_t free_<span
+class=GramE>area[</span>MAX_ORDER];</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/*</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>* Discontig
+memory support fields.</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>*/</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>struct</span>
+pglist_data *zone_pgdat;</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>struct</span>
+page *zone_mem_map;</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>unsigned</span>
+long<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>zone_start_paddr;</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>unsigned</span>
+long<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>zone_start_mapnr;</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/*</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>* <span
+class=GramE>rarely</span> used fields:</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>*/</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>char</span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>*name;</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>unsigned</span>
+long<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>size;</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>} zone_t;</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US>#define
+ZONE_DMA<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='mso-spacerun:yes'>&nbsp;&nbsp;</span>0</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US>#define
+ZONE_NORMAL<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>1</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US>#define
+ZONE_HIGHMEM<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>2</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US>#define
+MAX_NR_ZONES<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>3</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>对</span><span
+lang=EN-US>struct zone_struct</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>结构中每个域的描述如下：</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US>lock </span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>：用来保证对该结构中其它域的串行访问</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US>free_pages </span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>：在这个区中现有空闲页的个数</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US>pages_min</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>、</span><span lang=EN-US>pages_low</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>及</span><span lang=EN-US> pages_high</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>是对这个区最少、此少及最多页面个数的描述</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US>need_balance</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>：与</span><span lang=EN-US>kswapd</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>合在一起使用</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US>free_area</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>：在伙伴分配系统中的位图数组和页面链表</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US>zone_pgdat</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>：本管理区所在的存储节点</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US>zone_mem_map</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>：该管理区的内存映射表</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US>zone_start_paddr</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>：该管理区的起始物理地址</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US>zone_start_mapnr</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>：在</span><span lang=EN-US>mem_map</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>中的索引（或下标）</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US>name</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>：该管理区的名字</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US>size</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>：该管理区物理内存总的大小</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>其中，</span><span
+lang=EN-US>free_area_t</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>定义为：</span></p>
+
+<p class=MsoNormal style='margin-left:20.9pt;text-indent:21.6pt;mso-outline-level:
+1'><span lang=EN-US>#difine<span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span>MAX_<span class=GramE>ORDER<span style='mso-spacerun:yes'>&nbsp;
+</span>10</span></span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>type</span>
+struct free_area_struct {</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>struct</span> list_head<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>free_list</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span><span class=GramE>unsigned<span
+style='mso-spacerun:yes'>&nbsp; </span>int</span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>*map</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>} free_area_t</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span></span><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>因此，</span><span
+lang=EN-US>zone&shy;&shy;&shy;_struct</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>结构中的</span><span
+lang=EN-US>free_area[MAX_ORDER]</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>是一组“空闲区间”链表。为什么要定义一组而不是一个空闲队列呢？这是因为常常需要成块地在物理空间分配连续的多个页面，所以要按块的大小分别加以管理。因此，在管理区数据结构中既要有一个队列来保持一些离散（连续长度为</span><span
+lang=EN-US>1</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>）的物理页面，还要有一个队列来保持一些连续长度为</span><span
+lang=EN-US>2</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>的页面块以及连续长度为</span><span lang=EN-US>4</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>、</span><span lang=EN-US>8</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>、</span><span
+lang=EN-US>16</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>、</span><span lang=EN-US>…</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>、直至</span><span lang=EN-US>2 <sup>MAX_ORDER</sup></span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>（即</span><st1:chmetcnv UnitName="m" SourceValue="4"
+HasSpace="False" Negative="False" NumberType="1" TCSC="0" w:st="on"><span
+ lang=EN-US>4M</span></st1:chmetcnv><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>字节）的队列。</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span></span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>如前所述，内存中每个物理页面都有一个</span><span
+lang=EN-US>struct page</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>结构，位于</span><span
+lang=EN-US>include/linux/mm.h</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>，该结构包含了对物理页面进行管理的所有信息，下面给出具体描述：</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>typedef</span> struct page {</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>struct</span>
+list_head list;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>struct</span>
+address_space *mapping;<span style='mso-spacerun:yes'>&nbsp; </span></span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>unsigned</span>
+long index;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>struct</span>
+page *next_hash;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>atomic_t</span>
+count;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>unsigned</span>
+long flags;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>struct</span>
+list_head lru;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>wait_queue_head_t</span>
+wait;<span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>struct</span>
+page **pprev_hash;<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>struct</span>
+buffer_head * buffers;<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>void</span>
+*virtual;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>struct</span>
+zone_struct *zone;<span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}
+mem_map_t;</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>对每个域的描述如下：</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US>list </span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>：指向链表中的下一页</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US>mapping </span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>：用来指定我们正在映射的索引节点（</span><span lang=EN-US>inode</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>）</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US>index</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>：在映射表中的偏移</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US>next_hash</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>：指向页高速缓存哈希表中下一个共享的页</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US>count</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>：引用这个页的个数</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US>flags</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>：页面各种不同的属性</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US>lru</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>：用在</span><span lang=EN-US>active_list</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>中</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US>wait</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>：等待这一页的页队列</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US>pprev_hash</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>：与</span><span lang=EN-US>next_hash</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>相对应</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US>buffers</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>：把缓冲区映射到一个磁盘块</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US>zone</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>：<span class=GramE>页所在</span>的内存管理区</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span></span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>与内存管理区相关的三个主要函数为：</span></p>
+
+<p class=MsoNormal style='margin-left:21.25pt;text-indent:-21.25pt;mso-list:
+l1 level1 lfo1;tab-stops:list 21.25pt'><![if !supportLists]><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:Wingdings;mso-bidi-font-family:
+宋体'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US>free_area_init() </span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>函数</span></p>
+
+<p class=MsoNormal style='margin-left:21.25pt;text-indent:-21.25pt;mso-list:
+l1 level1 lfo1;tab-stops:list 21.25pt'><![if !supportLists]><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:Wingdings;mso-bidi-font-family:
+宋体'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US>build_zonelists() </span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>函数</span></p>
+
+<p class=MsoNormal style='margin-left:21.25pt;text-indent:-21.25pt;mso-list:
+l1 level1 lfo1;tab-stops:list 21.25pt'><![if !supportLists]><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:Wingdings;mso-bidi-font-family:
+宋体'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US>mem_init() </span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>函数</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>1</span><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>．</span><span
+lang=EN-US>free_area_init() </span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>函数</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span></span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>这个函数用来初始化内存管理区并创建内存映射表，定义于</span><span
+lang=EN-US>mm/page_alloc.c</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>中。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span></span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>函数原型为：</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>void</span> free_area_init(unsigned long *zones_size);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>void</span> free_area_init_core(int nid, pg_data_t *pgdat,</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='mso-spacerun:yes'>&nbsp;&nbsp;</span><span class=GramE>struct</span>
+page **gmap,</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>unsigned</span> long *zones_size, </span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>unsigned</span> long zone_start_paddr, </span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>unsigned</span> long *zholes_size, </span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>struct</span> page *lmem_map);</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US>free_area_init</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>（）为封装函数，而</span><span lang=EN-US>free_area_init_core</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>（）为真正实现的函数，对该函数详细描述如下：</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>struct</span> page *p;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>unsigned</span> long i, j;</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>unsigned</span> long map_size;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>unsigned</span> long totalpages, offset, realtotalpages;</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>const</span> unsigned long zone_required_alignment = 1UL &lt;&lt;
+(MAX_ORDER-1);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>if</span> (zone_start_paddr &amp; ~PAGE_MASK)</span></p>
+
+<p class=MsoNormal style='mso-outline-level:1'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>BUG(</span>);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-outline-level:1'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>检查该管理区的起始地址是否是一个页的边界。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>totalpages</span> = 0;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>for</span> (i = 0; i &lt; MAX_NR_ZONES; i++) {</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span style='mso-tab-count:
+2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>unsigned</span> long size = zones_size[i];</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span style='mso-tab-count:
+2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>totalpages</span> += size;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt;mso-outline-level:1'><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>计算本存储节点中页面的个数。</span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>realtotalpages</span> = totalpages;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>if</span> (zholes_size)</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span style='mso-tab-count:
+2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>for</span> (i = 0; i &lt; MAX_NR_ZONES; i++)</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>realtotalpages</span> -= zholes_size[i];</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>printk(</span>&quot;On node %d totalpages: %lu\n&quot;, nid,
+realtotalpages);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span></span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>打印除空洞以外的实际页面数。</span><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>INIT_LIST_<span
+class=GramE>HEAD(</span>&amp;active_list);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>INIT_LIST_<span
+class=GramE>HEAD(</span>&amp;inactive_list);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span></span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>初始化循环链表。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/*</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>* Some <span
+class=GramE>architectures</span> (with lots of mem and discontinous memory</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>* maps)
+have to search for a good mem_map area:</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>* For
+discontigmem, the conceptual mem map array starts from </span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>*
+PAGE_OFFSET, we need to align the actual array onto a mem map </span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>* <span
+class=GramE>boundary</span>, so that MAP_NR works.</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>*/</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>map_size =
+(totalpages + 1)*<span class=GramE>sizeof(</span>struct page);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>if</span> (lmem_map == (struct page *)0) {</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span style='mso-tab-count:
+2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>lmem_map
+= (struct page *) </span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='mso-tab-count:1'>&nbsp;&nbsp; </span>alloc_bootmem_<span
+class=GramE>node(</span>pgdat, map_size);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span style='mso-tab-count:
+2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>lmem_map
+= (struct page *<span class=GramE>)(</span>PAGE_OFFSET + </span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span style='mso-tab-count:
+2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>MAP_<span
+class=GramE>ALIGN(</span>(unsigned long)lmem_map - PAGE_OFFSET));</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>给局部内存（即本节点中的内存）映射分配空间，并在</span><span
+lang=EN-US>sizeof(mem_map_t)</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>边界上对齐它。</span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>*gmap =
+pgdat-&gt;node_mem_map = lmem_map;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>pgdat</span>-&gt;node_size = totalpages;</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>pgdat</span>-&gt;node_start_paddr = zone_start_paddr;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>pgdat</span>-&gt;node_start_mapnr = (lmem_map - mem_map);</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>pgdat</span>-&gt;nr_zones = 0;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>初始化本节点中的域。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/*</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>* Initially
+all pages are reserved - free ones are freed</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>* up by
+free_all_<span class=GramE>bootmem(</span>) once the early boot process is</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>* done.</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>*/</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>for</span> (p = lmem_map; p &lt; lmem_map + totalpages; p++) {</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span style='mso-tab-count:
+2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>set_page_<span
+class=GramE>count(</span>p, 0);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span style='mso-tab-count:
+2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>SetPageReserved(</span>p);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;</span><span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>init_waitqueue_<span
+class=GramE>head(</span>&amp;p-&gt;wait);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span style='mso-tab-count:
+2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>memlist_<span
+class=GramE>init(</span>&amp;p-&gt;list);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>仔细检查所有的页，并进行如下操作：</span></p>
+
+<p class=MsoNormal style='margin-left:42.25pt;text-indent:-21.25pt;mso-list:
+l0 level1 lfo2;tab-stops:list 21.25pt'><![if !supportLists]><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:Wingdings;mso-bidi-font-family:
+宋体'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span class=GramE><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>把页的</span></span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>使用计数（</span><span lang=EN-US>count</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>域）置为</span><span lang=EN-US>0</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>。</span></p>
+
+<p class=MsoNormal style='margin-left:42.25pt;text-indent:-21.25pt;mso-list:
+l0 level1 lfo2;tab-stops:list 21.25pt'><![if !supportLists]><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:Wingdings;mso-bidi-font-family:
+宋体'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span class=GramE><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>把页标记</span></span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>为保留。</span></p>
+
+<p class=MsoNormal style='margin-left:42.25pt;text-indent:-21.25pt;mso-list:
+l0 level1 lfo2;tab-stops:list 21.25pt'><![if !supportLists]><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:Wingdings;mso-bidi-font-family:
+宋体'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>初始化该页的等待队列。</span></p>
+
+<p class=MsoNormal style='margin-left:42.25pt;text-indent:-21.25pt;mso-list:
+l0 level1 lfo2;tab-stops:list 21.25pt'><![if !supportLists]><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:Wingdings;mso-bidi-font-family:
+宋体'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>初始化链表指针。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;</span><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>offset</span> = lmem_map - mem_map;</span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>变量</span><span
+lang=EN-US>mem_map</span><span class=GramE><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>是类型</span></span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>为</span><span lang=EN-US>struct pages</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>的全局稀疏矩阵。</span><span lang=EN-US>mem_map</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>下标的<span class=GramE>起始值</span>取决于第一个节点的第一个管理区。如果第一个管理区的起始地址为</span><span
+lang=EN-US>0</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>，则下标就从</span><span lang=EN-US>0</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>开始，并且与物理页面号相对应，也就是说，页面号就是</span><span lang=EN-US>mem_map</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>的下标。每一个管理区都有自己的映射表，存放在</span><span lang=EN-US>zone_mem_map</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>中，每个管理区又被映射到它所在的节点</span><span lang=EN-US>node_mem_map</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>中，而每个节点又被映射到管理全局内存的</span><span lang=EN-US>mem_map</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>中。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span></span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>在上面的这行代码中，</span><span lang=EN-US>offset</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>表示该节点放的内存映射表在全局</span><span lang=EN-US>mem_map</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>中的入口点（下标）。在这里，</span><span lang=EN-US>offset</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>为</span><span lang=EN-US>0</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>，因为在</span><span
+lang=EN-US>i386</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>上，只有一个节点。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>for</span> (j = 0; j &lt; MAX_NR_ZONES; j++) {</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt;mso-outline-level:1'><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>这个循环对</span><span lang=EN-US>zone </span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>的域进行初始化。</span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>zone_t *zone =
+pgdat-&gt;node_zones + j;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>unsigned</span>
+long mask;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>unsigned</span>
+long size, realsize;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>realsize</span>
+= size = zones_size[j];</span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>管理区的实际数据是存放在节点中的，因此，让指针指向正确的管理区，并获得该管理区的大小。</span>
+</p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>if</span>
+(zholes_size)</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>realsize</span> -= zholes_size[j];</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>printk(</span>&quot;zone(%lu):
+%lu pages.\n&quot;, j, size);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span></span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>计算各个区的实际大小，并进行打印。例如，在具有</span><span
+lang=EN-US>256MB</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>的内存上，上面的输出为：</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>zone(</span>0): 4096 pages.</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>zone(</span>1): 61440 pages.</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>zone(</span>2): 0 pages.</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>这里，管理区</span><span lang=EN-US>2</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>为</span><span lang=EN-US>0</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>，因为只有</span><span
+lang=EN-US>256MB</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>的</span><span lang=EN-US>RAM.</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>zone</span>-&gt;size
+= size;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>zone</span>-&gt;name
+= zone_names[j];</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>zone</span>-&gt;lock
+= SPIN_LOCK_UNLOCKED;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>zone</span>-&gt;zone_pgdat
+= pgdat;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>zone</span>-&gt;free_pages
+= 0;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>zone</span>-&gt;need_balance
+= 0;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>初始化管理区中的各个域。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>if</span>
+(!size)</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>continue</span>;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>如果一个管理区的大小为</span><span lang=EN-US>0</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>，就没必要进一步的初始化。</span><span lang=EN-US><span style='mso-tab-count:
+1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>pgdat</span>-&gt;nr_zones
+= j+1;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>mask</span>
+= (realsize / zone_balance_ratio[j]);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>if</span>
+(mask &lt; zone_balance_min[j])</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>mask</span> = zone_balance_min[j];</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>else</span>
+if (mask &gt; zone_balance_max[j])</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>mask</span> = zone_balance_max[j];</span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>计算合适的平衡比率。</span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>zone</span>-&gt;pages_min
+= mask;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>zone</span>-&gt;pages_low
+= mask*2;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>zone</span>-&gt;pages_high
+= mask*3;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>zone</span>-&gt;zone_mem_map
+= mem_map + offset;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>zone</span>-&gt;zone_start_mapnr
+= offset;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>zone</span>-&gt;zone_start_paddr
+= zone_start_paddr;</span></p>
+
+<p class=MsoNormal style='margin-left:21.25pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>设置该管理区中页面数量的几个界限，并把在全局变量</span><span
+lang=EN-US>mem_map</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>中的入口点作为</span><span
+lang=EN-US>zone_mem_map</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>的初值。用全局变量</span><span
+lang=EN-US>mem_map</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>的下标初始化变量</span><span
+lang=EN-US>zone_start_mapnr</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>if</span>
+((zone_start_paddr &gt;&gt; PAGE_SHIFT) &amp; </span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>(<span
+class=GramE>zone_required_alignment-1</span>))</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>printk(</span>&quot;BUG: wrong zone alignment, it will
+crash\n&quot;);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>for</span>
+(i = 0; i &lt; size; i++) {</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>struct</span> page *page = mem_map + offset + i;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>page</span>-&gt;zone = zone;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>if</span> (j != ZONE_HIGHMEM)</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>page</span>-&gt;virtual = __va(zone_start_paddr);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>zone_start_paddr += PAGE_SIZE;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>}</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>对该管理区中的每一页进行处理。首先，把</span><span
+lang=EN-US>struct page</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>结构中的</span><span
+lang=EN-US>zone</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>域初始化为指向该管理区（</span><span lang=EN-US>zone</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>）</span><span lang=EN-US>,</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>如果这个管理区不是</span><span
+lang=EN-US>ZONE_HIGHMEM</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>，则设置这一页的虚地址（即物理地址</span><span
+lang=EN-US> + PAGE_OFFSET</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>）。也就是说，建立起每一页物理<span
+class=GramE>地址到虚地址</span>的映射。</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>offset</span>
++= size;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span></span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>把</span><span lang=EN-US>offset</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>增加</span><span lang=EN-US>size</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>，使它指向</span><span
+lang=EN-US>mem_map</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>中下一个管理区的起始位置。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>for</span>
+(i = 0; ; i++) {</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>unsigned</span> long bitmap_size;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>memlist_<span class=GramE>init(</span>&amp;zone-&gt;free_area[i].free_list);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>if</span> (i == MAX_ORDER-1) {</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>zone</span>-&gt;free_area[i].map = NULL;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>break</span>;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span></span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>初始化</span><span lang=EN-US>free_area[]</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>链表，把</span><span lang=EN-US>free_area[]</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>中最后一个序号的位图置为</span><span lang=EN-US>NULL</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/*</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>* Page
+buddy system uses &quot;index &gt;&gt; (i+1)&quot;,</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>* <span
+class=GramE>where</span> &quot;index&quot; is at most &quot;size-1&quot;.</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>*</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>* The extra
+&quot;+3&quot; is to round down to byte</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>* size (8
+bits per byte assumption). Thus</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>* <span
+class=GramE>we</span> get &quot;(size-1) &gt;&gt; (i+4)&quot; as the last byte</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>* <span
+class=GramE>we</span> can access.</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>*</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>* The
+&quot;+1&quot; is because we want to round the</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>* <span
+class=GramE>byte</span> allocation up rather than down. So</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>* <span
+class=GramE>we</span> should have had a &quot;+7&quot; before we shifted</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>* down by three.</span> Also, we have to add one as</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>* <span
+class=GramE>we</span> actually _use_ the last bit (it's [0,n]</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>* <span
+class=GramE>inclusive</span>, not [0,n[).</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>*</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>* So we
+actually had +7+1 before we shift</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>* down by 3.</span> But (n+8) &gt;&gt; 3 == (n &gt;&gt; 3) + 1</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>* (modulo overflows, which we do not have).</span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>*</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>* Finally,
+we LONG_ALIGN because all bitmap</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>* <span
+class=GramE>operations</span> are on longs.</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>*/</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'> </span><span style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp; </span>bitmap_size = (size-1)
+&gt;&gt; (i+4);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>bitmap_size
+= LONG_<span class=GramE>ALIGN(</span>bitmap_size+1);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>zone</span>-&gt;free_area[i].map = (unsigned long *) </span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>alloc_bootmem_<span class=GramE>node(</span>pgdat, bitmap_size);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span><span style='mso-tab-count:1'>&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;</span>}</span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>计算位图的大小，然后调用</span><span
+lang=EN-US>alloc_bootmem_node</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>给位<span class=GramE>图分配</span>空间。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>build_<span
+class=GramE>zonelists(</span>pgdat);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span></span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>在节点中为不同的管理区创建链表。</span></p>
+
+<p class=MsoNormal style='mso-outline-level:1'><span lang=EN-US>2</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>．</span><span lang=EN-US>build_zonelists</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>（）函数</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span></span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>函数原型：</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span><span class=GramE>static</span> inline void build_zonelists(pg_data_t
+*pgdat)</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>代码如下：</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span class=GramE>int</span> i, j,
+k;</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span class=GramE>for</span> (i =
+0; i &lt;= GFP_ZONEMASK; i++) {</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>zonelist_t *zonelist;</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>zone_t *zone;</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>zonelist</span>
+= pgdat-&gt;node_zonelists + i;</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>memset(</span>zonelist,
+0, sizeof(*zonelist));</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>获得节点中指向管理区链表的域，并把它初始化为空。</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>j = 0;<span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>k = ZONE_NORMAL;</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>if</span>
+(i &amp; __GFP_HIGHMEM)</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>k =
+ZONE_HIGHMEM;</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>if</span>
+(i &amp; __GFP_DMA)</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>k =
+ZONE_DMA;</span></p>
+
+<p class=MsoNormal style='margin-left:32.4pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>把当前管理区掩码与三个可用管理区掩码相“与”，获得一个管理区标识，把它用在下面的</span><span
+lang=EN-US>switch</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>语句中。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>switch</span>
+(k) {</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>default</span>:</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt;mso-outline-level:1'><span
+lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>BUG(</span>);</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>/*</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>* <span class=GramE>fallthrough</span>:</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>*/</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>case</span> ZONE_HIGHMEM:</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>zone</span> = pgdat-&gt;node_zones + ZONE_HIGHMEM;</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+class=GramE>if</span> (zone-&gt;size) {</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>#ifndef CONFIG_HIGHMEM</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt;mso-outline-level:1'><span
+lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>BUG(</span>);</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>#endif</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>zonelist</span>-&gt;zones[j++] = zone;</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>}</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>case</span> ZONE_NORMAL:</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>zone</span> = pgdat-&gt;node_zones + ZONE_NORMAL;</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+class=GramE>if</span> (zone-&gt;size)</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>zonelist</span>-&gt;zones[j++] = zone;</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>case</span> ZONE_DMA:</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>zone</span> = pgdat-&gt;node_zones + ZONE_DMA;</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>if</span> (zone-&gt;size)</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>zonelist</span>-&gt;zones[j++] = zone;</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>}</span></p>
+
+<p class=MsoNormal style='margin-left:21.25pt;text-indent:11.15pt'><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>给定的管理区掩码指定了优先顺序，我们可以用它找到在</span><span lang=EN-US>switch</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>语句中的入口点。如果掩码为</span><span lang=EN-US>__GFP_DMA</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>，管理区链表</span><span lang=EN-US>zonelist</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>将仅仅包含</span><span lang=EN-US>DMA</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>管理区，如果为</span><span lang=EN-US>__GFP_HIGHMEM</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>，则管理区链表中就会依次有</span><span lang=EN-US>ZONE_HIGHMEM</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>、</span><span lang=EN-US> ZONE_NORMAL</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>和</span><span lang=EN-US>ZONE_DMA</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>。</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>zonelist</span>-&gt;zones[j++]
+= NULL;</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp; </span>}</span></p>
+
+<p class=MsoNormal style='text-indent:32.4pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>用</span><span
+lang=EN-US>Null</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>结束链表。</span> </p>
+
+<p class=MsoNormal style='mso-outline-level:1'><span lang=EN-US>3</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>．</span><span lang=EN-US>mem_init() </span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>函数</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>这个函数由</span><span lang=EN-US>start_kernel()</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>调用，以对管理区的分配算法进行进一步的初始化，定义于</span><span lang=EN-US>arch/i386/mm/init.c</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>中，具体解释如下：</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> codesize, reservedpages, datasize, initsize;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> tmp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>int</span> bad_ppro;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>if</span> (!mem_map)</span></p>
+
+<p class=MsoNormal style='mso-outline-level:1'><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span style='mso-tab-count:
+2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>BUG(</span>);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#ifdef
+CONFIG_HIGHMEM</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>highmem_start_page
+= mem_map + highstart_pfn;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>max_mapnr =
+num_physpages = highend_pfn;</span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>如果</span><span
+lang=EN-US> HIGHMEM </span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>被激活，就要获得</span><span
+lang=EN-US>HIGHMEM </span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>的起始地址和总的页面数。</span><span
+lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#else</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>max_mapnr =
+num_physpages = max_low_pfn;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#endif</span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>否则，页面数就是常规内存的页面数。</span><span
+lang=EN-US><span style='mso-tab-count:1'>&nbsp; </span></span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>high_memory
+= (void *) __<span class=GramE>va(</span>max_low_pfn * PAGE_SIZE);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt;mso-outline-level:1'><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>获得低区内存中最后一个页面的虚地址。</span><span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/* clear
+the zero-page */</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>memset(</span>empty_zero_page, 0, PAGE_SIZE);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/* this
+will put all low memory onto the freelists */</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>totalram_pages
++= free_all_<span class=GramE>bootmem(</span>);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>reservedpages</span> = 0;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>free_all_bootmem()</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>函数本质上释放所有的低区内存，从此以后，</span><span lang=EN-US>bootmem</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>不再使用。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/*</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>* Only
+count reserved RAM pages</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>*/</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>for</span> (tmp = 0; tmp &lt; max_low_pfn; tmp++)</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span style='mso-tab-count:
+2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>if</span> (page_is_ram(tmp) &amp;&amp; PageReserved(mem_map+tmp))</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>reservedpages</span>++;</span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>对</span><span
+lang=EN-US>mem_map </span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>查找一遍，并统计所保留的页面数。</span>
+</p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#ifdef
+CONFIG_HIGHMEM</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>for</span> (tmp = highstart_pfn; tmp &lt; highend_pfn; tmp++) {</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span style='mso-tab-count:
+3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>struct</span> page *page = mem_map + tmp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span style='mso-tab-count:
+3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>if</span> (!page_is_ram(tmp)) {</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>SetPageReserved(</span>page);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>continue</span>;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span style='mso-tab-count:
+3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span style='mso-tab-count:
+2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>if</span> (bad_ppro &amp;&amp; page_kills_ppro(tmp)) {</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>SetPageReserved(</span>page);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>continue</span>;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span style='mso-tab-count:
+2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span style='mso-tab-count:
+2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>ClearPageReserved(</span>page);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span style='mso-tab-count:
+1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>set_<span
+class=GramE>bit(</span>PG_highmem, &amp;page-&gt;flags);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span style='mso-tab-count:
+2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>atomic_<span
+class=GramE>set(</span>&amp;page-&gt;count, 1);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span style='mso-tab-count:
+2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>__free_<span
+class=GramE>page(</span>page);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span><span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;</span><span class=GramE>totalhigh_pages</span>++;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>totalram_pages
++= totalhigh_pages;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;</span><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp; </span>#endif</span></p>
+
+<p class=MsoNormal style='margin-left:21.25pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>把高区内存查找一遍，并把保留但不能使用的页面标记为</span><span
+lang=EN-US>PG_highmem</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>，并调用</span><span
+lang=EN-US>__free_page()</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>释放它，还要<span
+class=GramE>修改伙伴</span>系统的位图。</span><span lang=EN-US> </span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>codesize</span> =<span style='mso-spacerun:yes'>&nbsp;
+</span>(unsigned long) &amp;_etext - (unsigned long) &amp;_text;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>datasize</span> =<span style='mso-spacerun:yes'>&nbsp;
+</span>(unsigned long) &amp;_edata - (unsigned long) &amp;_etext;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>initsize</span> =<span style='mso-spacerun:yes'>&nbsp;
+</span>(unsigned long) &amp;__init_end - </span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>(<span
+class=GramE>unsigned</span> long) &amp;__init_begin;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>printk(</span>&quot;Memory: %luk/%luk available (%dk kernel code,</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>%dk reserved,</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>%dk data, %dk init, %ldk highmem)\n&quot;,</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>(<span class=GramE>unsigned</span> long) nr_free_pages() &lt;&lt; </span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>(PAGE_SHIFT-10),</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>max_mapnr &lt;&lt; (PAGE_SHIFT-10),</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>codesize</span> &gt;&gt; 10,</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>reservedpages</span> &lt;&lt; (PAGE_SHIFT-10),</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>datasize</span> &gt;&gt; 10,</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+class=GramE>initsize</span> &gt;&gt; 10,</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>(<span class=GramE>unsigned</span> long) (totalhigh_pages </span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&lt;&lt; (PAGE_SHIFT-10)));</span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>计算内核各个部分的大小，并打印统计信息。</span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>从以上的介绍可以看出，在初始化阶段，对内存的初始化要做许多工作。但这里要说明的是，尽管在这个阶段建立起了初步的虚拟内存管理机制，但仅仅考虑了内核虚拟空间（</span><span
+lang=EN-US>3GB</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>以上），还根本没有涉及用户空间的管理。因此，在这个阶段，虚拟存储空间到物理存储空间的映射非常简单，仅仅通过一种简单的线性关系就可以达到虚地址到物理地址之间的相互转换。但是，了解这个初始化阶段又非常重要，它是后面进一步进行内存管理分析的基础。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

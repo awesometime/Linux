@@ -1,0 +1,930 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="2.6.3.files/filelist.xml">
+<title>Gcc嵌入式汇编</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="chmetcnv" downloadurl=""/>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="chsdate" downloadurl=""/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>CLJ</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>CLJ</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>1</o:TotalTime>
+  <o:Created>2007-08-14T07:40:00Z</o:Created>
+  <o:LastSaved>2007-08-14T07:40:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>597</o:Words>
+  <o:Characters>3406</o:Characters>
+  <o:Lines>28</o:Lines>
+  <o:Paragraphs>7</o:Paragraphs>
+  <o:CharactersWithSpaces>3996</o:CharactersWithSpaces>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:PunctuationKerning/>
+  <w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	mso-font-kerning:5.0pt;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:15.6pt;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:8338343;
+	mso-list-type:simple;
+	mso-list-template-ids:1937021516;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:·;
+	mso-level-tab-stop:21.25pt;
+	mso-level-number-position:left;
+	margin-left:21.25pt;
+	text-indent:-21.25pt;
+	font-family:宋体;
+	mso-hansi-font-family:Wingdings;}
+@list l1
+	{mso-list-id:955912426;
+	mso-list-type:simple;
+	mso-list-template-ids:1937021516;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:·;
+	mso-level-tab-stop:21.25pt;
+	mso-level-number-position:left;
+	margin-left:21.25pt;
+	text-indent:-21.25pt;
+	font-family:宋体;
+	mso-hansi-font-family:Wingdings;}
+@list l2
+	{mso-list-id:1277369604;
+	mso-list-type:simple;
+	mso-list-template-ids:1937021516;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:·;
+	mso-level-tab-stop:21.25pt;
+	mso-level-number-position:left;
+	margin-left:21.25pt;
+	text-indent:-21.25pt;
+	font-family:宋体;
+	mso-hansi-font-family:Wingdings;}
+@list l3
+	{mso-list-id:1455518412;
+	mso-list-type:simple;
+	mso-list-template-ids:1937021516;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:·;
+	mso-level-tab-stop:21.25pt;
+	mso-level-number-position:left;
+	margin-left:21.25pt;
+	text-indent:-21.25pt;
+	font-family:宋体;
+	mso-hansi-font-family:Wingdings;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+</head>
+
+<body lang=ZH-CN style='tab-interval:21.0pt;text-justify-trim:punctuation'>
+
+<div class=Section1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal><st1:chsdate Year="1899" Month="12" Day="30"
+IsLunarDate="False" IsROCDate="False" w:st="on"><span lang=EN-US>2.6.3</span></st1:chsdate><span
+lang=EN-US> Gcc</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>嵌入式汇编</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span></span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>在</span><span lang=EN-US>Linux</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>的源代码中，有很多</span><span lang=EN-US>C</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>语言的函数中嵌入一段汇编语言程序段，这就是</span><span lang=EN-US>gcc</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>提供的“</span><span lang=EN-US>asm</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>”功能，例如在</span><span lang=EN-US>include/asm-i386/system.h</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>中定义的，<span class=GramE>读控制</span>寄存器</span><span lang=EN-US>CR0</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>的一个宏</span><span lang=EN-US>read_cr0()</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>：</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>#define read_<span class=GramE>cr0(</span>)
+({ \</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>unsigned</span> int __dummy; \</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=PT-BR style='mso-ansi-language:PT-BR'>__asm__( \<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;movl %%cr0,%0\n\t&quot; \<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>:&quot;=r&quot; (__dummy)); \</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>__dummy; \</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span>})</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>这种形式看起来比较陌生，这是因为这不是标准</span><span
+lang=EN-US>C</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>所定义的形式，而是</span><span lang=EN-US>gcc </span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>对</span><span lang=EN-US>C</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>语言的扩充。其中</span><span
+lang=EN-US>__dummy</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为</span><span
+lang=EN-US>C</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>函数所定义的变量；关键词</span><span lang=EN-US>__asm__</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>表示汇编代码的开始。括弧中第一个引号中为汇编指令</span><span lang=EN-US>movl</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>，紧接着有一个冒号，这种形式阅读起来比较复杂。</span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>一般而言，嵌入式汇编语言片段比单纯的汇编语言代码要复杂得多，因为这里存在怎样分配和使用寄存器，以及把</span><span
+lang=EN-US>C</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>代码中的变量应该存放在哪个寄存器中。为了达到这个目的，就必须对一般的</span><span
+lang=EN-US>C</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>语言进行扩充，增加对编译器的指导作用，因此，嵌入式汇编看起来晦涩而难以读懂。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>1. </span><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>嵌入式汇编的一般形式：</span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>__asm__ __volatile__ (&quot;&lt;asm
+routine&gt;<span class=GramE>&quot; :</span> output : input : modify);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span></span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>其中，</span><span lang=EN-US>__asm__</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>表示汇编代码的开始，其后可以跟</span><span lang=EN-US>__volatile__</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>（这是可选项），其含义是避免“</span><span lang=EN-US>asm</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>”指令被删除、移动或组合；然后就是小括弧，括弧中的内容是我们介绍的重点：</span></p>
+
+<p class=MsoNormal style='margin-left:21.25pt;text-indent:-21.25pt;mso-list:
+l0 level1 lfo1;tab-stops:list 21.25pt'><![if !supportLists]><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:Wingdings;mso-bidi-font-family:
+宋体'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US>&quot;&lt;asm routine&gt;&quot;</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>为汇编指令部分，例如，</span><span lang=EN-US>&quot;movl
+%%cr0,%0\n\t&quot;</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>。数字前加前缀<span
+class=GramE>“</span>％“，如％</span><span lang=EN-US>1</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>，％</span><span lang=EN-US>2</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>等表示使用寄存器的样板操作数。可以使用的操作数总数取决于具体</span><span
+lang=EN-US>CPU</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>中通用寄存器的数量，如</span><span lang=EN-US>Intel</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>可以有</span><span lang=EN-US>8</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>个。指令中有几个操作数，就说明有几个变量需要与寄存器结合，由</span><span
+lang=EN-US>gcc</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>在编译时根据后面输出部分和输入部分的约束条件进行相应的处理。由于这些样板操作数的前缀使用了”％<span
+class=GramE>“</span>，因此，在用到具体的寄存器时就在前面加两个“％”，如</span><span lang=EN-US>%%cr0</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>。</span></p>
+
+<p class=MsoNormal style='margin-left:21.25pt;text-indent:-21.25pt;mso-list:
+l0 level1 lfo1;tab-stops:list 21.25pt'><![if !supportLists]><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:Wingdings;mso-bidi-font-family:
+宋体'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>输出部分（</span><span
+lang=EN-US>output</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>），用以规定对输出变量（目标操作数）如何与寄存器结合的约束（</span><span
+lang=EN-US>constraint</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>）</span><span
+lang=EN-US>,</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>输出部分可以有多个约束，互相以逗号分开。每个约束以“＝”开头，接着用一个字母来表示操作数的类型，然后是关于变量结合的约束。例如，上例中：</span></p>
+
+<p class=MsoNormal style='text-indent:23.4pt'><span lang=EN-US>:&quot;=r&quot;
+(__dummy)</span></p>
+
+<p class=MsoNormal style='margin-left:21.25pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>“＝</span><span
+lang=EN-US>r”</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>表示相应的目标操作数（指令部分的</span><span
+lang=EN-US>%0</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>）可以使用任何一个通用寄存器，并且变量</span><span
+lang=EN-US>__dummy </span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>存放在这个寄存器中，但如果是：</span></p>
+
+<p class=MsoNormal style='text-indent:23.4pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>：“＝</span><span
+lang=EN-US>m”</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>（</span><span lang=EN-US>__dummy</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>）</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>“＝</span><span
+lang=EN-US>m”</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>就表示相应的目标操作数是存放在内存单元</span><span
+lang=EN-US>__dummy</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>中。</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>表示约束条件的字母很多，表</span><span
+lang=EN-US> 2</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>－</span><span lang=EN-US>5 </span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>给出几个主要的约束字母及其含义：</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span></span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>表</span><span lang=EN-US>2.5<span
+style='mso-spacerun:yes'>&nbsp; </span></span><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>主要的约束字母及其含义</span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0cm 5.4pt 0cm 5.4pt;mso-border-insideh:.5pt solid windowtext;
+ mso-border-insidev:.5pt solid windowtext'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=181 valign=top style='width:108.45pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>字母</span></p>
+  </td>
+  <td width=611 valign=top style='width:366.4pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>含义</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=181 valign=top style='width:108.45pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp; </span>m, v,o</span></p>
+  </td>
+  <td width=611 valign=top style='width:366.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-indent:22.8pt'><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>表示内存单元</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=181 valign=top style='width:108.45pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp; </span>R</span></p>
+  </td>
+  <td width=611 valign=top style='width:366.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-indent:22.8pt'><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>表示任何通用寄存器</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=181 valign=top style='width:108.45pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp; </span>Q</span></p>
+  </td>
+  <td width=611 valign=top style='width:366.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-indent:22.8pt'><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>表示寄存器</span><span
+  lang=EN-US>eax, ebx, ecx,edx</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>之一</span><span
+  lang=EN-US> </span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=181 valign=top style='width:108.45pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp; </span>I, h</span></p>
+  </td>
+  <td width=611 valign=top style='width:366.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-indent:22.8pt'><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>表示直接操作数</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td width=181 valign=top style='width:108.45pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp; </span>E, F</span></p>
+  </td>
+  <td width=611 valign=top style='width:366.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-indent:22.8pt'><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>表示浮点数</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td width=181 valign=top style='width:108.45pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp; </span>G</span></p>
+  </td>
+  <td width=611 valign=top style='width:366.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-indent:22.8pt'><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>表示“任意”</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7'>
+  <td width=181 valign=top style='width:108.45pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp; </span>a, b.c d</span></p>
+  </td>
+  <td width=611 valign=top style='width:366.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-indent:22.8pt'><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>表示要求使用寄存器</span><span
+  lang=EN-US>eax/ax/al, ebx/bx/bl, ecx/cx/cl</span><span style='font-family:
+  宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>或</span><span
+  lang=EN-US>edx/dx/dl</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8'>
+  <td width=181 valign=top style='width:108.45pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp; </span>S, D</span></p>
+  </td>
+  <td width=611 valign=top style='width:366.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-indent:22.8pt'><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>表示要求使用寄存器</span><span
+  lang=EN-US>esi</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>或</span><span lang=EN-US>edi</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9;mso-yfti-lastrow:yes'>
+  <td width=181 valign=top style='width:108.45pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp; </span>I</span></p>
+  </td>
+  <td width=611 valign=top style='width:366.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-indent:22.8pt'><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>表示常数（</span><span
+  lang=EN-US>0</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>～</span><span lang=EN-US>31</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>）</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-left:21.25pt;text-indent:-21.25pt;mso-list:
+l1 level1 lfo2;tab-stops:list 21.25pt'><![if !supportLists]><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:Wingdings;mso-bidi-font-family:
+宋体'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>输入部分（</span><span
+lang=EN-US>Input</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>）：输入部分与输出部分相似，但没有“＝”。如果输入部分一个操作数所要求使用的寄存器，与前面输出部分<span
+class=GramE>某个约束</span>所要求的是同一个寄存器，那就把对应操作数的编号（如“</span><span lang=EN-US>1</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>”，“</span><span lang=EN-US>2</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>”等）放在约束条件中，在后面的例子中，我们会看到这种情况。</span></p>
+
+<p class=MsoNormal style='margin-left:21.25pt;text-indent:-21.25pt;mso-list:
+l1 level1 lfo2;tab-stops:list 21.25pt'><![if !supportLists]><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:Wingdings;mso-bidi-font-family:
+宋体'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>修改部分（</span><span
+lang=EN-US>modify</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>）</span><span lang=EN-US>:</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>这部分常常以“</span><span lang=EN-US>memory”</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>为约束条件，以表示操作完成后内存中的内容已有改变，如果原来某个寄存器的内容来自内存，那么现在内存中这个单元的内容已经改变。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:21.25pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>注意，指令部分为必选项，而输入部分、输出部分及修改部分为可选项，当输入部分存在，而输出部分不存在时，分号“：<span
+class=GramE>“</span>要保留，当“</span><span lang=EN-US>memory”</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>存在时，三个分号都要保留，例如</span><span lang=EN-US>system.h</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>中的宏定义</span><span lang=EN-US>__cli()</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>：</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span>#define __<span class=GramE>cli(</span>)<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>__asm__ __volatile__(&quot;cli&quot;: : :&quot;memory&quot;)</span></p>
+
+<p class=MsoNormal><span lang=EN-US>2.<span style='mso-spacerun:yes'>&nbsp;
+</span>Linux</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>源代码中嵌入式汇编举例</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span>Linux</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>源代码中，在</span><span lang=EN-US>arch</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>目录下的</span><span lang=EN-US>.h</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>和</span><span
+lang=EN-US>.c</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>文件中，很多文件都涉及嵌入式汇编，下面以</span><span
+lang=EN-US>system.h</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>中的</span><span
+lang=EN-US>C</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>函数为例，说明嵌入式汇编的应用。</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>（</span><span lang=EN-US>1</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>）简单应用</span></p>
+
+<p class=MsoNormal><span lang=EN-US>#define __save_flags(x)<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>__asm__ __volatile_<span class=GramE>_(</span>&quot;pushfl ; popl
+%0&quot;:&quot;=g&quot; (x): /* no input */)</span></p>
+
+<p class=MsoNormal><span lang=EN-US>#define __restore_flags(x)<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>__asm__
+__volatile_<span class=GramE>_(</span>&quot;pushl %0 ; popfl&quot;: /* no
+output */ </span></p>
+
+<p class=MsoNormal style='margin-left:255.0pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span>:&quot;g&quot; (x):&quot;memory&quot;,
+&quot;cc&quot;)</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>第一个宏是保存标志寄存器的值，第二个宏是恢复标志寄存器的值。第一个宏中的</span><span
+lang=EN-US>pushfl</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>指令是把标志寄存器的值压<span class=GramE>栈</span>。而</span><span
+lang=EN-US>popl</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>是把<span class=GramE>栈</span>顶的值（刚压入<span
+class=GramE>栈</span>的</span><span lang=EN-US>flags</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>）弹出到</span><span lang=EN-US>x</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>变量中，这个变量可以存放在一个寄存器或内存中。这样，你可以很容易地读懂第二个宏。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>(2) </span><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>较复杂应用</span></p>
+
+<p class=MsoNormal><span class=GramE><span lang=EN-US>static</span></span><span
+lang=EN-US> inline unsigned long get_limit(unsigned long segment)</span></p>
+
+<p class=MsoNormal><span lang=EN-US>{</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>unsigned</span> long __limit;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>__asm_<span class=GramE>_(</span>&quot;lsll %1,%0&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>:&quot;=r&quot; (__limit):&quot;r&quot; (segment));</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>return</span> __limit+1;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>}</span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>这是一个设置段界限的函数，汇编代码段中的输出参数为</span><span
+lang=EN-US>__limit</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>（即</span><span
+lang=EN-US>%0</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>），输入参数为</span><span lang=EN-US>segment</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>（即</span><span lang=EN-US>%1</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>）。</span><span
+lang=EN-US>Lsll</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>是加载段界限的指令，即把</span><span lang=EN-US>segment</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>段描述符中的段界限字段装入某个寄存器（这个寄存器与</span><span lang=EN-US>__limit</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>结合），函数返回</span><span lang=EN-US>__limit</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>加</span><span lang=EN-US>1</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>，即段长。</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>（</span><span lang=EN-US>3</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>）复杂应用</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>在</span><span lang=EN-US>Linux</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>内核代码中，有关字符串操作的函数都是通过嵌入式汇编完成的，因为内核及用户程序对字符串函数的调用非常频繁，因此，用汇编代码实现主要是为了提高效率（当然是以牺牲可读性和可维护性为代价的）。在此，我们仅列举一个字符串比较函数</span><span
+lang=EN-US>strcmp</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>，其代码在</span><span lang=EN-US>arch/i386</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>／</span><span lang=EN-US>string.h</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>中。</span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span class=GramE><span
+lang=EN-US>static</span></span><span lang=EN-US> inline int strcmp(const char *
+cs,const char * ct)</span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span lang=EN-US>{</span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span class=GramE><span
+lang=EN-US>int</span></span><span lang=EN-US> d0, d1;</span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span class=GramE><span
+lang=EN-US>register</span></span><span lang=EN-US> int __res;</span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span lang=PT-BR
+style='mso-ansi-language:PT-BR'>__asm__ __volatile__(<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span lang=PT-BR
+style='mso-ansi-language:PT-BR'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;1:\tlodsb\n\t&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span lang=PT-BR
+style='mso-ansi-language:PT-BR'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;scasb\n\t&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span lang=PT-BR
+style='mso-ansi-language:PT-BR'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;jne <st1:chmetcnv UnitName="F" SourceValue="2" HasSpace="False"
+Negative="False" NumberType="1" TCSC="0" w:st="on">2f</st1:chmetcnv>\n\t&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span lang=PT-BR
+style='mso-ansi-language:PT-BR'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;testb %%al,%%al\n\t&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span lang=PT-BR
+style='mso-ansi-language:PT-BR'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;jne 1b\n\t&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span lang=PT-BR
+style='mso-ansi-language:PT-BR'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;</span>&quot;xorl
+%%eax,%%eax\n\t&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span lang=PT-BR
+style='mso-ansi-language:PT-BR'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;jmp <st1:chmetcnv UnitName="F" SourceValue="3" HasSpace="False"
+Negative="False" NumberType="1" TCSC="0" w:st="on">3f</st1:chmetcnv>\n&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span lang=PT-BR
+style='mso-ansi-language:PT-BR'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;2:\tsbbl %%eax,%%eax\n\t&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span lang=PT-BR
+style='mso-ansi-language:PT-BR'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;orb $1,%%al\n&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span lang=PT-BR
+style='mso-ansi-language:PT-BR'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;3:&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span lang=PT-BR
+style='mso-ansi-language:PT-BR'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>:&quot;=a&quot; (__res), &quot;=&amp;S&quot; (d0), &quot;=&amp;D&quot;
+(d1)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span lang=PT-BR
+style='mso-ansi-language:PT-BR'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>:&quot;1&quot; (cs),&quot;2&quot; (ct));</span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span class=GramE><span
+lang=EN-US>return</span></span><span lang=EN-US> __res;</span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span lang=EN-US>}</span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>其中的“</span><span
+lang=EN-US>\n</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>”是换行符，“</span><span lang=EN-US>\t”</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>是</span><span lang=EN-US>tab</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>符，在每条命令的结束加这两个符号，是为了让</span><span
+lang=EN-US>gcc</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>把嵌入式汇编代码翻译成一般的汇编代码时能够保证换行和留有一定的空格。例如，上面的嵌入式汇编会被翻译成：</span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span lang=EN-US>1</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>：</span><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>lodsb<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>//</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>装入串操作数</span><span lang=EN-US>,</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>即从</span><span lang=EN-US>[esi]</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>传送到</span><span lang=EN-US>al</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>寄存器，然后</span><span
+lang=EN-US>esi</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>指向串中下一个元素</span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>scasb<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>//</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>扫描串操作数，即从</span><span lang=EN-US>al</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>中减去</span><span lang=EN-US>es:[edi]</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>，不保留结果，只改变标志</span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>jne<st1:chmetcnv
+UnitName="F" SourceValue="2" HasSpace="False" Negative="False" NumberType="1"
+TCSC="0" w:st="on">2f</st1:chmetcnv><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>//</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>如果两个字符不相等，则转到标号</span><span
+lang=EN-US>2<span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>testb</span> %al<span style='mso-spacerun:yes'>&nbsp;
+</span>%al<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;</span><span class=GramE>jne</span> 1b</span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>xorl</span> %eax %eax</span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>jmp</span> <st1:chmetcnv UnitName="F" SourceValue="3"
+HasSpace="False" Negative="False" NumberType="1" TCSC="0" w:st="on">3f</st1:chmetcnv></span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span lang=EN-US>2:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>sbbl %eax %eax</span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>orb</span> $1 %al</span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span lang=EN-US>3:</span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span></span><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>这段代码看起来非常熟悉，读起来也不困难。其中</span><st1:chmetcnv
+UnitName="F" SourceValue="1" HasSpace="False" Negative="False" NumberType="1"
+TCSC="0" w:st="on"><span lang=EN-US>1f</span></st1:chmetcnv><span lang=EN-US> </span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>表示往前（</span><span lang=EN-US>forword</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>）找到第一个标号为</span><span lang=EN-US>1</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>的那一行，相应地，</span><span lang=EN-US>1b</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>表示往后找。其中嵌入式汇编代码中输出和输入部分的结合情况为：</span></p>
+
+<p class=MsoNormal style='margin-left:44.05pt;text-indent:-21.25pt;mso-list:
+l2 level1 lfo3;tab-stops:list 21.25pt'><![if !supportLists]><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:Wingdings;mso-bidi-font-family:
+宋体'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>返回值</span><span
+lang=EN-US>__res</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>，放在</span><span lang=EN-US>al</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>寄存器中，与</span><span lang=EN-US>%0</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>相结合；</span></p>
+
+<p class=MsoNormal style='margin-left:44.05pt;text-indent:-21.25pt;mso-list:
+l3 level1 lfo4;tab-stops:list 21.25pt'><![if !supportLists]><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:Wingdings;mso-bidi-font-family:
+宋体'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>局部变量</span><span
+lang=EN-US>d0</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>，与％</span><span lang=EN-US>1</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>相结合，也与输入部分的</span><span lang=EN-US>cs</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>参数相对应，也存放在寄存器</span><span lang=EN-US>ESI</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>中，即</span><span lang=EN-US>ESI</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>中存放源字符串的起始地址。</span></p>
+
+<p class=MsoNormal style='margin-left:44.05pt;text-indent:-21.25pt;mso-list:
+l3 level1 lfo4;tab-stops:list 21.25pt'><![if !supportLists]><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:Wingdings;mso-bidi-font-family:
+宋体'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>局部变量</span><span
+lang=EN-US>d1</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>，</span> <span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>与％</span><span
+lang=EN-US>2</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>相结合，也与输入部分的</span><span lang=EN-US>ct</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>参数相对应，也存放在寄存器</span><span lang=EN-US>EDI</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>中，即</span><span lang=EN-US>EDI</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>中存放目的字符串的起始地址。</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>通过对这段代码的分析我们应当体会到，万变不利其本，嵌入式汇编与一般汇编的区别仅仅是形式，本质依然不变。因此，全面掌握</span><span
+lang=EN-US>Intel 386 </span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>汇编指令<span
+class=GramE>乃突破</span>阅读低层代码之根本。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

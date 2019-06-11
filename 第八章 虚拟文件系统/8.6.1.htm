@@ -1,0 +1,950 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="8.6.1.files/filelist.xml">
+<title>管道文件系统pipefs</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>CLJ</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>CLJ</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:Created>2007-08-15T09:15:00Z</o:Created>
+  <o:LastSaved>2007-08-15T09:15:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>776</o:Words>
+  <o:Characters>4429</o:Characters>
+  <o:Lines>36</o:Lines>
+  <o:Paragraphs>10</o:Paragraphs>
+  <o:CharactersWithSpaces>5195</o:CharactersWithSpaces>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:PunctuationKerning/>
+  <w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	mso-font-kerning:1.0pt;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:15.6pt;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:301740484;
+	mso-list-template-ids:-696064592;}
+@list l0:level1
+	{mso-level-start-at:8;
+	mso-level-text:%1;
+	mso-level-tab-stop:24.0pt;
+	mso-level-number-position:left;
+	margin-left:24.0pt;
+	text-indent:-24.0pt;}
+@list l0:level2
+	{mso-level-start-at:6;
+	mso-level-text:"%1\.%2";
+	mso-level-tab-stop:24.0pt;
+	mso-level-number-position:left;
+	margin-left:24.0pt;
+	text-indent:-24.0pt;}
+@list l0:level3
+	{mso-level-text:"%1\.%2\.%3";
+	mso-level-tab-stop:24.0pt;
+	mso-level-number-position:left;
+	margin-left:24.0pt;
+	text-indent:-24.0pt;}
+@list l0:level4
+	{mso-level-text:"%1\.%2\.%3\.%4";
+	mso-level-tab-stop:24.0pt;
+	mso-level-number-position:left;
+	margin-left:24.0pt;
+	text-indent:-24.0pt;}
+@list l0:level5
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5";
+	mso-level-tab-stop:24.0pt;
+	mso-level-number-position:left;
+	margin-left:24.0pt;
+	text-indent:-24.0pt;}
+@list l0:level6
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6";
+	mso-level-tab-stop:24.0pt;
+	mso-level-number-position:left;
+	margin-left:24.0pt;
+	text-indent:-24.0pt;}
+@list l0:level7
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7";
+	mso-level-tab-stop:24.0pt;
+	mso-level-number-position:left;
+	margin-left:24.0pt;
+	text-indent:-24.0pt;}
+@list l0:level8
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8";
+	mso-level-tab-stop:24.0pt;
+	mso-level-number-position:left;
+	margin-left:24.0pt;
+	text-indent:-24.0pt;}
+@list l0:level9
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.%9";
+	mso-level-tab-stop:24.0pt;
+	mso-level-number-position:left;
+	margin-left:24.0pt;
+	text-indent:-24.0pt;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+</head>
+
+<body lang=ZH-CN style='tab-interval:21.0pt;text-justify-trim:punctuation'>
+
+<div class=Section1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal style='margin-left:24.0pt;text-indent:-24.0pt;mso-list:l0 level3 lfo1;
+tab-stops:list 24.0pt'><![if !supportLists]><span lang=EN-US style='mso-fareast-font-family:
+"Times New Roman"'><span style='mso-list:Ignore'>8.6.1<span style='font:7.0pt "Times New Roman"'>
+</span></span></span><![endif]><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>管道文件系统</span><span
+lang=EN-US>pipefs</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US>pipefs</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>是一种简单的、虚拟的文件系统类型，因为它没有对应的物理设备，因此其安装时不需要块设备，在第</span><span
+lang=EN-US>10</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>章将看到，大部分文件系统是以模块的形成来实现的。该文件系统相关的代码在</span><span
+lang=EN-US>fs/pipe.c</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>中：</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span></span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span class=GramE><span
+lang=EN-US>static</span></span><span lang=EN-US> DECLARE_FSTYPE(pipe_fs_type,
+&quot;pipefs&quot;, pipefs_read_super,</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>FS_NOMOUNT|FS_SINGLE);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span class=GramE><span lang=EN-US>static</span></span><span
+lang=EN-US> int __init init_pipe_fs(void)</span></p>
+
+<p class=MsoNormal><span lang=EN-US>{</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>int</span> err =
+register_filesystem(&amp;pipe_fs_type);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>if</span> (!err) {</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>pipe_mnt = kern_<span class=GramE>mount(</span>&amp;pipe_fs_type);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=PT-BR style='mso-ansi-language:PT-BR'>err =
+PTR_ERR(pipe_mnt);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span class=GramE><span lang=EN-US>if</span></span><span
+lang=EN-US> (IS_ERR(pipe_mnt))</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>unregister_<span class=GramE>filesystem(</span>&amp;pipe_fs_type);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>else</span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>err</span> = 0;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>}</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>return</span> err;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>}</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span class=GramE><span
+lang=EN-US>static</span></span><span lang=EN-US> void __exit exit_pipe_fs(void)</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US>{</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>unregister_<span class=GramE>filesystem(</span>&amp;pipe_fs_type);</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>mntput(</span>pipe_mnt); </span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>}</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US>module_<span
+class=GramE>init(</span>init_pipe_fs)</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US>module_<span
+class=GramE>exit(</span>exit_pipe_fs)</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span lang=EN-US>pipefs</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>文件系统是作为一个模块来安装的，其中</span><span lang=EN-US>module_init</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>（）是模块的初始化函数，</span><span lang=EN-US>module_exit</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>（）是模块的卸载函数，其更详细的解释将在第</span><span lang=EN-US>10</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>章给出。</span></p>
+
+<p class=MsoNormal style='text-indent:21.6pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>从</span><span
+lang=EN-US>DECLARE_FSTYPE</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>（）宏定义可以看出，</span><span
+lang=EN-US>pipefs</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>文件系统的</span><span lang=EN-US>FS_NOMOUNT</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>和</span><span lang=EN-US>FS_SINGLE</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>标志位为</span><span lang=EN-US>1</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>，这就意味着该文件系统不能从用户空间进行安装，并且在整个系统范围内只有一个超级块。</span><span
+lang=EN-US>FS_SINGLE</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>标志也意味着在通过</span><span
+lang=EN-US>register_filesystem()</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>成功地注册了该文件系统后，应该通过</span><span
+lang=EN-US>kern_mount()</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>来安装。</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US>register_filesystem()</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>函数把</span><span lang=EN-US>pipe_fs_type</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>链接到</span><span lang=EN-US>file_systems</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>链表，因此，你可以通过读</span><span lang=EN-US>/proc/filesystems</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>找到“</span><span lang=EN-US>pipefs</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>”入口点，在那里，“</span><span lang=EN-US>nodev</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>”标志表示没有设置</span><span lang=EN-US>FS_REQUIRES_DEV</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>标志，即该文件系统没有对应的物理设备。</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US>kern_mount()</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>类似于</span><span lang=EN-US>do_mount()</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>，用来安装</span><span lang=EN-US>pipefs</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>文件系统。当安装出现错误时，则调用</span><span lang=EN-US>unregister_filesystem</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>（）把</span><span lang=EN-US>pipe_fs_type</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>从</span><span lang=EN-US>file_systems</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>链表中拆除。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span></span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>现在，</span><span lang=EN-US>pipefs</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>文件系统已被注册，并成为内核中的一个模块，从此我们就可以使用它了。</span><span lang=EN-US>Pipefs</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>文件系统的入口点就是</span><span lang=EN-US>pipe()</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>系统调用，其内核实现函数为</span><span lang=EN-US>sys_pipe()</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>，而真正的工作是调用</span><span lang=EN-US>do_pipe()</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>函数来完成的，其代码在</span><span lang=EN-US>/fs/pipe.c</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>中，我们并同时给出了对代码的注释。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;
+</span><span class=GramE>int</span> do_pipe(int *fd)</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span>{</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>struct</span> qstr this;</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>char</span> name[32];</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>struct</span> dentry *dentry;</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;</span><span class=GramE>struct</span> inode *
+inode;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;</span>struct
+file *f1, *f2;<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span>/*</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>进程对每个已打开文件的操作是通过</span><span lang=EN-US>file</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>结构进行的。</span></p>
+
+<p class=MsoNormal style='margin-left:148.75pt;text-indent:21.25pt'><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>一个管道实际上就是一个存在于内存的文件，</span></p>
+
+<p class=MsoNormal style='margin-left:148.75pt;text-indent:21.25pt'><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>对这个文件的操作要通过两个已打开的文件进行，</span></p>
+
+<p class=MsoNormal style='margin-left:148.75pt;text-indent:21.25pt'><span
+lang=EN-US>f1</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>、</span><span lang=EN-US>f2</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>分别代表该管道的两端。</span><span lang=EN-US>*/</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>int</span> error;</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'> </span><span style='mso-spacerun:yes'>&nbsp;</span><span
+class=GramE>int</span> i,j;</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>error</span> = -ENFILE;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>f1 =
+get_empty_filp();<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>/*</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>管道两端各分配一个</span><span lang=EN-US>file </span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>结构</span><span lang=EN-US>*/</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>if</span> (!f1)</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>goto</span> no_files;</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span></span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>f2 = get_empty_<span class=GramE>filp(</span>);</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>if</span> (!f2)</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>goto</span> close_f1;</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>inode =
+get_pipe_inode();<span style='mso-spacerun:yes'>&nbsp; </span>/*</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>每个文件都有一个</span><span lang=EN-US>inode</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>结构。由于管道文件在管道创建之前并不存在，因此，在创建管道时临时创建一个</span><span lang=EN-US>inode</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>结构。</span><span lang=EN-US>*/</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>if</span> (!inode)</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>goto</span> close_f12;</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span></span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>error = get_unused_fd();<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>／</span><span lang=EN-US>* </span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>分配打开文件号</span><span
+lang=EN-US>*/</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>if</span> (error &lt; 0)</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>goto</span> close_f12_inode;</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>i = error;</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>error</span> = get_unused_fd();</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>if</span> (error &lt; 0)</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>goto</span> close_f12_inode_i;</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>j = error;</span></p>
+
+<p class=MsoNormal style='margin-left:21.25pt;text-indent:21.25pt'><span
+lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>error</span> = -ENOMEM;</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>sprintf(</span>name, &quot;[%lu]&quot;,
+inode-&gt;i_ino);</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>this.name = name;</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>this.len = <span class=GramE>strlen(</span>name);</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>this.hash = inode-&gt;i_ino; /* will go */</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>dentry = d_alloc(pipe_mnt-&gt;mnt_sb-&gt;s_root, &amp;this);<span
+style='mso-spacerun:yes'>&nbsp; </span>/* File</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>结构中有个指针</span><span
+lang=EN-US>f_dentry</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>指向所打开文件的目录项</span><span
+lang=EN-US>dentry</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>结构，而</span><span lang=EN-US>dentry </span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>中有个指针指向相应的</span><span lang=EN-US>inode</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>结构。所以，调用</span><span lang=EN-US>d_alloc</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>（）分配一个目录项是为了把</span><span lang=EN-US>file</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>结构与</span><span lang=EN-US>inode</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>结构联系起来。</span><span lang=EN-US>*</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>if</span> (!dentry)</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>goto</span> close_f12_inode_i_j;</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>dentry</span>-&gt;d_op = &amp;pipefs_dentry_operations;<span
+style='mso-spacerun:yes'>&nbsp; </span></span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>d_add(dentry, inode);<span style='mso-spacerun:yes'>&nbsp; </span></span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>／</span><span lang=EN-US>*</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>使已分配的</span><span
+lang=EN-US>inode </span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>结构与已分配的目录项结构<span class=GramE>挂勾</span></span><span
+lang=EN-US>*</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>／</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>f1-&gt;f_vfsmnt = f2-&gt;f_vfsmnt = mntget(mntget(pipe_mnt));<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>/* pipe_mnt</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>就是在</span><span lang=EN-US>init_pipe_fs</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>（）中所获得的指向</span><span lang=EN-US>vfsmount</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>结构的指针，因为这个结构多了两个使用者，因此调用两次</span><span lang=EN-US>mntget<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>（）使其引用计数加</span><span
+lang=EN-US>2 *</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>／</span></p>
+
+<p class=MsoNormal style='margin-left:42.5pt;text-indent:21.25pt'><span
+lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>f1-&gt;f_dentry = f2-&gt;f_dentry = dget(dentry); </span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>／</span><span lang=EN-US>*</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>让两个已打开文件中的</span><span
+lang=EN-US>f_dentry</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>指针都指向这个目录项，并使目录项的引用计数加</span><span
+lang=EN-US>1*</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>／</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;</span>/* read file */</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>f1-&gt;f_pos = f2-&gt;f_pos = 0;</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>f1-&gt;f_flags = O_RDONLY;</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>f1-&gt;f_op = &amp;read_pipe_fops;</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>f1-&gt;f_mode = 1;</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;</span>f1-&gt;f_version = 0;</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span></span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>/* write file */</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>f2-&gt;f_flags = O_WRONLY;</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>f2-&gt;f_op = &amp;write_pipe_fops;</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>f2-&gt;f_mode = 2;</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>f2-&gt;f_version = 0;</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span>fd_install(i, f1);<span
+style='mso-spacerun:yes'>&nbsp; </span><span style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/*</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>将已打开文件结构与分配得的打开文件号相关联（打开<span class=GramE>文件号只在</span>一个进程的范围类有效）。</span><span
+lang=EN-US>*/</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;</span>fd_<span class=GramE>install(</span>j,
+f2);<span style='mso-spacerun:yes'>&nbsp; </span></span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>fd[0] = i;<span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>／</span><span lang=EN-US>*</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>使得</span><span
+lang=EN-US>fd[0]</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>为管道读出端的打开文件号</span><span lang=EN-US>*/</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>fd[1] = j;<span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>／</span><span lang=EN-US>*</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>使得</span><span
+lang=EN-US>fd[1]</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>为管道写出端的打开文件号</span><span lang=EN-US>*/</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>return</span> 0;</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>／</span><span
+lang=EN-US>*</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>以下为释放各种资源</span><span lang=EN-US>*/</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span>close_f12_inode_i_j:</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>put_unused_<span class=GramE>fd(</span>j);</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span>close_f12_inode_i:</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>put_unused_<span class=GramE>fd(</span>i);</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span>close_f12_inode:</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>free_<span class=GramE>page(</span>(unsigned long) PIPE_BASE(*inode));</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>kfree(</span>inode-&gt;i_pipe);</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>inode</span>-&gt;i_pipe = NULL;</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>iput(</span>inode);</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span>close_f12:</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>put_<span class=GramE>filp(</span>f2);</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span>close_f1:</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>put_<span class=GramE>filp(</span>f1);</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US>no_files:</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>return</span> error;<span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span></span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span>}</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>下面对管道的单向性再做进一步的说明。从代码看出，把</span><span lang=EN-US>f1</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>一端设置成“只读（</span><span lang=EN-US>O_RDONLY</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>）”，另一端则设置成“只写（</span><span lang=EN-US>O_WRONLY</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>）”。同时，两端的文件操作也分别设置成</span><span lang=EN-US>read_pipe_fops</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>和</span><span lang=EN-US>write_pipe_fops</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>，其定义于</span><span lang=EN-US>pipe.c</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>中：</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;
+</span><span style='mso-tab-count:1'>&nbsp;&nbsp; </span><span class=GramE>struct</span>
+file_operations read_pipe_fops = {</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>llseek</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>pipe_lseek,</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>read</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>pipe_read,</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+style='mso-spacerun:yes'>&nbsp;</span><span class=GramE>write</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>bad_pipe_w,</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>poll</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>pipe_poll,</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>ioctl</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>pipe_ioctl,</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>open</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>pipe_read_open,</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>release</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>pipe_read_release,</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span>};</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span></span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span class=GramE><span
+lang=EN-US>struct</span></span><span lang=EN-US> file_operations
+write_pipe_fops = {</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>llseek</span>: <span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>pipe_lseek,</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>read</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>bad_pipe_r,</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>write</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>pipe_write,</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>poll</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>pipe_poll,</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>ioctl</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>pipe_ioctl,</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;</span><span class=GramE>open</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>pipe_write_open,</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class=GramE>release</span>:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>pipe_write_release,</span></p>
+
+<p class=MsoNormal style='text-indent:21.25pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span>};</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>在</span><span lang=EN-US>read_pipe_fops</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>（）中的写操作函数为</span><span lang=EN-US>bad_pipe_w</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>（），而在</span><span lang=EN-US>write_pipe_fops</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>（）中的读操作函数为</span><span lang=EN-US>bad_pipe_r</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>（），这两个函数分别返回一个出错代码。尽管代表着管道两端的两个已打开文件一个只能读，一个只能写。但是，另一方面，这两个逻辑上已打开的文件指向同一个</span><span
+lang=EN-US>inode</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>，即用作管道的缓冲区，显然，这个缓冲区既支持读也支持写。这进一步说明了</span><span
+lang=EN-US>file </span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>、</span><span lang=EN-US>inode</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>及</span><span lang=EN-US>dentry</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>之间的不同和联系。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

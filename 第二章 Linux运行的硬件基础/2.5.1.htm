@@ -1,0 +1,567 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="2.5.1.files/filelist.xml">
+<link rel=Edit-Time-Data href="2.5.1.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>与页相关的数据结构及宏的定义</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="chsdate" downloadurl=""/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>CLJ</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>CLJ</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:Created>2007-08-14T07:35:00Z</o:Created>
+  <o:LastSaved>2007-08-14T07:35:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>363</o:Words>
+  <o:Characters>2070</o:Characters>
+  <o:Lines>17</o:Lines>
+  <o:Paragraphs>4</o:Paragraphs>
+  <o:CharactersWithSpaces>2429</o:CharactersWithSpaces>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:PunctuationKerning/>
+  <w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	mso-font-kerning:5.0pt;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:15.6pt;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:1119447283;
+	mso-list-type:simple;
+	mso-list-template-ids:-471969570;}
+@list l0:level1
+	{mso-level-text:（%1）;
+	mso-level-tab-stop:51.6pt;
+	mso-level-number-position:left;
+	margin-left:51.6pt;
+	text-indent:-28.8pt;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=ZH-CN style='tab-interval:21.0pt;text-justify-trim:punctuation'>
+
+<div class=Section1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><st1:chsdate
+Year="1899" Month="12" Day="30" IsLunarDate="False" IsROCDate="False" w:st="on"><span
+ lang=EN-US>2.5.1</span></st1:chsdate><span lang=EN-US> </span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>与<span class=GramE>页相关</span>的数据结构及宏的定义</span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>上一节讨论的分<span class=GramE>页机制</span>是硬件对分页的支持，这是虚拟内存管理的硬件基础。要想使这种硬件机制充分发挥其功能，必须有相应软件的支持，我们来看一下</span><span
+lang=EN-US>Linux</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>所定义的一些主要数据结构，其分布在</span><span
+lang=EN-US>include/asm-i386/</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>目录下的</span><span
+lang=EN-US>page.h</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>，</span><span lang=EN-US>pgtable.h</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>及</span><span lang=EN-US>pgtable-2level.h</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>三个文件中。</span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp;</span>1. </span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>表项的定义</span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>如上所述，</span><span lang=EN-US>PGD</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>、</span><span lang=EN-US>PMD</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>及</span><span
+lang=EN-US>PT</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>表的表项都占</span><span lang=EN-US>4</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>个字节，因此，把它们定义为无符号长整数，分别叫做</span><span lang=EN-US>pgd_t</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>、</span><span lang=EN-US>pmd_t</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>及</span><span
+lang=EN-US>pte_t(pte </span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>即</span><span
+lang=EN-US>Page table Entry)</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>，在</span><span
+lang=EN-US>page.h</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>中定义如下：</span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>typedef</span> struct { unsigned long pte_low; } pte_t;</span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span
+class=GramE>typedef</span> struct { unsigned long pmd; } pmd_t;</span></p>
+
+<p class=MsoNormal style='text-indent:22.8pt;mso-layout-grid-align:none;
+text-autospace:none'><span class=GramE><span lang=EN-US>typedef</span></span><span
+lang=EN-US> struct { unsigned long pgd; } pgd_t;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span class=GramE>typedef</span>
+struct { unsigned long pgprot; } pgprot_t;</span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>可以看出，</span><span lang=EN-US>Linux</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>没有把这几个类型直接<span class=GramE>定义长</span>整数而是定义为一个结构，这是为了让</span><span
+lang=EN-US>gcc</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>在编译时进行更严格的类型检查。另外，还定义了几个宏来访问这些结构的成分，这也是一种面向对象思想的体现：</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span>#define pte_val(x)<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>((x).pte_low)</span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp; </span>#<span
+class=GramE>define</span> pmd_val(x)<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>((x).pmd)</span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp; </span>#<span
+class=GramE>define</span> pgd_val(x)<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>((x).pgd)</span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp;</span><span style='mso-tab-count:
+1'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>从图</span><span
+lang=EN-US>2.22</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>和图</span><span lang=EN-US>2.24 </span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>可以看出，对这些表项应该定义<span class=GramE>成位段</span>，但内核并没有这样定义，而是定义了一个页面保护结构</span><span
+lang=EN-US>pgprot_t</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>和一些宏：</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span><span class=GramE>typedef</span> struct { unsigned long pgprot; }
+pgprot_t;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span>#<span class=GramE>define</span> pgprot_val(x)<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>((x).pgprot)</span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp; </span></span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>字段</span><span lang=EN-US>pgprot</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>的值与图</span><span lang=EN-US>2.24</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>页面项的低</span><span lang=EN-US>12</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>位相对应，其中的</span><span lang=EN-US>9</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>位对应</span><span lang=EN-US>0</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>～</span><span
+lang=EN-US>9</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>位，在</span><span lang=EN-US>pgtalbe.h</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>中定义了对应的宏：</span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp; </span>#define
+_PAGE_PRESENT<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span>0x001<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp; </span>#define _PAGE_RW<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>0x002</span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp; </span>#define _PAGE_USER<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>0x004</span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp; </span>#define _PAGE_PWT<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>0x008</span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp; </span>#define _PAGE_PCD<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>0x010</span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp; </span>#define _PAGE_<span
+class=GramE>ACCESSED<span style='mso-spacerun:yes'>&nbsp; </span>0x020</span></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp; </span>#define
+_PAGE_DIRTY<span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>0x040</span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp; </span>#define _PAGE_PSE<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>0x080<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>/* 4 MB (or 2MB) page, Pentium+,
+if present<span class=GramE>..</span> */</span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp; </span>#define
+_PAGE_GLOBAL<span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>0x100 <span
+style='mso-spacerun:yes'>&nbsp;&nbsp;</span>/* Global TLB entry PPro+ */</span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>在你阅读源代码的过程中你能体会到，把标志位定义为宏而<span class=GramE>不是位段更</span>有利于编码。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>另外，页目录表及页表在</span><span lang=EN-US>pgtable.h</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>中定义如下：</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span class=GramE>extern</span>
+pgd_t swapper_pg_dir[1024];</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span class=GramE>extern</span>
+unsigned long pg0[1024];</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>swapper_pg_dir</span><span
+class=GramE><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>为页目录</span></span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>表，</span><span lang=EN-US>pg0</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为一临时页表，每个<span
+class=GramE>表最多</span>都有</span><span lang=EN-US>1024</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>项。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span>2</span><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>．线性地址域的定义</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>Intel</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>线性地址的结构如图</span><span lang=EN-US>2.29</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>所示：</span></p>
+
+<p class=MsoNormal><!--[if gte vml 1]><o:wrapblock><v:rect id="_x0000_s1026"
+  style='position:absolute;left:0;text-align:left;margin-left:45.8pt;
+  margin-top:0;width:274.8pt;height:26.1pt;z-index:1' o:allowincell="f">
+  <v:textbox>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span lang=EN-US><span
+     style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span
+     style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+     "Times New Roman"'>目录</span><span lang=EN-US><span style='mso-tab-count:
+     5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+     style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+     "Times New Roman"'>页</span><span lang=EN-US><span style='mso-tab-count:
+     3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+     </span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+     mso-hansi-font-family:"Times New Roman"'>偏移量</span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+  <w:wrap type="topAndBottom"/>
+ </v:rect><v:line id="_x0000_s1027" style='position:absolute;left:0;
+  text-align:left;z-index:2' from="160.3pt,0" to="160.3pt,26.1pt"
+  o:allowincell="f">
+  <w:wrap type="topAndBottom"/>
+ </v:line><v:line id="_x0000_s1028" style='position:absolute;left:0;
+  text-align:left;z-index:3' from="229pt,0" to="229pt,26.1pt" o:allowincell="f">
+  <w:wrap type="topAndBottom"/>
+ </v:line><![endif]--><![if !vml]><span style='mso-ignore:vglayout'>
+ <table cellpadding=0 cellspacing=0>
+  <tr>
+   <td width=60 height=0></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><img width=372 height=41 src="2.5.1.files/image001.gif" v:shapes="_x0000_s1026 _x0000_s1027 _x0000_s1028"></td>
+  </tr>
+ </table>
+ </span><![endif]><!--[if gte vml 1]></o:wrapblock><![endif]--><br
+style='mso-ignore:vglayout' clear=ALL>
+<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>31<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>22 21<span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>11<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>0</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>图</span><span lang=EN-US>2.29<span
+style='mso-spacerun:yes'>&nbsp; </span>32</span><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>位的线性地址结构</span></p>
+
+<p class=MsoNormal style='margin-left:51.6pt;text-indent:-28.8pt;mso-list:l0 level1 lfo1;
+tab-stops:list 51.6pt'><![if !supportLists]><span lang=EN-US style='mso-bidi-font-family:
+宋体'><span style='mso-list:Ignore'>（1）<span style='font:7.0pt "Times New Roman"'>
+</span></span></span><![endif]><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>偏移量的位数</span></p>
+
+<p class=MsoNormal style='margin-left:22.8pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span>#define PAGE_SHIFT<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>12</span></p>
+
+<p class=MsoNormal style='margin-left:22.8pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span>#define PAGE_SIZE<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>(1UL
+&lt;&lt; PAGE_SHIFT)</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#define
+PTRS_PER_PTE<span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>1024</span></p>
+
+<p class=MsoNormal style='margin-left:22.8pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span>#define PAGE_MASK<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>(<span
+class=GramE>~(</span>PAGE_SIZE-1))</span></p>
+
+<p class=MsoNormal style='margin-left:22.8pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>其中</span><span
+lang=EN-US>PAGE_SHIFT</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>宏定义了偏移量的位数为</span><span
+lang=EN-US>12</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>，因此<span class=GramE>页大小</span></span><span
+lang=EN-US>PAGE_SIZE</span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为</span><span
+lang=EN-US>2<sup>12</sup></span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>＝</span><span
+lang=EN-US>4096</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>字节</span><span lang=EN-US>;
+PTRS_PER_PTE</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>为页表的项数；最后</span><span lang=EN-US>PAGE_MASK</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>值定义为</span><span lang=EN-US>0xfffff000</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>，用以屏蔽掉偏移量域的所有位（</span><span lang=EN-US>12</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>位）。</span></p>
+
+<p class=MsoNormal style='margin-left:51.6pt;text-indent:-28.8pt;mso-list:l0 level1 lfo1;
+tab-stops:list 51.6pt'><![if !supportLists]><span lang=EN-US style='mso-bidi-font-family:
+宋体'><span style='mso-list:Ignore'>（2）<span style='font:7.0pt "Times New Roman"'>
+</span></span></span><![endif]><span lang=EN-US>PGDIR_SHIFT</span></p>
+
+<p class=MsoNormal style='margin-left:22.8pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>#define PGDIR_SHIFT<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>22</span></p>
+
+<p class=MsoNormal style='margin-left:22.8pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>#define PTRS_PER_PGD<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>1024</span></p>
+
+<p class=MsoNormal style='margin-left:22.8pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>#define PGDIR_SIZE<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>(1UL &lt;&lt;
+PGDIR_SHIFT)</span></p>
+
+<p class=MsoNormal style='margin-left:22.8pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>#define PGDIR_MASK<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>(<span
+class=GramE>~(</span>PGDIR_SIZE-1))</span></p>
+
+<p class=MsoNormal style='margin-left:22.8pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>PGDIR_SHIFT</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>是页表所能映射区域线性地址的位数，它的值为</span><span lang=EN-US>22</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>（</span><span lang=EN-US>12</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>位的偏移量加上</span><span
+lang=EN-US>10</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>位的页表）；</span><span lang=EN-US>PTRS_PER_PGD</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>为页<span class=GramE>目录目录</span>项数；</span><span lang=EN-US>PGDIR_SIZE</span><span
+class=GramE><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>为页目录</span></span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>的大小</span><span lang=EN-US>,</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>为</span><span
+lang=EN-US>2<sup>22</sup></span><span style='font-family:宋体;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman"'>，即</span><span
+lang=EN-US>4MB</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>；</span><span lang=EN-US>PGDIR_MASK</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>为</span><span lang=EN-US>0xffc00000</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>，用于屏蔽偏移量位与页表域的所有位。</span></p>
+
+<p class=MsoNormal style='margin-left:22.8pt'><span style='font-family:宋体;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>（</span><span
+lang=EN-US>3</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>）</span><span lang=EN-US>PMD_SHIFT</span></p>
+
+<p class=MsoNormal style='margin-left:22.8pt'><span lang=EN-US>#define
+PMD_SHIFT<span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>22</span></p>
+
+<p class=MsoNormal style='margin-left:22.8pt'><span lang=EN-US>#define
+PTRS_PER_PMD<span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>1</span></p>
+
+<p class=MsoNormal style='margin-left:22.8pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>PMD_SHIFT</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>为中间目录表映射的地址位数，其值也为</span><span lang=EN-US>22</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>，但是因为</span><span lang=EN-US>Linux</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>在</span><span lang=EN-US>386</span><span style='font-family:
+宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>中只用了两级页表结构，因此，让其目录项个数为</span><span
+lang=EN-US>1</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>，这就使得中间目录在指针序列中的位置被保存，以便同样的代码在</span><span
+lang=EN-US>32</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman"'>位系统和</span><span lang=EN-US>64</span><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman"'>位系统下都能使用。后面的讨论我们不再提及中间目录。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,237 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="10.4.1.files/filelist.xml">
+<title>内核版本与模块版本的兼容性</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="chsdate" downloadurl=""/>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="chmetcnv" downloadurl=""/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>CLJ</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>CLJ</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>1</o:TotalTime>
+  <o:Created>2007-08-17T03:39:00Z</o:Created>
+  <o:LastSaved>2007-08-17T03:39:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>186</o:Words>
+  <o:Characters>1065</o:Characters>
+  <o:Lines>8</o:Lines>
+  <o:Paragraphs>2</o:Paragraphs>
+  <o:CharactersWithSpaces>1249</o:CharactersWithSpaces>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:PunctuationKerning/>
+  <w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	mso-font-kerning:1.0pt;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:15.6pt;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:378364589;
+	mso-list-type:simple;
+	mso-list-template-ids:-1041201128;}
+@list l0:level1
+	{mso-level-start-at:10;
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+</head>
+
+<body lang=ZH-CN style='tab-interval:21.0pt;text-justify-trim:punctuation'>
+
+<div class=Section1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1;
+tab-stops:list 18.0pt'><![if !supportLists]><span lang=EN-US style='font-family:
+宋体;mso-hansi-font-family:"Times New Roman";mso-bidi-font-family:宋体;color:black;
+mso-font-kerning:0pt'><span style='mso-list:Ignore'>10.<span style='font:7.0pt "Times New Roman"'>
+</span></span></span><![endif]><span lang=EN-US style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>4.1</span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>内核版本与模块版本的兼容性<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='text-indent:20.4pt'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>可装入模块的编写者必须意识到，可装入模块既独立于内核又依赖于内核，所谓“独立”是因为它可以独立编译，所谓依赖是指它要调用内核或其他已装入模块的函数或变量，因此，内核版本的变化直接影响着曾经编写的模块是否能被新的内核认可。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='text-indent:20.4pt'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>例如，<span
+lang=EN-US>mydriver.o</span>是基于<span lang=EN-US>Linux<st1:chsdate Year="1899"
+Month="12" Day="30" IsLunarDate="False" IsROCDate="False" w:st="on">2.2.1</st1:chsdate></span>内核编写和编译的，但是有人想把它装入到<span
+lang=EN-US>Linux2.2.2</span>的内核中，如果<span lang=EN-US>mydriver.o</span>所调用的内核函数在<span
+lang=EN-US>2.2.2</span>中有所变化，那么内核怎么知道内核版本与模块所调用函数的版本不一致呢？<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='text-indent:20.4pt'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>为了解决这个问题，可装入模块的开发者就决定给模块也编以内核的版本号。在上面的例子中，<span
+lang=EN-US>mydriver.o</span>目标文件的<span lang=EN-US>.modinfo</span>特殊区段就含有“<st1:chsdate
+Year="1899" Month="12" Day="30" IsLunarDate="False" IsROCDate="False" w:st="on"><span
+ lang=EN-US>2.2.1</span></st1:chsdate>”，因为<span lang=EN-US>mydriver.o</span>的编译使用了来自<span
+lang=EN-US>Linux 2.2.1</span>的头文件，因此，当把该驱动程序装入到<span lang=EN-US>2.2.2</span>内核时，<span
+lang=EN-US>insmod</span>就会发现不匹配而失败，从而告诉你内核版本不匹配。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='text-indent:20.4pt'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>但是，<span
+lang=EN-US>Linux<st1:chsdate Year="1899" Month="12" Day="30" IsLunarDate="False"
+IsROCDate="False" w:st="on">2.2.1</st1:chsdate> </span>和 <span lang=EN-US>2.2.2</span>之间的一点不兼容是否真的影响<span
+lang=EN-US>mydriver.o</span>的执行呢？<span lang=EN-US>mydriver.o</span>仅仅调用了内核中几个函数、访问了几个数据结构，可以肯定地说，这些函数和数据结构并不一定随每个版本的稍微变化而变化。这种版本上的严格限制在一定程度上带来了不便，因为每当有版本变动时，就要重新编译（或从网上下载）许多可安装模块，而这种变动也许并不影响模块的运行，因此应当有其他的办法来解决这个问题。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span style='font-family:
+宋体;mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>办法之一，<span
+lang=EN-US>insmod</span>有一个<span lang=EN-US>-f</span>选项来强迫<span lang=EN-US>insmod</span>忽略内核版本的不匹配，并把模块插入到任何版本中，但是，你仍然会得到一个版本不匹配的警告信息。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>办法之二，就是将版本信息编码进符号名中，例如将版本号作为符号名的后缀。这样如果符号名相同而版本号不一致，<span
+lang=EN-US>insmod</span>就会认为是不同的符号而不予连接。但是，内核把是否将版本信息编码进符号名中是作为一个可选项<span
+lang=EN-US>CONFIG_MODVERSIONS</span>来提供的。如果需要版本信息，就可以在编译内核代码前的系统配置阶段选择这个可选项；如果不需要，就可以在编译模块的源代码时加上<span
+lang=EN-US>-D CONFIG_MODVERSIONS</span>取消这个选项。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:宋体;mso-hansi-font-family:
+"Times New Roman";color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span style='font-family:
+宋体;mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>当以符号编码来编译内核或模块时，我们前面介绍的<span
+lang=EN-US>EXPORT_SYMBOL</span>（）宏定义的形式就有所不同，例如模块最常调用的内核函数<span lang=EN-US>register_chrdev</span>（），其函数名的宏定义的在<span
+lang=EN-US>C</span>中为：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='text-indent:36.0pt'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'>#define register_chrdev register_chrdev_Rc8dc8350<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:20.4pt'><span style='font-family:宋体;
+mso-hansi-font-family:"Times New Roman";color:black;mso-font-kerning:0pt'>把符号<span
+lang=EN-US>register_chrdev</span>定义为<span lang=EN-US>register_chrdev</span>加上一个后缀，这个后缀就是<span
+lang=EN-US>register_chrdev</span>（）函数实际源代码的校验和，只要函数的源代码改动一个字符，这个校验和也会发生变化。因此，尽管你在源代码中读到的函数名为<span
+lang=EN-US>register_chrdev</span>，但<span lang=EN-US>C</span>的预处理程序知道真正调用的是<span
+lang=EN-US>register_chrdev_Rc8dc8350</span>。<span lang=EN-US> <o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:宋体;mso-hansi-font-family:"Times New Roman";color:black;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>
